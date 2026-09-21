@@ -352,7 +352,7 @@ html.ce-js .ce-lp:not(#ce) .ce-progress:not(.ce-on){opacity:0}
 .ce-lp:not(#ce) .ce-cut-tb{aspect-ratio:503/788;--iw:203.579%;--tx:-3.711%;--ty:-3.906%}
 .ce-lp:not(#ce) .ce-cut-tb,.ce-lp:not(#ce) .ce-fv-book img{clip-path:polygon(0.99% 2.41%,6.16% 0.51%,97.71% 6.6%,99.11% 95.69%,5.96% 99.37%,0.99% 98.48%)}
 .ce-lp:not(#ce) .ce-cut-b2{aspect-ratio:309/443;--iw:331.392%;--tx:-62.109%;--ty:-31.706%;clip-path:polygon(0.97% 2.26%,3.24% 0.68%,99.03% 7.45%,99.03% 97.97%,3.24% 99.32%,0.97% 98.87%)}
-.ce-lp:not(#ce) .ce-cut-b3{aspect-ratio:300/446;--iw:341.333%;--tx:-3.516%;--ty:-59.766%;clip-path:polygon(1% 2.69%,3.67% 0.67%,99% 7.85%,99% 97.53%,3% 99.33%,1% 98.21%)}
+.ce-lp:not(#ce) .ce-cut-b3{aspect-ratio:300/446;--iw:341.333%;--tx:-3.516%;--ty:-59.766%;clip-path:polygon(1% 2.69%,3.67% 0.67%,99% 7.85%,99% 93.09%,3% 98.95%,1% 97.83%)}
 .ce-lp:not(#ce) .ce-cut-b4{aspect-ratio:361/391;--iw:283.657%;--tx:-33.203%;--ty:-62.695%;clip-path:polygon(3.32% 10.23%,4.43% 7.42%,6.65% 5.88%,9.42% 5.12%,91.97% 0.77%,95.29% 1.28%,97.51% 2.81%,98.61% 5.63%,99.17% 93.35%,98.06% 96.68%,95.57% 98.72%,91.97% 99.23%,7.2% 98.98%,3.6% 98.21%,1.66% 95.91%,0.83% 92.58%)}
 .ce-lp:not(#ce) .ce-cut-b5{aspect-ratio:319/411;--iw:321.003%;--tx:-68.164%;--ty:-63.216%;clip-path:polygon(27.27% 0.73%,86.21% 5.6%,92.79% 9.25%,94.36% 15.57%,97.49% 19.71%,99.37% 23.11%,97.81% 31.39%,91.54% 53.28%,90.28% 75.18%,86.83% 91%,82.76% 98.54%,78.37% 99.27%,2.51% 90.02%,0.63% 87.83%,3.76% 77.62%,10.34% 16.79%,12.54% 8.52%,16.3% 7.3%,24.76% 4.62%,26.02% 1.46%)}
 
@@ -538,12 +538,16 @@ html.ce-js .ce-lp:not(#ce) .ce-live .ce-fv-arrow svg{animation:ceNudge 2.6s ease
 .ce-lp:not(#ce) .ce-photo-frame::before,.ce-lp:not(#ce) .ce-photo-frame::after{content:"";position:absolute;width:14px;height:14px;pointer-events:none;border:0 solid #D9AE56}
 .ce-lp:not(#ce) .ce-photo-frame::before{left:-3px;top:-3px;border-left-width:2px;border-top-width:2px;border-radius:var(--r-m) 0 0 0}
 .ce-lp:not(#ce) .ce-photo-frame::after{right:-3px;bottom:-3px;border-right-width:2px;border-bottom-width:2px;border-radius:0 0 var(--r-m) 0}
-.ce-lp:not(#ce) .ce-photo-img{display:block;width:100%;height:auto;object-fit:cover;border-radius:calc(var(--r-m) - 3px);background:#E6E3DD}
 .ce-lp:not(#ce) .ce-photo-cap{margin:.9em 0 0;font-size:var(--fs-fig);line-height:1.7;letter-spacing:0;text-align:center;font-feature-settings:"palt";color:var(--tx-3)}
 .ce-lp:not(#ce) .ce-photo-cap::before{content:"";display:inline-block;width:18px;height:1px;margin:0 .65em .34em 0;vertical-align:middle;background:var(--rule)}
 
+.ce-lp:not(#ce) .ce-gal{display:grid;grid-template-columns:1fr 1fr;gap:5px}
+.ce-lp:not(#ce) .ce-gal-i{position:relative;margin:0;min-width:0;aspect-ratio:4/3;overflow:hidden;border-radius:calc(var(--r-m) - 4px);background:#E6E3DD;box-shadow:inset 0 0 0 1px rgba(201,154,63,.38)}
+.ce-lp:not(#ce) .ce-gal-i picture{display:block;width:100%;height:100%}
+.ce-lp:not(#ce) .ce-gal-i img{display:block;width:100%;height:100%;object-fit:cover;background:#E6E3DD}
+.ce-lp:not(#ce) .ce-gal-main{grid-column:1/-1}
+
 .ce-lp:not(#ce) .ce-photo-work{margin-top:2.8em;margin-bottom:.6em}
-.ce-lp:not(#ce) .ce-photo-work .ce-photo-img{aspect-ratio:4/3}
 
 .ce-lp:not(#ce) .ce-b2 .ce-lead{position:relative;padding-bottom:14px}
 .ce-lp:not(#ce) .ce-b2 .ce-lead::after{content:"";position:absolute;left:0;bottom:0;width:40px;height:1px;background:var(--gold-line)}
@@ -834,7 +838,7 @@ html.ce-js .ce-lp:not(#ce) .ce-toc p.ce-rv:nth-child(4){transition-delay:.36s}
 .ce-lp:not(#ce) .ce-photo-party .ce-photo-frame{padding:8px;border-radius:var(--r-l);border-color:rgba(201,154,63,.55);background:#fff;box-shadow:var(--sh-navy)}
 .ce-lp:not(#ce) .ce-photo-party .ce-photo-frame::before{left:2px;top:2px;border-color:#C99A3F;border-radius:var(--r-s) 0 0 0}
 .ce-lp:not(#ce) .ce-photo-party .ce-photo-frame::after{right:2px;bottom:2px;border-color:#C99A3F;border-radius:0 0 var(--r-s) 0}
-.ce-lp:not(#ce) .ce-photo-party .ce-photo-img{aspect-ratio:11/10;object-position:84% 45%;border-radius:var(--r-s)}
+.ce-lp:not(#ce) .ce-photo-party .ce-gal-i{border-radius:var(--r-s);box-shadow:inset 0 0 0 1px rgba(201,154,63,.5)}
 
 .ce-lp:not(#ce) .ce-notice{margin-top:4.5em;padding-block:60px 64px;background:#F3F1EC;border-block:1px solid rgba(31,26,48,.12);color:#3A3D42;font-family:var(--serif);font-size:17.5px;line-height:1.9;letter-spacing:.03em}
 
@@ -1085,9 +1089,12 @@ html.ce-still .ce-lp:not(#ce) .ce-mk{background-size:100% 100%!important}
   .ce-lp:not(#ce) .ce-photo-frame::before,.ce-lp:not(#ce) .ce-photo-frame::after{width:18px;height:18px}
   .ce-lp:not(#ce) .ce-photo-cap{margin-top:1.05em}
   
-  .ce-lp:not(#ce) .ce-photo-work{max-width:560px;margin:3.2em 0 .8em}
+  .ce-lp:not(#ce) .ce-gal{grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr;gap:6px}
+  .ce-lp:not(#ce) .ce-gal-main{grid-column:1/3;grid-row:1/3}
   
-  .ce-lp:not(#ce) .ce-photo-party{max-width:560px;margin-left:0;margin-right:0}
+  .ce-lp:not(#ce) .ce-photo-work{max-width:694px;margin:3.2em 0 .8em}
+  
+  .ce-lp:not(#ce) .ce-photo-party{max-width:694px;margin-left:0;margin-right:0}
   .ce-lp:not(#ce) .ce-photo-party .ce-photo-frame{padding:10px}
   .ce-lp:not(#ce) .ce-belief{--gap-e:140px;padding:56px 40px 88px}
   .ce-lp:not(#ce) .ce-bel-no{left:24px;top:-48px}
@@ -1391,8 +1398,12 @@ html.ce-still .ce-lp:not(#ce) .ce-mk{background-size:100% 100%!important}
 <p class="ce-g1 ce-rv">先月もそれをやっていましたし、<br>来月も…<wbr>たぶん<wbr>同じことをしています。</p>
 
 <figure class="ce-photo ce-photo-work ce-rv">
-  <div class="ce-photo-frame"><picture><source data-asset="b2-work-photo-webp" type="image/webp" srcset="assets/photos/b2-work.webp"><img class="ce-photo-img" data-asset="b2-work-photo" src="assets/photos/b2-work.jpg" alt="中国の展示会の会場。赤いカーペットの通路で、頭上の案内板を指さす人と、それを見る人たち" width="1200" height="900" loading="lazy" decoding="async" onerror="var f=this.closest('.ce-photo');if(f)f.style.display='none'"></picture></div>
-  <figcaption class="ce-photo-cap">中国の展示会（広交会）の会場。<wbr>写っているのは<wbr>受講生です。</figcaption>
+  <div class="ce-photo-frame"><div class="ce-gal">
+    <div class="ce-gal-i ce-gal-main"><picture><source data-asset="b2-work-photo-webp" type="image/webp" srcset="assets/photos/b2-work.webp"><img data-asset="b2-work-photo" src="assets/photos/b2-work.jpg" alt="中国の展示会の会場。赤いカーペットの通路で、頭上の案内板を指さしているのが講師の田村。まわりでそれを見ている人たち" width="1200" height="900" loading="lazy" decoding="async" onerror="var f=this.closest('.ce-photo');if(f)f.style.display='none'"></picture></div>
+    <div class="ce-gal-i"><picture><source data-asset="b2-expo-2-webp" type="image/webp" srcset="assets/photos/gal-expo-2.webp"><img data-asset="b2-expo-2" src="assets/photos/gal-expo-2.jpg" alt="展示会の通路。大勢の来場者がブースのあいだを歩いている" width="640" height="480" loading="lazy" decoding="async" onerror="var t=this.closest('.ce-gal-i');if(t)t.style.display='none'"></picture></div>
+    <div class="ce-gal-i"><picture><source data-asset="b2-expo-3-webp" type="image/webp" srcset="assets/photos/gal-expo-3.webp"><img data-asset="b2-expo-3" src="assets/photos/gal-expo-3.jpg" alt="展示会のブース。棚と、照明を当てた台に並ぶ商品を、手に取って見ている人たち" width="640" height="480" loading="lazy" decoding="async" onerror="var t=this.closest('.ce-gal-i');if(t)t.style.display='none'"></picture></div>
+  </div></div>
+  <figcaption class="ce-photo-cap">中国の展示会（広交会）の会場。<wbr>大きい写真で<wbr>案内板を<wbr>指さしているのが、<wbr>講師の<wbr>田村です。</figcaption>
 </figure>
 <p class="ce-g2 ce-lead ce-rv">つまり<wbr>私は、<wbr>今も<wbr>現場にいます。</p>
 <p class="ce-g1 ce-rv">なぜ、<wbr>わざわざこんなことを<wbr>書くのか？</p>
@@ -1947,8 +1958,12 @@ html.ce-still .ce-lp:not(#ce) .ce-mk{background-size:100% 100%!important}
 <p class="ce-g2 ce-rv">少なくとも、<wbr>次に<wbr>何かを<wbr>選ぶときの、<br>物差しにはなるはずですから。</p>
 
 <figure class="ce-photo ce-photo-party ce-rv">
-  <div class="ce-photo-frame"><picture><source data-asset="b8-party-photo-webp" type="image/webp" srcset="assets/photos/b8-party.webp"><img class="ce-photo-img" data-asset="b8-party-photo" src="assets/photos/b8-party.jpg" alt="屋上テラスで長机を囲む懇親会の集合写真。右手に講師の2人が写っている" width="1600" height="1000" loading="lazy" decoding="async" onerror="var f=this.closest('.ce-photo');if(f)f.style.display='none'"></picture></div>
-  <figcaption class="ce-photo-cap">講師と受講生の懇親会（中国・広州）</figcaption>
+  <div class="ce-photo-frame"><div class="ce-gal">
+    <div class="ce-gal-i ce-gal-main"><picture><source data-asset="b8-party-photo-webp" type="image/webp" srcset="assets/photos/b8-party.webp"><img data-asset="b8-party-photo" src="assets/photos/b8-party.jpg" alt="屋上テラスで長机を囲む懇親会。机の奥に立つ人と、その手前に座る人が講師の2人" width="776" height="582" loading="lazy" decoding="async" onerror="var f=this.closest('.ce-photo');if(f)f.style.display='none'"></picture></div>
+    <div class="ce-gal-i"><picture><source data-asset="b8-party-2-webp" type="image/webp" srcset="assets/photos/gal-party-2.webp"><img data-asset="b8-party-2" src="assets/photos/gal-party-2.jpg" alt="夜の川沿いで撮った集合写真。奥に川と橋、高層ビルの明かりが見える" width="640" height="480" loading="lazy" decoding="async" onerror="var t=this.closest('.ce-gal-i');if(t)t.style.display='none'"></picture></div>
+    <div class="ce-gal-i"><picture><source data-asset="b8-party-3-webp" type="image/webp" srcset="assets/photos/gal-party-3.webp"><img data-asset="b8-party-3" src="assets/photos/gal-party-3.jpg" alt="飲茶の並んだ丸いテーブルを囲んで食事をしている人たち" width="640" height="480" loading="lazy" decoding="async" onerror="var t=this.closest('.ce-gal-i');if(t)t.style.display='none'"></picture></div>
+  </div></div>
+  <figcaption class="ce-photo-cap">中国での<wbr>懇親会と<wbr>集合写真。<wbr>大きい写真に<wbr>講師の<wbr>2人が<wbr>写っています。</figcaption>
 </figure>
 </div><div class="ce-notice"><div class="ce-col">
 <p class="ce-g2 ce-rv">それと、<wbr>もうひとつ。</p>
@@ -2122,7 +2137,8 @@ html.ce-still .ce-lp:not(#ce) .ce-mk{background-size:100% 100%!important}
   function imgFail(img){
     if(img.hasAttribute('data-ce-failed')) return; img.setAttribute('data-ce-failed','');
     var box=img.closest('.ce-shot,.ce-evidence-frame'); if(box){ box.classList.add('ce-img-failed'); return; }
-    var fig=img.closest('.ce-photo'); if(fig){ fig.style.display='none'; return; } /* 現地・懇親会の写真は、キャプションごと隠す */
+    var tile=img.closest('.ce-gal-i'); if(tile&&!tile.classList.contains('ce-gal-main')){ tile.style.display='none'; return; } /* ギャラリーの脇の写真は、そのタイルだけ隠す */
+    var fig=img.closest('.ce-photo'); if(fig){ fig.style.display='none'; return; } /* 現地・懇親会の写真は、主役が読めないときキャプションごと隠す */
     var ph=img.closest('.ce-portrait,.ce-prof-photo'); if(ph){ ph.style.display='none'; var c=img.closest('.ce-host,.ce-prof-head'); if(c) c.classList.add('ce-no-photo'); }
   }
   function imgOk(img){ if(img.classList.contains('ce-fv-photo')&&img.parentNode) img.parentNode.classList.add('ce-has-photo'); }
