@@ -1337,7 +1337,7 @@ html.ce-still .ce-lp:not(#ce) .ce-mk{background-size:100% 100%!important}
 .ce-lp:not(#ce).ce-dl .ce-dl-list{list-style:none;margin:0;padding:0;display:grid;gap:20px}
 
 .ce-lp:not(#ce).ce-dl .ce-dl-i{position:relative;margin:0;padding:22px 20px 22px;border-radius:var(--r-l);background:#FFFDF7;border:1px solid rgba(201,154,63,.5);box-shadow:0 8px 22px rgba(26,33,82,.08);
-  display:grid;grid-template-columns:72px 1fr;column-gap:14px;grid-template-areas:"pic no" "k k" "d d" "meta meta" "btn btn";align-items:center}
+  display:grid;grid-template-columns:72px 1fr;column-gap:14px;grid-template-areas:"pic no" "k k" "d d" "meta meta" "cav cav" "btn btn";align-items:center}
 .ce-lp:not(#ce).ce-dl .ce-dl-pic{grid-area:pic}
 .ce-lp:not(#ce).ce-dl .ce-dl-no{grid-area:no}
 .ce-lp:not(#ce).ce-dl .ce-dl-k{grid-area:k}
@@ -1358,6 +1358,10 @@ html.ce-still .ce-lp:not(#ce) .ce-mk{background-size:100% 100%!important}
 
 .ce-lp:not(#ce).ce-dl .ce-dl-watch .ce-cta-ic svg{transform:none}
 .ce-lp:not(#ce).ce-dl .ce-dl-watch .ce-cta-ic svg path{fill:var(--cta-arrow);stroke-width:2}
+
+.ce-lp:not(#ce).ce-dl .ce-dl-ext .ce-cta-ic svg{transform:none}
+
+.ce-lp:not(#ce).ce-dl .ce-dl-caveat{grid-area:cav;margin-top:.7em!important;padding:10px 12px;border-radius:var(--r-m);background:#FFF4DC;border:1px solid rgba(201,154,63,.45);font-size:calc(var(--fs-note) - 1px);line-height:1.75;color:var(--tx-2);word-break:keep-all;line-break:strict;overflow-wrap:anywhere}
 
 .ce-lp:not(#ce).ce-dl .ce-dl-i-main{margin-top:10px;border-color:#C99A3F;box-shadow:0 0 0 1px rgba(201,154,63,.3),0 14px 30px rgba(26,33,82,.12)}
 .ce-lp:not(#ce).ce-dl .ce-dl-ribbon{position:absolute;z-index:2;top:-13px;left:18px;padding:2px 13px;border-radius:var(--r-pill);
@@ -1391,7 +1395,7 @@ html.ce-still .ce-lp:not(#ce) .ce-mk{background-size:100% 100%!important}
   .ce-lp:not(#ce).ce-dl .ce-dl-list{grid-template-columns:1fr 1fr;gap:24px}
   
   .ce-lp:not(#ce).ce-dl .ce-dl-i{padding:0 24px 24px;overflow:hidden;grid-template-columns:1fr;column-gap:0;align-items:start;
-    grid-template-areas:"pic" "no" "k" "d" "meta" "btn";grid-template-rows:auto auto auto auto 1fr auto}
+    grid-template-areas:"pic" "no" "k" "d" "meta" "cav" "btn";grid-template-rows:auto auto auto auto auto 1fr auto}
   .ce-lp:not(#ce).ce-dl .ce-dl-pic{position:relative;display:flex;align-items:center;justify-content:center;height:210px;margin:0 -24px 20px;
     background:radial-gradient(55% 65% at 50% 58%,rgba(255,214,130,.30),rgba(255,214,130,0) 72%),linear-gradient(180deg,#1C2459 0%,#121845 100%);
     border-bottom:1px solid rgba(201,154,63,.65)}
@@ -1410,7 +1414,7 @@ html.ce-still .ce-lp:not(#ce) .ce-mk{background-size:100% 100%!important}
 
   
   .ce-lp:not(#ce).ce-dl .ce-dl-i-main{grid-column:1/-1;margin-top:0;padding:30px 34px 30px 0;column-gap:34px;
-    grid-template-columns:240px 1fr;grid-template-areas:"pic no" "pic k" "pic d" "pic meta" "pic btn";grid-template-rows:auto auto auto 1fr auto}
+    grid-template-columns:240px 1fr;grid-template-areas:"pic no" "pic k" "pic d" "pic meta" "pic cav" "pic btn";grid-template-rows:auto auto auto auto 1fr auto}
   .ce-lp:not(#ce).ce-dl .ce-dl-i-main .ce-dl-pic{align-self:stretch;height:auto;margin:-30px 0 -30px 0;border-bottom:0;border-right:1px solid rgba(201,154,63,.65)}
   .ce-lp:not(#ce).ce-dl .ce-dl-i-main .ce-dl-pic .ce-cut{height:220px}
   .ce-lp:not(#ce).ce-dl .ce-dl-i-main .ce-dl-pic::after{bottom:22px;width:190px;margin-left:-95px}
@@ -1491,8 +1495,9 @@ html.ce-still .ce-lp:not(#ce) .ce-mk{background-size:100% 100%!important}
 <p class="ce-dl-no"><span>特典</span><span class="ce-dl-no-n ce-gtl">1</span><span class="ce-dl-kind" aria-hidden="true">BOOK</span></p>
 <p class="ce-dl-k">『年間利益<wbr>1,000万円をつくる <span class="ce-ib">商品プロデュースの<wbr>教科書』</span></p>
 <p class="ce-dl-d">まずは<wbr>これを、<wbr>はじめから<wbr>終わりまで<wbr>一度<wbr>通して<wbr>読んでください。</p>
-<p class="ce-dl-meta">全45ページ</p>
-<p class="ce-dl-btn-w"><a class="ce-cta" href="#" download>ダウンロードする<span class="ce-cta-ic" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M7.5 4.5 13 10l-5.5 5.5"/></svg></span></a></p>
+<p class="ce-dl-meta">Kindle版（Amazon）／64ページ</p>
+<p class="ce-dl-caveat">PDF版は<wbr>準備中のため、<wbr>いまは<wbr>AmazonのKindle版<wbr>（書名<wbr>『副業で<wbr>年間利益<wbr>1,000万円 <wbr>〜最強の<wbr>予約販売<wbr>ビジネス〜』）を<wbr>ご案内しています。<wbr>Kindle Unlimitedを<wbr>ご利用中なら<wbr>追加料金なしで<wbr>読めます。<wbr>それ以外の方は<wbr>有料です。</p>
+<p class="ce-dl-btn-w"><a class="ce-cta ce-dl-ext" href="https://www.amazon.co.jp/dp/B0H66HDZW7" target="_blank" rel="noopener">Amazonで読む<span class="ce-cta-ic" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M7.5 4.5 13 10l-5.5 5.5"/></svg></span></a></p>
 </li>
 
 <li class="ce-dl-i">
