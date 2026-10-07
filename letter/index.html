@@ -7,7 +7,7 @@
 <title>Crowd Edge（プレビュー）</title>
 <meta name="robots" content="noindex,nofollow">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&family=Noto+Serif+JP:wght@500;700&family=Shippori+Mincho+B1:wght@800&display=swap">
-<style>body{margin:0;background:#0A1130}.ce-sl-cdph{padding:22px;border:2px dashed #C9A24A;background:#FFF8E6;color:#7A5A12;font:600 15px/1.6 sans-serif;text-align:center}</style>
+<style>body{margin:0;background:#0A1130}.ce-sl-cdph{padding:4px 16px 16px;background:#10163F;color:#F3D58E;text-align:center;font-family:'Cormorant Garamond',serif}.ce-sl-cdph b{font-size:46px;font-style:italic;font-weight:600;margin:0 2px}.ce-sl-cdph i{font:600 15px 'Noto Serif JP',serif;font-style:normal;color:#E9EEF8;margin-right:8px}.ce-sl-cdph small{display:block;font:12px sans-serif;color:#9AA3C0;margin-top:2px}</style>
 <style>
 
 
@@ -1826,6 +1826,75 @@ html.ce-still .ce-lp:not(#ce) .ce-mk{background-size:100% 100%!important}
 .ce-lp:not(#ce) .ce-sl-fv .ce-sl-fv-orn{margin:22px auto 20px}
 .ce-lp:not(#ce) .ce-sl-fv .ce-sl-fv-arrow{margin:26px auto 0}
 
+.ce-lp:not(#ce) .ce-sl-loupe{position:relative;z-index:3;margin:-22px 6px 0 auto;padding:8px;border-radius:14px;background:#fff;box-shadow:0 0 0 2px #E2B65C,0 0 0 6px rgba(255,248,234,.9),0 0 0 7px rgba(201,154,63,.45),0 16px 32px rgba(0,0,0,.35)}
+.ce-lp:not(#ce) .ce-sl-loupe img{width:100%;height:auto;border-radius:8px}
+.ce-lp:not(#ce) .ce-sl-loupe-side{width:62%;max-width:300px}
+.ce-lp:not(#ce) .ce-sl-loupe-wide{width:92%;max-width:520px}
+.ce-lp:not(#ce) .ce-sl-loupe-k{position:absolute;left:14px;top:-12px;padding:0 10px 0 calc(10px + .3em);font-family:var(--latin);font-style:italic;font-weight:600;font-size:14px;line-height:22px;letter-spacing:.3em;color:#FFF3D0;background:linear-gradient(180deg,var(--navy-1),var(--navy-2));border:1px solid #D9AE56;border-radius:var(--r-xs)}
+
+.ce-lp:not(#ce) .ce-sl-loupe-ic{position:absolute;left:-16px;bottom:-14px;width:34px;height:34px;border-radius:50%;border:3px solid #D9AE56;background:radial-gradient(circle at 35% 35%,rgba(255,255,255,.9),rgba(255,240,200,.35) 60%,transparent 70%);box-shadow:0 4px 10px rgba(0,0,0,.3)}
+.ce-lp:not(#ce) .ce-sl-loupe-ic::after{content:"";position:absolute;left:-12px;bottom:-10px;width:16px;height:5px;border-radius:3px;background:linear-gradient(90deg,#8E6A26,#E2B65C);transform:rotate(-45deg);transform-origin:100% 50%}
+.ce-lp:not(#ce) .ce-sl-ev-loupe figcaption{margin-top:1.4em}
+
+.ce-lp:not(#ce) .ce-sl-act{position:relative;overflow:hidden;min-height:340px;display:grid;place-items:center;text-align:center;background:#0A1130}
+.ce-lp:not(#ce) .ce-sl-act-bg{position:absolute;inset:0}
+.ce-lp:not(#ce) .ce-sl-act-bg img{width:100%;height:100%;object-fit:cover;filter:saturate(.7) brightness(.55)}
+.ce-lp:not(#ce) .ce-sl-act::before{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(70% 60% at 50% 50%,rgba(10,17,48,.35),rgba(10,17,48,.85)),linear-gradient(180deg,rgba(10,17,48,.6),rgba(10,17,48,.2) 40%,rgba(10,17,48,.7))}
+.ce-lp:not(#ce) .ce-sl-act::after{content:"";position:absolute;inset:12px;z-index:1;border:1px solid rgba(226,182,92,.55);pointer-events:none}
+.ce-lp:not(#ce) .ce-sl-act-in{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;padding:56px 20px}
+.ce-lp:not(#ce) .ce-sl-act-k{font-family:var(--latin);font-style:italic;font-weight:600;font-size:16px;letter-spacing:.6em;padding-left:.6em;line-height:1;color:#E9C27A}
+.ce-lp:not(#ce) .ce-sl-act-n{margin-top:6px;font-family:var(--latin);font-style:italic;font-weight:600;font-size:96px;line-height:.95;letter-spacing:.04em;filter:drop-shadow(0 0 18px rgba(243,200,110,.45))}
+.ce-lp:not(#ce) .ce-sl-act-t{margin-top:10px;font-family:var(--latin);font-weight:600;font-size:22px;letter-spacing:.32em;padding-left:.32em;color:#fff}
+.ce-lp:not(#ce) .ce-sl-act-orn{display:block;width:200px;margin:18px auto 12px}
+.ce-lp:not(#ce) .ce-sl-act-r{font-family:var(--latin);font-style:italic;font-weight:600;font-size:15px;letter-spacing:.24em;color:#CDD6E8}
+
+.ce-lp:not(#ce) .ce-sl-act-on-sun{position:absolute;left:0;right:0;top:4%;z-index:3;display:flex;flex-direction:column;align-items:center;text-align:center;pointer-events:none}
+.ce-lp:not(#ce) .ce-sl-act-on-sun .ce-sl-act-k{color:#FFE7B8}
+.ce-lp:not(#ce) .ce-sl-act-on-sun .ce-sl-act-n{color:#FFF6E0;text-shadow:0 0 22px rgba(255,190,120,.9)}
+.ce-lp:not(#ce) .ce-sl-act-on-sun .ce-sl-act-t{color:#FFF6E0}
+.ce-lp:not(#ce) .ce-sl-act-on-sun .ce-sl-act-r{margin-top:6px;color:#FFE7B8}
+.ce-lp:not(#ce) .ce-sl-act-on-sun .ce-sl-act-n{font-size:58px}
+.ce-lp:not(#ce) .ce-sl-act-on-sun .ce-sl-act-t{margin-top:4px;font-size:17px;text-shadow:0 1px 10px rgba(43,12,63,.9)}
+.ce-lp:not(#ce) .ce-sl-act-on-sun .ce-sl-act-r{font-size:13px;text-shadow:0 1px 8px rgba(43,12,63,.9)}
+
+.ce-lp:not(#ce) .ce-sl-chat{margin-top:2.2em;border-radius:14px;overflow:hidden;background:#F2F4F8;box-shadow:0 0 0 1px rgba(201,154,63,.55),0 18px 40px rgba(0,0,0,.25)}
+.ce-lp:not(#ce) .ce-sl-chat-h{display:flex;align-items:center;gap:6px;padding:10px 14px;background:linear-gradient(180deg,var(--navy-1),var(--navy-2));border-bottom:2px solid #D9AE56}
+.ce-lp:not(#ce) .ce-sl-chat-h i{width:9px;height:9px;border-radius:50%;background:#3A4560}
+.ce-lp:not(#ce) .ce-sl-chat-h i:first-child{background:#FF5C6E}
+.ce-lp:not(#ce) .ce-sl-chat-h i:nth-child(2){background:#F3C35E}
+.ce-lp:not(#ce) .ce-sl-chat-h i:nth-child(3){background:#3DCB7E}
+.ce-lp:not(#ce) .ce-sl-chat-room{flex:1;height:8px;margin-left:10px;border-radius:4px;background:rgba(255,255,255,.18);max-width:120px}
+.ce-lp:not(#ce) .ce-sl-chat-body{display:grid;gap:14px;padding:18px 12px 20px;background:radial-gradient(100% 60% at 50% 0%,rgba(226,182,92,.12),transparent 70%),#F2F4F8}
+.ce-lp:not(#ce) .ce-sl-msg{display:grid;grid-template-columns:42px 1fr;gap:10px;align-items:start}
+.ce-lp:not(#ce) .ce-sl-msg-ic{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;color:#1A2152;background:#FFF8EA;box-shadow:0 0 0 1.5px #D9AE56}
+.ce-lp:not(#ce) .ce-sl-msg-ic svg{width:24px;height:24px}
+.ce-lp:not(#ce) .ce-sl-bubble{position:relative;padding:12px 14px;border-radius:4px 14px 14px 14px;background:#fff;box-shadow:0 2px 6px rgba(26,33,82,.1)}
+.ce-lp:not(#ce) .ce-sl-bubble::before{content:"";position:absolute;left:-7px;top:0;width:0;height:0;border-style:solid;border-width:0 8px 10px 0;border-color:transparent #fff transparent transparent}
+.ce-lp:not(#ce) .ce-sl-bubble p{font-size:17px;line-height:1.75;color:#1F1A30}
+.ce-lp:not(#ce) .ce-sl-msg:nth-child(even) .ce-sl-bubble{background:#FFFBF0}
+.ce-lp:not(#ce) .ce-sl-msg:nth-child(even) .ce-sl-bubble::before{border-right-color:#FFFBF0}
+.ce-lp:not(#ce) .ce-sl-chat .ce-hl{color:#6E450C}
+
+.ce-lp:not(#ce) .ce-sl-cd{position:relative;background:#10163F;text-align:center}
+.ce-lp:not(#ce) .ce-sl-cd-top{padding:30px 20px 6px;border-top:1px solid rgba(226,182,92,.6)}
+.ce-lp:not(#ce) .ce-sl-cd-bot{padding:8px 20px 28px;border-bottom:1px solid rgba(226,182,92,.6)}
+.ce-lp:not(#ce) .ce-sl-cd::before{content:"";position:absolute;left:12px;right:12px;pointer-events:none;border:1px solid rgba(226,182,92,.4)}
+.ce-lp:not(#ce) .ce-sl-cd-top::before{top:12px;bottom:0;border-bottom:0}
+.ce-lp:not(#ce) .ce-sl-cd-bot::before{top:0;bottom:12px;border-top:0}
+.ce-lp:not(#ce) .ce-sl-cd-k{display:block;font-family:var(--latin);font-style:italic;font-weight:600;font-size:17px;letter-spacing:.5em;padding-left:.5em;color:#E9C27A}
+.ce-lp:not(#ce) .ce-sl-cd-orn{display:block;width:200px;margin:12px auto 0}
+.ce-lp:not(#ce) .ce-sl-cd-bot .ce-sl-cd-orn{margin:0 auto}
+
+.ce-lp:not(#ce) .ce-sl-ps{position:relative;margin:0 -4px;padding:58px 20px 64px;border-radius:4px;background:repeating-linear-gradient(180deg,transparent 0 37px,rgba(26,33,82,.07) 37px 38px) 0 46px/100% calc(100% - 92px) no-repeat,linear-gradient(180deg,#FFFFFF,#FFFDF8);box-shadow:0 1px 0 #E9E2D2,0 2px 0 #FFFDF8,0 3px 0 #E9E2D2,0 24px 50px rgba(110,80,30,.18)}
+.ce-lp:not(#ce) .ce-sl-ps::before{content:"";position:absolute;left:30px;top:0;bottom:0;width:1px;background:rgba(176,34,63,.18)}
+.ce-lp:not(#ce) .ce-sl-ps-mark{position:absolute;right:18px;top:14px;font-family:var(--latin);font-style:italic;font-weight:600;font-size:42px;line-height:1;color:#C99A3F;opacity:.85}
+.ce-lp:not(#ce) .ce-sl-ps .ce-sl-h2{text-align:left;font-size:24px}
+.ce-lp:not(#ce) .ce-sl-ps .ce-sl-h2::after{margin:12px 0 0;width:120px}
+.ce-lp:not(#ce) .ce-sl-ps .ce-sl-h3{margin-top:3em}
+.ce-lp:not(#ce) .ce-sl-ps .ce-sl-ctabox{margin-top:2.6em!important}
+.ce-lp:not(#ce) .ce-sl-seal{position:absolute;right:22px;bottom:-26px;display:grid;place-items:center;width:62px;height:62px;border-radius:50%;font-family:var(--latin);font-style:italic;font-weight:600;font-size:22px;letter-spacing:.04em;color:#F6D9DE;background:radial-gradient(circle at 35% 30%,#C8394F 0%,#9C1F33 55%,#6E1222 100%);box-shadow:0 0 0 4px rgba(156,31,51,.35),0 8px 16px rgba(0,0,0,.3);transform:rotate(-12deg)}
+.ce-lp:not(#ce) .ce-sl-ps .ce-sl-ph-sign{margin-top:2em}
+
 @media (min-width:768px){
   .ce-lp:not(#ce) .ce-sl-fv-scene{width:170px;height:228px}
   .ce-lp:not(#ce) .ce-sl-fv-1{font-size:38px}
@@ -1860,6 +1929,11 @@ html.ce-still .ce-lp:not(#ce) .ce-mk{background-size:100% 100%!important}
   .ce-lp:not(#ce) .ce-sl-ctabox .ce-cta{min-height:74px;font-size:25px}
   .ce-lp:not(#ce) .ce-sl-b95 p{font-size:23px}
   .ce-lp:not(#ce) .ce-sl-chain-t{font-size:23px}
+  .ce-lp:not(#ce) .ce-sl-act{min-height:420px}
+  .ce-lp:not(#ce) .ce-sl-act-n{font-size:128px}
+  .ce-lp:not(#ce) .ce-sl-ps{padding:72px 48px 76px}
+  .ce-lp:not(#ce) .ce-sl-ps::before{left:34px}
+  .ce-lp:not(#ce) .ce-sl-bubble p{font-size:18px}
 }
 
 </style>
@@ -1972,7 +2046,7 @@ html.ce-still .ce-lp:not(#ce) .ce-mk{background-size:100% 100%!important}
 <p class="ce-g1 ce-sl-stat">売上の<wbr>総額、<wbr><span class="ce-nw"><span class="ce-hl ce-sl-num">9,692,475円</span>。</span><br>買ってくれた<wbr>人は、<wbr><span class="ce-nw"><span class="ce-hl ce-sl-num">1,841人</span>。</span></p>
 <span class="ce-horizon" aria-hidden="true"></span></div></div>
 <p class="ce-g1">在庫を<wbr>抱える<wbr>ことも、<wbr>値下げ合戦を<wbr>する<wbr>ことも、<wbr>なくです。</p>
-<figure class="ce-evidence ce-sl-ev"><span class="ce-ev-tag" aria-hidden="true">EVIDENCE</span><div class="ce-evidence-frame"><span class="ce-sl-badge">1回目</span><a class="ce-sl-zoom" href="../assets/letter/sl-floss-3.webp" target="_blank" rel="noopener"><img src="../assets/letter/sl-floss-3.webp" alt="Makuakeプロジェクト『フロス糸交換ハンドル』第三弾の画面。応援購入総額9,692,475円、サポーター1,841人" width="1000" height="397" loading="lazy" decoding="async"></a></div><figcaption>Makuake<wbr>プロジェクト<wbr>『フロス糸交換ハンドル』<wbr>第三弾の<wbr>実画面。<wbr><span class="ce-nw">応援購入総額 9,692,475円／</span><wbr><span class="ce-nw">サポーター 1,841人</span><br>実行者: 株式会社<wbr>Matelia<wbr>（Crowd Edge<wbr>講師の<wbr>田村りょうが<wbr>代表）。<wbr>応援購入総額は、<wbr>手数料・原価などを<wbr>差し引く<wbr>前の<wbr>売上額です。</figcaption></figure>
+<figure class="ce-evidence ce-sl-ev ce-sl-ev-loupe"><span class="ce-ev-tag" aria-hidden="true">EVIDENCE</span><div class="ce-evidence-frame"><span class="ce-sl-badge">1回目</span><a class="ce-sl-zoom" href="../assets/letter/sl-floss-3.webp" target="_blank" rel="noopener"><img src="../assets/letter/sl-floss-3.webp" alt="Makuakeプロジェクト『フロス糸交換ハンドル』第三弾の画面。応援購入総額9,692,475円、サポーター1,841人" width="1000" height="397" loading="lazy" decoding="async"></a></div><div class="ce-sl-loupe ce-sl-loupe-side"><span class="ce-sl-loupe-k" aria-hidden="true">ZOOM</span><span class="ce-sl-loupe-ic" aria-hidden="true"></span><img src="../assets/letter/sl-loupe-floss-3.webp" alt="応援購入総額 9,692,475円、サポーター 1,841人の部分の拡大" width="310" height="270" loading="lazy" decoding="async"></div><figcaption>Makuake<wbr>プロジェクト<wbr>『フロス糸交換ハンドル』<wbr>第三弾の<wbr>実画面。<wbr><span class="ce-nw">応援購入総額 9,692,475円／</span><wbr><span class="ce-nw">サポーター 1,841人</span><br>実行者: 株式会社<wbr>Matelia<wbr>（Crowd Edge<wbr>講師の<wbr>田村りょうが<wbr>代表）。<wbr>応援購入総額は、<wbr>手数料・原価などを<wbr>差し引く<wbr>前の<wbr>売上額です。</figcaption></figure>
 <p class="ce-g2">ここで、<wbr>多くの<wbr>人は<wbr>こう<wbr>思います。</p>
 <p class="ce-g1 ce-quote">「たまたま、<wbr>当たっただけでしょう？」と。</p>
 <p class="ce-g1 ce-big ce-big-c">では、<wbr>これは<wbr>どう<wbr>見えますか？</p>
@@ -1980,7 +2054,7 @@ html.ce-still .ce-lp:not(#ce) .ce-mk{background-size:100% 100%!important}
 <div class="ce-band95 ce-sl-band"><div class="ce-b95 ce-sl-b95"><span class="ce-b95-clip" aria-hidden="true"><span class="ce-b95-rays"></span></span><span class="ce-spark" style="--s:16px;left:7%;top:58%" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M10 0C11 7 13 9 20 10 13 11 11 13 10 20 9 13 7 11 0 10 7 9 9 7 10 0Z"/></svg></span><span class="ce-spark" style="--s:11px;right:10%;top:24%;--d:1.1s" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M10 0C11 7 13 9 20 10 13 11 11 13 10 20 9 13 7 11 0 10 7 9 9 7 10 0Z"/></svg></span>
 <p class="ce-g1 ce-sl-stat">それでも、<wbr><span class="ce-nw"><span class="ce-hl ce-sl-num">2,620,632円</span>。</span><br><span class="ce-hl ce-sl-num">487人</span>が、<wbr>また<wbr>財布を<wbr>開いてくれました。</p>
 <span class="ce-horizon" aria-hidden="true"></span></div></div>
-<figure class="ce-evidence ce-sl-ev"><span class="ce-ev-tag" aria-hidden="true">EVIDENCE</span><div class="ce-evidence-frame"><span class="ce-sl-badge">5回目</span><a class="ce-sl-zoom" href="../assets/letter/sl-floss-5th.webp" target="_blank" rel="noopener"><img src="../assets/letter/sl-floss-5th.webp" alt="『フロス交換ハンドル』の販売ページの画面。2,620,632円、支援者487人" width="1000" height="341" loading="lazy" decoding="async"></a></div><figcaption>同じ商品の<wbr>別の<wbr>販売ページの<wbr>実画面。<wbr><span class="ce-nw">2,620,632円／</span><wbr><span class="ce-nw">支援者 487人</span></figcaption></figure>
+<figure class="ce-evidence ce-sl-ev ce-sl-ev-loupe"><span class="ce-ev-tag" aria-hidden="true">EVIDENCE</span><div class="ce-evidence-frame"><span class="ce-sl-badge">5回目</span><a class="ce-sl-zoom" href="../assets/letter/sl-floss-5th.webp" target="_blank" rel="noopener"><img src="../assets/letter/sl-floss-5th.webp" alt="『フロス交換ハンドル』の販売ページの画面。2,620,632円、支援者487人" width="1000" height="341" loading="lazy" decoding="async"></a></div><div class="ce-sl-loupe ce-sl-loupe-wide"><span class="ce-sl-loupe-k" aria-hidden="true">ZOOM</span><span class="ce-sl-loupe-ic" aria-hidden="true"></span><img src="../assets/letter/sl-loupe-floss-5th.webp" alt="現在 2,620,632円、支援者 487人の部分の拡大" width="500" height="83" loading="lazy" decoding="async"></div><figcaption>同じ商品の<wbr>別の<wbr>販売ページの<wbr>実画面。<wbr><span class="ce-nw">2,620,632円／</span><wbr><span class="ce-nw">支援者 487人</span></figcaption></figure>
 <p class="ce-g2 ce-lead">売って、<wbr>終わりではありません。</p>
 <p class="ce-g1 ce-lead">一度きりの<wbr>花火でも、<wbr>ありません。</p>
 <p class="ce-g1 ce-max ce-sl-c">たった<wbr>1つの<wbr>商品を、<wbr>1回、<wbr>2回、<wbr>そして<wbr>5回。</p>
@@ -2043,7 +2117,7 @@ html.ce-still .ce-lp:not(#ce) .ce-mk{background-size:100% 100%!important}
 <div class="ce-col">
 </div>
 </section>
-<div class="ce-sunrise ce-sl-sunrise" aria-hidden="true"><div class="ce-sunrise-veil"></div><div class="ce-sun-at"><div class="ce-rays"></div><div class="ce-halo"></div><div class="ce-sun"></div><div class="ce-flash"></div></div><div class="ce-sunrise-top"></div><div class="ce-sunrise-bottom"></div><span class="ce-spark" style="--s:14px;left:12%;top:32%" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M10 0C11 7 13 9 20 10 13 11 11 13 10 20 9 13 7 11 0 10 7 9 9 7 10 0Z"/></svg></span><span class="ce-spark" style="--s:20px;right:14%;top:26%;--d:.8s" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M10 0C11 7 13 9 20 10 13 11 11 13 10 20 9 13 7 11 0 10 7 9 9 7 10 0Z"/></svg></span><span class="ce-spark" style="--s:11px;left:24%;top:64%;--d:1.6s" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M10 0C11 7 13 9 20 10 13 11 11 13 10 20 9 13 7 11 0 10 7 9 9 7 10 0Z"/></svg></span><span class="ce-spark" style="--s:13px;right:22%;top:60%;--d:2.4s" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M10 0C11 7 13 9 20 10 13 11 11 13 10 20 9 13 7 11 0 10 7 9 9 7 10 0Z"/></svg></span></div>
+<div class="ce-sunrise ce-sl-sunrise" aria-hidden="true"><div class="ce-sunrise-veil"></div><div class="ce-sun-at"><div class="ce-rays"></div><div class="ce-halo"></div><div class="ce-sun"></div><div class="ce-flash"></div></div><div class="ce-sunrise-top"></div><div class="ce-sunrise-bottom"></div><div class="ce-sl-act-on-sun" aria-hidden="true"><span class="ce-sl-act-k">ACT</span><b class="ce-sl-act-n">II</b><span class="ce-sl-act-t">THE DAWN</span><span class="ce-sl-act-r">CHAPTER 03 — 04</span></div><span class="ce-spark" style="--s:14px;left:12%;top:32%" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M10 0C11 7 13 9 20 10 13 11 11 13 10 20 9 13 7 11 0 10 7 9 9 7 10 0Z"/></svg></span><span class="ce-spark" style="--s:20px;right:14%;top:26%;--d:.8s" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M10 0C11 7 13 9 20 10 13 11 11 13 10 20 9 13 7 11 0 10 7 9 9 7 10 0Z"/></svg></span><span class="ce-spark" style="--s:11px;left:24%;top:64%;--d:1.6s" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M10 0C11 7 13 9 20 10 13 11 11 13 10 20 9 13 7 11 0 10 7 9 9 7 10 0Z"/></svg></span><span class="ce-spark" style="--s:13px;right:22%;top:60%;--d:2.4s" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M10 0C11 7 13 9 20 10 13 11 11 13 10 20 9 13 7 11 0 10 7 9 9 7 10 0Z"/></svg></span></div>
 <section id="sl-b3" class="ce-blk ce-sl-sec ce-sl-warm ce-light ce-warm">
 <div class="ce-col">
 <div class="ce-chap" aria-hidden="true"><span class="ce-chap-rule"></span><span class="ce-chap-in"><span class="ce-chap-t">CHAPTER</span><span class="ce-chap-n ce-gx">03</span></span><span class="ce-chap-rule"></span></div>
@@ -2212,7 +2286,7 @@ html.ce-still .ce-lp:not(#ce) .ce-mk{background-size:100% 100%!important}
 <span class="ce-horizon" aria-hidden="true"></span></div></div>
 <p class="ce-g1 ce-sl-stat">さらに、<wbr>この<wbr>道を<wbr>歩む<wbr>ある<wbr>実践者の<wbr>アカウントを、<wbr>一つ<wbr>覗くだけでも。<br>累計で、<wbr><span class="ce-nw"><span class="ce-hl ce-sl-num">約7,200万円</span>。</span></p>
 <p class="ce-g1 ce-sl-stat">買ってくれた<wbr>人は、<wbr><span class="ce-hl ce-sl-num">1万人</span>を<wbr>超えています。</p>
-<figure class="ce-evidence ce-sl-ev"><span class="ce-ev-tag" aria-hidden="true">EVIDENCE</span><div class="ce-evidence-frame"><a class="ce-sl-zoom" href="../assets/letter/sl-makuake-total.webp" target="_blank" rel="noopener"><img src="../assets/letter/sl-makuake-total.webp" alt="Makuakeの実行者ページ（matelia.ltd）。応援購入総額72,208,222円、プロジェクト数17件、サポーター数10,427人" width="1000" height="353" loading="lazy" decoding="async"></a></div><figcaption>Makuake<wbr>実行者<wbr>ページ<wbr>（matelia.ltd）の<wbr>実画面。<wbr><span class="ce-nw">応援購入総額 72,208,222円／</span><wbr><span class="ce-nw">サポーター数 10,427人</span></figcaption></figure>
+<figure class="ce-evidence ce-sl-ev ce-sl-ev-loupe"><span class="ce-ev-tag" aria-hidden="true">EVIDENCE</span><div class="ce-evidence-frame"><a class="ce-sl-zoom" href="../assets/letter/sl-makuake-total.webp" target="_blank" rel="noopener"><img src="../assets/letter/sl-makuake-total.webp" alt="Makuakeの実行者ページ（matelia.ltd）。応援購入総額72,208,222円、プロジェクト数17件、サポーター数10,427人" width="1000" height="353" loading="lazy" decoding="async"></a></div><div class="ce-sl-loupe ce-sl-loupe-wide"><span class="ce-sl-loupe-k" aria-hidden="true">ZOOM</span><span class="ce-sl-loupe-ic" aria-hidden="true"></span><img src="../assets/letter/sl-loupe-total.webp" alt="応援購入総額 72,208,222円、サポーター数 10,427人の部分の拡大" width="585" height="124" loading="lazy" decoding="async"></div><figcaption>Makuake<wbr>実行者<wbr>ページ<wbr>（matelia.ltd）の<wbr>実画面。<wbr><span class="ce-nw">応援購入総額 72,208,222円／</span><wbr><span class="ce-nw">サポーター数 10,427人</span></figcaption></figure>
 <p class="ce-g1 ce-max ce-sl-c">数字は、<wbr>嘘を<wbr>つきません。</p>
 </div>
 </section>
@@ -2268,6 +2342,7 @@ html.ce-still .ce-lp:not(#ce) .ce-mk{background-size:100% 100%!important}
 </section>
 </div>
 <div class="ce-lp ce-sl" lang="ja">
+<div class="ce-sl-act ce-dark ce-night" aria-hidden="true"><div class="ce-sl-act-bg"><img src="https://utagesystem.s3.ap-northeast-1.amazonaws.com/jW5amCPQZfus/Dgo4jYtFLsmqy2puGbCoCqAHt6tD2xbn6tLu0Snr.webp" alt="" width="1200" height="900" loading="lazy" decoding="async"></div><div class="ce-sl-act-in"><span class="ce-sl-act-k">ACT</span><b class="ce-sl-act-n ce-gt">III</b><span class="ce-sl-act-t">THE BLUEPRINT</span><span class="ce-orn ce-sl-act-orn"></span><span class="ce-sl-act-r">CHAPTER 05 — 10</span></div></div>
 <section id="sl-b5" class="ce-blk ce-sl-sec ce-sl-morning ce-light ce-warm">
 <div class="ce-col">
 <div class="ce-chap" aria-hidden="true"><span class="ce-chap-rule"></span><span class="ce-chap-in"><span class="ce-chap-t">CHAPTER</span><span class="ce-chap-n ce-gx">05</span></span><span class="ce-chap-rule"></span></div>
@@ -2546,7 +2621,10 @@ html.ce-still .ce-lp:not(#ce) .ce-mk{background-size:100% 100%!important}
 <p class="ce-g1 ce-em-line ce-em-mark"><span class="ce-mk">あなたが、<wbr>これから<wbr>何の<wbr>ジャンルを<wbr>選んだと<wbr>しても、<wbr>同じ、<wbr>ひとつの<wbr>設計図が<wbr>そのまま<wbr>使えると<wbr>いう<wbr>ことです。</span></p>
 <h3 class="ce-sl-h3">気づいた<wbr>人たちが、<wbr>次々と<wbr>動き始めている</h3>
 <p class="ce-g1">この<wbr>事実に<wbr>気づいた<wbr>人から、<wbr>静かに、<wbr>動き始めています。</p>
-<div class="ce-sl-voices ce-sl-voices3 ce-g1"><div class="ce-sl-voice"><span class="ce-sl-voice-ic" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 5H7.5v7a5.5 5.5 0 0 0 11 0V5h-2"/><path d="M13 17.5V20a6 6 0 0 0 12 0v-3"/><circle cx="25" cy="14.5" r="2.5"/></svg></span><p>看護師を<wbr>しながらの、<wbr>K.Sさん。</p></div><div class="ce-sl-voice"><span class="ce-sl-voice-ic" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 26 18 14"/><path d="M15 8l9 9 3-3-9-9z"/><path d="M5 12l4-4 4 4-4 4z" opacity=".001"/><path d="M7 27l-2-2"/></svg></span><p>長く<wbr>職人の<wbr>世界で<wbr>腕を<wbr>磨いてきた、<wbr>T.Aさん。</p></div><div class="ce-sl-voice"><span class="ce-sl-voice-ic" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 26 18 14"/><path d="M15 8l9 9 3-3-9-9z"/><path d="M5 12l4-4 4 4-4 4z" opacity=".001"/><path d="M7 27l-2-2"/></svg></span><p>小さな<wbr>子どもを<wbr>育てる<wbr>主婦の、<wbr>M.Yさん。</p></div></div>
+<div class="ce-sl-chat ce-g1"><div class="ce-sl-chat-h" aria-hidden="true"><i></i><i></i><i></i><span class="ce-sl-chat-room"></span></div><div class="ce-sl-chat-body"><div class="ce-sl-msg"><span class="ce-sl-msg-ic" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 5H7.5v7a5.5 5.5 0 0 0 11 0V5h-2"/><path d="M13 17.5V20a6 6 0 0 0 12 0v-3"/><circle cx="25" cy="14.5" r="2.5"/></svg></span><div class="ce-sl-bubble"><p>看護師を<wbr>しながらの、<wbr>K.Sさん。</p></div></div>
+<div class="ce-sl-msg"><span class="ce-sl-msg-ic" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 26 18 14"/><path d="M15 8l9 9 3-3-9-9z"/><path d="M5 12l4-4 4 4-4 4z" opacity=".001"/><path d="M7 27l-2-2"/></svg></span><div class="ce-sl-bubble"><p>長く<wbr>職人の<wbr>世界で<wbr>腕を<wbr>磨いてきた、<wbr>T.Aさん。</p></div></div>
+<div class="ce-sl-msg"><span class="ce-sl-msg-ic" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 26 18 14"/><path d="M15 8l9 9 3-3-9-9z"/><path d="M5 12l4-4 4 4-4 4z" opacity=".001"/><path d="M7 27l-2-2"/></svg></span><div class="ce-sl-bubble"><p>小さな<wbr>子どもを<wbr>育てる<wbr>主婦の、<wbr>M.Yさん。</p></div></div>
+</div></div>
 <p class="ce-g1">その<wbr>多くが、<wbr>物販は<wbr>初めてか、<wbr>ほとんど<wbr>触れた<wbr>ことの<wbr>なかった<wbr>人たちです。</p>
 <p class="ce-g2 ce-sl-q">なぜ、<wbr>未経験の<wbr>人たちが、<wbr>わざわざここへ<wbr>来るのか？</p>
 <p class="ce-g1">届いた<wbr>言葉は、<wbr>驚く<wbr>ほど、<wbr>似ています。</p>
@@ -2630,6 +2708,7 @@ html.ce-still .ce-lp:not(#ce) .ce-mk{background-size:100% 100%!important}
 </section>
 </div>
 <div class="ce-lp ce-sl" lang="ja">
+<div class="ce-sl-act ce-dark ce-night" aria-hidden="true"><div class="ce-sl-act-bg"><img src="https://utagesystem.s3.ap-northeast-1.amazonaws.com/jW5amCPQZfus/tax0HxvsfPaHqKTJ3yQf7g5aEXG1HxFSVUi16zjL.webp" alt="" width="640" height="480" loading="lazy" decoding="async"></div><div class="ce-sl-act-in"><span class="ce-sl-act-k">ACT</span><b class="ce-sl-act-n ce-gt">IV</b><span class="ce-sl-act-t">THE METHOD</span><span class="ce-orn ce-sl-act-orn"></span><span class="ce-sl-act-r">CHAPTER 11 — 17</span></div></div>
 <section id="sl-b11" class="ce-blk ce-sl-sec ce-sl-cream ce-light ce-warm">
 <div class="ce-col">
 <div class="ce-chap" aria-hidden="true"><span class="ce-chap-rule"></span><span class="ce-chap-in"><span class="ce-chap-t">CHAPTER</span><span class="ce-chap-n ce-gx">11</span></span><span class="ce-chap-rule"></span></div>
@@ -3175,6 +3254,7 @@ html.ce-still .ce-lp:not(#ce) .ce-mk{background-size:100% 100%!important}
 <p class="ce-g1">ここからは、<wbr>その、<wbr>具体的な<wbr>進め方の<wbr>話を<wbr>します。</p>
 </div>
 </section>
+<div class="ce-sl-act ce-dark ce-night" aria-hidden="true"><div class="ce-sl-act-bg"><img src="https://utagesystem.s3.ap-northeast-1.amazonaws.com/jW5amCPQZfus/p5iImIbDzXo4IkaBEAhOtVYWNpHDSBGANkQlyPBe.webp" alt="" width="776" height="582" loading="lazy" decoding="async"></div><div class="ce-sl-act-in"><span class="ce-sl-act-k">ACT</span><b class="ce-sl-act-n ce-gt">V</b><span class="ce-sl-act-t">THE DECISION</span><span class="ce-orn ce-sl-act-orn"></span><span class="ce-sl-act-r">CHAPTER 18 — P.S.</span></div></div>
 <section id="sl-b18" class="ce-blk ce-sl-sec ce-sl-warm ce-light ce-warm">
 <div class="ce-col">
 <div class="ce-chap" aria-hidden="true"><span class="ce-chap-rule"></span><span class="ce-chap-in"><span class="ce-chap-t">CHAPTER</span><span class="ce-chap-n ce-gx">18</span></span><span class="ce-chap-rule"></span></div>
@@ -3503,9 +3583,11 @@ html.ce-still .ce-lp:not(#ce) .ce-mk{background-size:100% 100%!important}
 <p class="ce-g1 ce-em-line ce-em-mark"><span class="ce-mk">この<wbr>ご案内を<wbr>受けられる<wbr>時間には、<wbr>期限が<wbr>あります。<br>今、<wbr>この<wbr>ページに<wbr>表示されている<wbr>時間が、<wbr>その<wbr>残りです。</span></p>
 </div>
 </section>
+<div class="ce-sl-cd ce-sl-cd-top" aria-hidden="true"><span class="ce-sl-cd-k">TIME LIMIT</span><span class="ce-orn ce-sl-cd-orn"></span></div>
 </div>
-<div class="ce-sl-cdph">UTAGEのカウントダウン要素（72時間）がここに入ります</div>
+<div class="ce-sl-cdph"><b>71</b><i>時間</i><b>59</b><i>分</i><b>59</b><i>秒</i><small>（プレビューの見本。ここにUTAGEのカウントダウン要素が入ります）</small></div>
 <div class="ce-lp ce-sl" lang="ja">
+<div class="ce-sl-cd ce-sl-cd-bot" aria-hidden="true"><span class="ce-orn ce-sl-cd-orn"></span></div>
 <section id="sl-b25b" class="ce-blk ce-sl-sec ce-sl-warm ce-light ce-warm">
 <div class="ce-col">
 <p class="ce-g2">なぜ、<wbr>区切っているのか？</p>
@@ -3551,9 +3633,9 @@ html.ce-still .ce-lp:not(#ce) .ce-mk{background-size:100% 100%!important}
 <h2 class="ce-sl-h2">この<wbr>手法が<wbr>実際に<wbr>生んできた<wbr>数字です</h2>
 <p class="ce-g1">これは、<wbr>誰かの<wbr>自慢話ではありません。<br>すべて、<wbr>クラウドファンディングの<wbr>ページに、<wbr>記録と<wbr>して<wbr>残っている<wbr>数字です。</p>
 <p class="ce-g2 ce-lead">ある<wbr>フロス関連の<wbr>商品は、<wbr>1回の<wbr>クラウドファンディングで、<wbr><span class="ce-hl ce-sl-num">970万円</span>を<wbr>集めました。</p>
-<figure class="ce-evidence ce-sl-ev"><div class="ce-evidence-frame"><span class="ce-sl-badge">1回目</span><a class="ce-sl-zoom" href="../assets/letter/sl-floss-3.webp" target="_blank" rel="noopener"><img src="../assets/letter/sl-floss-3.webp" alt="Makuakeプロジェクト『フロス糸交換ハンドル』第三弾の画面。応援購入総額9,692,475円、サポーター1,841人" width="1000" height="397" loading="lazy" decoding="async"></a></div><figcaption>Makuake 実画面　9,692,475円</figcaption></figure>
+<figure class="ce-evidence ce-sl-ev ce-sl-ev-loupe"><div class="ce-evidence-frame"><span class="ce-sl-badge">1回目</span><a class="ce-sl-zoom" href="../assets/letter/sl-floss-3.webp" target="_blank" rel="noopener"><img src="../assets/letter/sl-floss-3.webp" alt="Makuakeプロジェクト『フロス糸交換ハンドル』第三弾の画面。応援購入総額9,692,475円、サポーター1,841人" width="1000" height="397" loading="lazy" decoding="async"></a></div><div class="ce-sl-loupe ce-sl-loupe-side"><span class="ce-sl-loupe-k" aria-hidden="true">ZOOM</span><span class="ce-sl-loupe-ic" aria-hidden="true"></span><img src="../assets/letter/sl-loupe-floss-3.webp" alt="応援購入総額 9,692,475円、サポーター 1,841人の部分の拡大" width="310" height="270" loading="lazy" decoding="async"></div><figcaption>Makuake 実画面　9,692,475円</figcaption></figure>
 <p class="ce-g1 ce-lead">そして、<wbr>驚くのは<wbr>ここからです。<br>同じ<wbr>商品で、<wbr>もう<wbr>一度、<wbr>また<wbr>一度と、<wbr>繰り返し販売し、<wbr>5回目でも<wbr><span class="ce-hl ce-sl-num">262万円</span>を<wbr>集めています。</p>
-<figure class="ce-evidence ce-sl-ev"><div class="ce-evidence-frame"><span class="ce-sl-badge">5回目</span><a class="ce-sl-zoom" href="../assets/letter/sl-floss-5th.webp" target="_blank" rel="noopener"><img src="../assets/letter/sl-floss-5th.webp" alt="『フロス交換ハンドル』の販売ページの画面。2,620,632円、支援者487人" width="1000" height="341" loading="lazy" decoding="async"></a></div><figcaption>実画面　2,620,632円</figcaption></figure>
+<figure class="ce-evidence ce-sl-ev ce-sl-ev-loupe"><div class="ce-evidence-frame"><span class="ce-sl-badge">5回目</span><a class="ce-sl-zoom" href="../assets/letter/sl-floss-5th.webp" target="_blank" rel="noopener"><img src="../assets/letter/sl-floss-5th.webp" alt="『フロス交換ハンドル』の販売ページの画面。2,620,632円、支援者487人" width="1000" height="341" loading="lazy" decoding="async"></a></div><div class="ce-sl-loupe ce-sl-loupe-wide"><span class="ce-sl-loupe-k" aria-hidden="true">ZOOM</span><span class="ce-sl-loupe-ic" aria-hidden="true"></span><img src="../assets/letter/sl-loupe-floss-5th.webp" alt="現在 2,620,632円、支援者 487人の部分の拡大" width="500" height="83" loading="lazy" decoding="async"></div><figcaption>実画面　2,620,632円</figcaption></figure>
 <p class="ce-g1">これが、<wbr>お伝えしてきた<wbr>1つの<wbr>商品を<wbr>何度も<wbr>売ると<wbr>いう<wbr>形です。</p>
 <p class="ce-g1">ジャンルは、<wbr>まったく<wbr>問いません。</p>
 <p class="ce-g2 ce-sl-stat">ある<wbr>家庭用の<wbr>彫刻機は、<wbr>1回で、<wbr><span class="ce-nw"><span class="ce-hl ce-sl-num">4,800万円</span>。</span></p>
@@ -3562,7 +3644,7 @@ html.ce-still .ce-lp:not(#ce) .ce-mk{background-size:100% 100%!important}
 <figure class="ce-sl-ph"><span>素材待ち：松茸 8,097,200円 の実画面</span></figure>
 <p class="ce-g2">時計も、<wbr>キッチン用品も、<wbr>生活家電も、<wbr>同じように<wbr>結果が<wbr>出ています。</p>
 <p class="ce-g1 ce-lead">そして、<wbr>これらを<wbr>積み上げてきた、<wbr>私たちの<wbr>アカウント全体の<wbr>実績が<wbr>こちらです。</p>
-<figure class="ce-evidence ce-sl-ev"><div class="ce-evidence-frame"><a class="ce-sl-zoom" href="../assets/letter/sl-makuake-total.webp" target="_blank" rel="noopener"><img src="../assets/letter/sl-makuake-total.webp" alt="Makuakeの実行者ページ（matelia.ltd）。応援購入総額72,208,222円、プロジェクト数17件、サポーター数10,427人" width="1000" height="353" loading="lazy" decoding="async"></a></div><figcaption>Makuake 実行者ページ　72,208,222円／10,427人</figcaption></figure>
+<figure class="ce-evidence ce-sl-ev ce-sl-ev-loupe"><div class="ce-evidence-frame"><a class="ce-sl-zoom" href="../assets/letter/sl-makuake-total.webp" target="_blank" rel="noopener"><img src="../assets/letter/sl-makuake-total.webp" alt="Makuakeの実行者ページ（matelia.ltd）。応援購入総額72,208,222円、プロジェクト数17件、サポーター数10,427人" width="1000" height="353" loading="lazy" decoding="async"></a></div><div class="ce-sl-loupe ce-sl-loupe-wide"><span class="ce-sl-loupe-k" aria-hidden="true">ZOOM</span><span class="ce-sl-loupe-ic" aria-hidden="true"></span><img src="../assets/letter/sl-loupe-total.webp" alt="応援購入総額 72,208,222円、サポーター数 10,427人の部分の拡大" width="585" height="124" loading="lazy" decoding="async"></div><figcaption>Makuake 実行者ページ　72,208,222円／10,427人</figcaption></figure>
 <p class="ce-g1">一つ<wbr>ひとつの<wbr>商品が、<wbr>こうして<wbr>積み上がっていきます。</p>
 <p class="ce-g2">さらに、<wbr>こうした<wbr>商品は、<wbr>私たちが<wbr>自分で<wbr>言っているだけではありません。</p>
 <div class="ce-sl-grid2"><figure><div class="ce-shot"><a class="ce-sl-zoom" href="../assets/letter/sl-media-goodspress.webp" target="_blank" rel="noopener"><img class="ce-sl-cover" src="../assets/letter/sl-media-goodspress.webp" alt="Goods Press の記事「日本の医療機器メーカーが本気で作ったデンタルフロスって気になる！」" width="1000" height="962" loading="lazy" decoding="async"></a></div><figcaption>Goods Press</figcaption></figure><figure><div class="ce-shot"><a class="ce-sl-zoom" href="../assets/letter/sl-media-lifehacker.webp" target="_blank" rel="noopener"><img class="ce-sl-cover" src="../assets/letter/sl-media-lifehacker.webp" alt="ライフハッカーの記事「純チタン製で衛生的！ フロスにハンドルを付けたら歯の掃除が快適になった」" width="1000" height="865" loading="lazy" decoding="async"></a></div><figcaption>ライフハッカー</figcaption></figure><figure><div class="ce-shot"><a class="ce-sl-zoom" href="../assets/letter/sl-media-gizmodo.webp" target="_blank" rel="noopener"><img class="ce-sl-cover" src="../assets/letter/sl-media-gizmodo.webp" alt="ギズモードの記事「フロス糸交換式でサステナブル。チタン製フロスハンドルが使いやすい」" width="1000" height="850" loading="lazy" decoding="async"></a></div><figcaption>ギズモード</figcaption></figure><figure><div class="ce-shot"><a class="ce-sl-zoom" href="../assets/letter/sl-media-tabilabo.webp" target="_blank" rel="noopener"><img class="ce-sl-cover" src="../assets/letter/sl-media-tabilabo.webp" alt="TABI LABO の記事「どんなフロス糸も使えるチタン製の最強フロスハンドル、ふたたび！」" width="1000" height="554" loading="lazy" decoding="async"></a></div><figcaption>TABI LABO</figcaption></figure></div>
@@ -3573,17 +3655,17 @@ html.ce-still .ce-lp:not(#ce) .ce-mk{background-size:100% 100%!important}
 <p class="ce-g1">数字だけでは、<wbr>あなたには<wbr>まだ<wbr>遠く<wbr>感じるかもしれません。</p>
 <p class="ce-g1">だから、<wbr>実際に、<wbr>この<wbr>道を<wbr>選んだ<wbr>人たちが、<wbr>どんな<wbr>人なのか？<br>それを<wbr>お伝えします。</p>
 <p class="ce-g2 ce-lead">みんな、<wbr>あなたと<wbr>同じ<wbr>場所から<wbr>来た<wbr>普通の<wbr>人たちです。</p>
-<div class="ce-sl-voices">
-<div class="ce-sl-voice"><span class="ce-sl-voice-ic" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="11" r="5"/><path d="M6 27c1.5-6 5.5-9 10-9s8.5 3 10 9"/></svg></span><p>毎日、<wbr>路線バスの<wbr>ハンドルを<wbr>握りながら、<wbr>いつか<wbr>自分の<wbr>商品を<wbr>持ちたいと<wbr>考えていた<wbr>Aさん。</p></div>
-<div class="ce-sl-voice"><span class="ce-sl-voice-ic" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="11" r="5"/><path d="M6 27c1.5-6 5.5-9 10-9s8.5 3 10 9"/></svg></span><p>証券会社の<wbr>コールセンターで、<wbr>17年間、<wbr>管理職を<wbr>務めてきた<wbr>Bさん。</p></div>
-<div class="ce-sl-voice"><span class="ce-sl-voice-ic" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="11" r="5"/><path d="M6 27c1.5-6 5.5-9 10-9s8.5 3 10 9"/></svg></span><p>店舗を<wbr>歩き回る<wbr>せどりで、<wbr>月に<wbr><span class="ce-hl ce-sl-num">90万円</span>を<wbr>売りながら、<wbr>手元には<wbr><span class="ce-hl ce-sl-num">15万円</span>しか<wbr>残らず<wbr>これは<wbr>一生は<wbr>続けられないと<wbr>悟った<wbr>Cさん。</p></div>
-<div class="ce-sl-voice"><span class="ce-sl-voice-ic" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="11" r="5"/><path d="M6 27c1.5-6 5.5-9 10-9s8.5 3 10 9"/></svg></span><p>Amazonの<wbr>制約と、<wbr>いつ止まるか<wbr>分からない<wbr>アカウントに、<wbr>ずっと<wbr>神経を<wbr>すり<wbr>減らしてきた<wbr>Dさん。</p></div>
-<div class="ce-sl-voice"><span class="ce-sl-voice-ic" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="11" r="5"/><path d="M6 27c1.5-6 5.5-9 10-9s8.5 3 10 9"/></svg></span><p>別の<wbr>物販の<wbr>塾に<wbr>一年<wbr>通ったのに、<wbr>結局、<wbr>何も<wbr>結果が<wbr>出なかった<wbr>Eさん。</p></div>
-<div class="ce-sl-voice"><span class="ce-sl-voice-ic" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="11" r="5"/><path d="M6 27c1.5-6 5.5-9 10-9s8.5 3 10 9"/></svg></span><p>建築機器の<wbr>部品を<wbr>作る<wbr>工場で<wbr>12年間、<wbr>シフト勤務を<wbr>続けてきた<wbr>Fさん。</p></div>
-<div class="ce-sl-voice"><span class="ce-sl-voice-ic" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="11" r="5"/><path d="M6 27c1.5-6 5.5-9 10-9s8.5 3 10 9"/></svg></span><p>介護施設の<wbr>事務を<wbr>しながら、<wbr>家でも<wbr>できる<wbr>仕事を<wbr>探していた<wbr>Gさん。</p></div>
-<div class="ce-sl-voice"><span class="ce-sl-voice-ic" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="11" r="5"/><path d="M6 27c1.5-6 5.5-9 10-9s8.5 3 10 9"/></svg></span><p>物販の<wbr>経験は<wbr>メルカリで、<wbr>いらない<wbr>物を<wbr>売った<wbr>ことがあるだけ。<br>それでも、<wbr>長く<wbr>続けられる<wbr>ビジネスが<wbr>欲しかった<wbr>Hさん。</p></div>
-<div class="ce-sl-voice"><span class="ce-sl-voice-ic" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="11" r="5"/><path d="M6 27c1.5-6 5.5-9 10-9s8.5 3 10 9"/></svg></span><p>漁師を<wbr>しながら、<wbr>自分で<wbr>獲った<wbr>ものを<wbr>もっと<wbr>多くの<wbr>人に<wbr>届けたかった<wbr>Iさん。</p></div>
-</div>
+<div class="ce-sl-chat"><div class="ce-sl-chat-h" aria-hidden="true"><i></i><i></i><i></i><span class="ce-sl-chat-room"></span></div><div class="ce-sl-chat-body">
+<div class="ce-sl-msg"><span class="ce-sl-msg-ic" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="11" r="5"/><path d="M6 27c1.5-6 5.5-9 10-9s8.5 3 10 9"/></svg></span><div class="ce-sl-bubble"><p>毎日、<wbr>路線バスの<wbr>ハンドルを<wbr>握りながら、<wbr>いつか<wbr>自分の<wbr>商品を<wbr>持ちたいと<wbr>考えていた<wbr>Aさん。</p></div></div>
+<div class="ce-sl-msg"><span class="ce-sl-msg-ic" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="11" r="5"/><path d="M6 27c1.5-6 5.5-9 10-9s8.5 3 10 9"/></svg></span><div class="ce-sl-bubble"><p>証券会社の<wbr>コールセンターで、<wbr>17年間、<wbr>管理職を<wbr>務めてきた<wbr>Bさん。</p></div></div>
+<div class="ce-sl-msg"><span class="ce-sl-msg-ic" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="11" r="5"/><path d="M6 27c1.5-6 5.5-9 10-9s8.5 3 10 9"/></svg></span><div class="ce-sl-bubble"><p>店舗を<wbr>歩き回る<wbr>せどりで、<wbr>月に<wbr><span class="ce-hl ce-sl-num">90万円</span>を<wbr>売りながら、<wbr>手元には<wbr><span class="ce-hl ce-sl-num">15万円</span>しか<wbr>残らず<wbr>これは<wbr>一生は<wbr>続けられないと<wbr>悟った<wbr>Cさん。</p></div></div>
+<div class="ce-sl-msg"><span class="ce-sl-msg-ic" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="11" r="5"/><path d="M6 27c1.5-6 5.5-9 10-9s8.5 3 10 9"/></svg></span><div class="ce-sl-bubble"><p>Amazonの<wbr>制約と、<wbr>いつ止まるか<wbr>分からない<wbr>アカウントに、<wbr>ずっと<wbr>神経を<wbr>すり<wbr>減らしてきた<wbr>Dさん。</p></div></div>
+<div class="ce-sl-msg"><span class="ce-sl-msg-ic" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="11" r="5"/><path d="M6 27c1.5-6 5.5-9 10-9s8.5 3 10 9"/></svg></span><div class="ce-sl-bubble"><p>別の<wbr>物販の<wbr>塾に<wbr>一年<wbr>通ったのに、<wbr>結局、<wbr>何も<wbr>結果が<wbr>出なかった<wbr>Eさん。</p></div></div>
+<div class="ce-sl-msg"><span class="ce-sl-msg-ic" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="11" r="5"/><path d="M6 27c1.5-6 5.5-9 10-9s8.5 3 10 9"/></svg></span><div class="ce-sl-bubble"><p>建築機器の<wbr>部品を<wbr>作る<wbr>工場で<wbr>12年間、<wbr>シフト勤務を<wbr>続けてきた<wbr>Fさん。</p></div></div>
+<div class="ce-sl-msg"><span class="ce-sl-msg-ic" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="11" r="5"/><path d="M6 27c1.5-6 5.5-9 10-9s8.5 3 10 9"/></svg></span><div class="ce-sl-bubble"><p>介護施設の<wbr>事務を<wbr>しながら、<wbr>家でも<wbr>できる<wbr>仕事を<wbr>探していた<wbr>Gさん。</p></div></div>
+<div class="ce-sl-msg"><span class="ce-sl-msg-ic" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="11" r="5"/><path d="M6 27c1.5-6 5.5-9 10-9s8.5 3 10 9"/></svg></span><div class="ce-sl-bubble"><p>物販の<wbr>経験は<wbr>メルカリで、<wbr>いらない<wbr>物を<wbr>売った<wbr>ことがあるだけ。<br>それでも、<wbr>長く<wbr>続けられる<wbr>ビジネスが<wbr>欲しかった<wbr>Hさん。</p></div></div>
+<div class="ce-sl-msg"><span class="ce-sl-msg-ic" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="11" r="5"/><path d="M6 27c1.5-6 5.5-9 10-9s8.5 3 10 9"/></svg></span><div class="ce-sl-bubble"><p>漁師を<wbr>しながら、<wbr>自分で<wbr>獲った<wbr>ものを<wbr>もっと<wbr>多くの<wbr>人に<wbr>届けたかった<wbr>Iさん。</p></div></div>
+</div></div>
 <p class="ce-g2">数えきれない<wbr>ほど、<wbr>います。</p>
 <p class="ce-g1">年齢も、<wbr>職業も、<wbr>これまでの<wbr>経験も、<wbr>バラバラです。<br>共通しているのは、<wbr>ただ<wbr>一つ。</p>
 <p class="ce-g2 ce-max ce-sl-c">「もう、<wbr>他人の<wbr>棚を<wbr>借りるのは、<wbr>終わりに<wbr>したい」</p>
@@ -3612,6 +3694,7 @@ html.ce-still .ce-lp:not(#ce) .ce-mk{background-size:100% 100%!important}
 <section id="sl-b27" class="ce-blk ce-sl-sec ce-sl-letter ce-light ce-warm">
 <div class="ce-col">
 <div class="ce-chap" aria-hidden="true"><span class="ce-chap-rule"></span><span class="ce-chap-in"><span class="ce-chap-t">POSTSCRIPT</span><span class="ce-chap-n ce-gx">P.S.</span></span><span class="ce-chap-rule"></span></div>
+<div class="ce-sl-ps"><span class="ce-sl-ps-mark" aria-hidden="true">P.S.</span>
 <h2 class="ce-sl-h2">追伸</h2>
 <p class="ce-g1 ce-lead">ここまで<wbr>読んでくださって、<wbr>まだ<wbr>あと<wbr>一歩が<wbr>踏み出せずに<wbr>いるかもしれません。</p>
 <p class="ce-g1">その<wbr>気持ちは、<wbr>よく<wbr>分かります。<br>決して、<wbr>小さな<wbr>金額ではないし<wbr>大きな<wbr>決断だからです。</p>
@@ -3668,6 +3751,7 @@ html.ce-still .ce-lp:not(#ce) .ce-mk{background-size:100% 100%!important}
 <p class="ce-g1 ce-sl-note">決済の<wbr>ことや、<wbr>聞いて<wbr>おきたいことがありましたら。<br>お手元に<wbr>届いている<wbr>メールに、<wbr>ご返信の<wbr>形で<wbr>ご連絡ください。</p>
 <p class="ce-g1">最後まで、<wbr>私たちが<wbr>直接お答えします。</p>
 <figure class="ce-sl-ph ce-sl-ph-sign"><span>素材待ち：辻本さん・田村さんのサイン</span></figure>
+<span class="ce-sl-seal" aria-hidden="true">CE</span></div>
 </div>
 </section>
 <footer class="ce-foot ce-dark ce-night"><div class="ce-col"><nav class="ce-foot-links" aria-label="規約・運営情報"><a href="https://utage-system.com/p/239Fh6UlsBUU" target="_blank" rel="noopener">特定商取引法に基づく表記</a><a href="https://utage-system.com/p/yLnXemvabwmQ" target="_blank" rel="noopener">プライバシーポリシー</a><a href="https://nexusage.co.jp/" target="_blank" rel="noopener">運営者情報</a></nav><p>Makuakeは<wbr>株式会社<wbr>マクアケの<wbr>サービス<wbr>名称です。<wbr>本ページは<wbr>同社と<wbr>提携関係になく、<wbr>同社が<wbr>推奨するものではありません。</p><p>CAMPFIREは<wbr>株式会社<wbr>CAMPFIREの<wbr>サービス<wbr>名称です。</p><p>※掲載の<wbr>数字は<wbr>過去の<wbr>実績であり、<wbr>成果を<wbr>保証するものではありません。</p><p class="ce-copy">© Crowd Edge</p></div></footer>
