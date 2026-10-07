@@ -1,0 +1,1630 @@
+<!doctype html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Crowd Edge（プレビュー）</title>
+<meta name="robots" content="noindex,nofollow">
+<style>body{margin:0;background:#FBF7EE}.ce-sl-cdph{max-width:640px;margin:0 auto;padding:22px;border:2px dashed #C9A24A;background:#FFF8E6;color:#7A5A12;font:600 15px/1.6 sans-serif;text-align:center}</style>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&family=Noto+Serif+JP:wght@500;700&family=Shippori+Mincho+B1:wght@700;800&display=swap");
+.ce-sl:not(#ce){
+  --navy0:#050817;--navy1:#0A1130;--navy2:#121C46;--paper:#FBF7EE;--paper2:#F4ECDC;--white:#FFFDF9;
+  --ink:#1C2232;--ink2:#4A5368;--gold1:#F7E2A6;--gold2:#E0B860;--gold3:#B88A2E;--goldtx:#8C6418;
+  --green1:#27C06E;--green2:#0E8C49;--green3:#0A6A37;
+  --tx:var(--ink);--tx2:var(--ink2);--acc:var(--goldtx);--line:rgba(184,138,46,.38);--card:#FFFFFF;--cardline:rgba(184,138,46,.45);
+  --fs:18px;
+  position:relative;font-family:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;font-weight:500;font-size:var(--fs);line-height:1.95;
+  letter-spacing:.03em;color:var(--tx);background:var(--paper);text-align:left;-webkit-text-size-adjust:100%;line-break:strict;overflow-wrap:break-word;
+}.ce-sl:not(#ce) *,.ce-sl:not(#ce) *::before,.ce-sl:not(#ce) *::after{box-sizing:border-box}.ce-sl:not(#ce) p,.ce-sl:not(#ce) h1,.ce-sl:not(#ce) h2,.ce-sl:not(#ce) h3,.ce-sl:not(#ce) ul,.ce-sl:not(#ce) li,.ce-sl:not(#ce) figure,.ce-sl:not(#ce) figcaption{margin:0;padding:0;line-height:inherit;font-size:inherit;font-weight:inherit;letter-spacing:inherit}.ce-sl:not(#ce) ul{list-style:none}.ce-sl:not(#ce) img{display:block;max-width:100%;height:auto;border:0}.ce-sl:not(#ce) b{font-weight:700}.ce-sl:not(#ce) a{word-break:normal}
+@media (min-width:768px){.ce-sl:not(#ce){--fs:20px}}.ce-sl:not(#ce) .ce-sl-sec{position:relative;padding:76px 0 84px;overflow:hidden}.ce-sl:not(#ce) .ce-sl-in{position:relative;z-index:1;max-width:640px;margin:0 auto;padding:0 22px}
+@media (min-width:768px){.ce-sl:not(#ce) .ce-sl-sec{padding:110px 0 120px}.ce-sl:not(#ce) .ce-sl-in{max-width:680px}}.ce-sl:not(#ce) .ce-sl-night,.ce-sl:not(#ce) .ce-sl-night2,.ce-sl:not(#ce) .ce-sl-proof{--tx:#E6E9F4;--tx2:#AEB6CE;--acc:var(--gold1);--line:rgba(224,184,96,.4);--card:rgba(255,255,255,.04);--cardline:rgba(224,184,96,.45)}.ce-sl:not(#ce) .ce-sl-night{color:var(--tx);background:
+  radial-gradient(1.2px 1.2px at 12% 18%,rgba(255,255,255,.8),transparent 60%),
+  radial-gradient(1px 1px at 78% 9%,rgba(255,255,255,.7),transparent 60%),
+  radial-gradient(1.4px 1.4px at 64% 31%,rgba(255,255,255,.55),transparent 60%),
+  radial-gradient(1px 1px at 31% 47%,rgba(255,255,255,.5),transparent 60%),
+  radial-gradient(1.2px 1.2px at 88% 58%,rgba(255,255,255,.6),transparent 60%),
+  radial-gradient(1px 1px at 22% 74%,rgba(255,255,255,.45),transparent 60%),
+  radial-gradient(1.3px 1.3px at 52% 88%,rgba(255,255,255,.5),transparent 60%),
+  linear-gradient(180deg,var(--navy0) 0%,var(--navy1) 100%);background-size:420px 900px,420px 900px,420px 900px,420px 900px,420px 900px,420px 900px,420px 900px,100% 100%}.ce-sl:not(#ce) .ce-sl-night2{color:var(--tx);background:radial-gradient(120% 60% at 50% 105%,rgba(224,184,96,.22),transparent 60%),linear-gradient(180deg,var(--navy1),#101A44 60%,#16245A)}.ce-sl:not(#ce) .ce-sl-proof{color:var(--tx);background:radial-gradient(90% 40% at 50% 0%,rgba(76,111,255,.16),transparent 70%),linear-gradient(180deg,#0B1334,#0E1A45)}.ce-sl:not(#ce) .ce-sl-paper{background:var(--paper)}.ce-sl:not(#ce) .ce-sl-paper+.ce-sl-paper{border-top:1px solid rgba(184,138,46,.18)}.ce-sl:not(#ce) .ce-sl-white{background:var(--white)}.ce-sl:not(#ce) .ce-sl-sunrise{background:linear-gradient(180deg,var(--paper) 0%,#FDF0E0 55%,#FBE2C8 100%)}.ce-sl:not(#ce) .ce-sl-todawn{padding-bottom:200px}.ce-sl:not(#ce) .ce-sl-todawn::after{content:"";position:absolute;left:0;right:0;bottom:0;height:260px;background:linear-gradient(180deg,rgba(10,17,48,0) 0%,#2B3A73 30%,#8E7FA6 55%,#E9C9A8 80%,var(--paper) 100%);pointer-events:none}.ce-sl:not(#ce) .ce-sl-chap{display:flex;flex-direction:column;align-items:center;margin:0 auto 26px;color:var(--acc);text-align:center}.ce-sl:not(#ce) .ce-sl-chap-k{font:600 italic 13px/1 "Cormorant Garamond",serif;letter-spacing:.42em;padding-left:.42em;opacity:.85}.ce-sl:not(#ce) .ce-sl-chap-n{position:relative;display:block;margin-top:6px;padding:0 64px;font:600 italic 46px/1.05 "Cormorant Garamond",serif;letter-spacing:.04em}.ce-sl:not(#ce) .ce-sl-chap-n::before,.ce-sl:not(#ce) .ce-sl-chap-n::after{content:"";position:absolute;top:50%;width:48px;height:1px;background:linear-gradient(90deg,transparent,currentColor)}.ce-sl:not(#ce) .ce-sl-chap-n::before{left:0}.ce-sl:not(#ce) .ce-sl-chap-n::after{right:0;transform:scaleX(-1)}.ce-sl:not(#ce) .ce-sl-h2{position:relative;margin:0 0 1.9em;font-family:"Shippori Mincho B1",serif;font-weight:800;font-size:clamp(25px,6.9vw,38px);line-height:1.55;letter-spacing:.04em;text-align:center;color:#18214D;text-wrap:balance;word-break:keep-all;overflow-wrap:anywhere}.ce-sl:not(#ce) .ce-sl-h2::after{content:"";display:block;width:120px;height:9px;margin:22px auto 0;background:
+  linear-gradient(var(--gold3),var(--gold3)) left 50%/48px 1px no-repeat,
+  linear-gradient(var(--gold3),var(--gold3)) right 50%/48px 1px no-repeat,
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M5 0L10 5L5 10L0 5Z' fill='%23D9AE55'/%3E%3C/svg%3E") center/9px 9px no-repeat}.ce-sl:not(#ce) .ce-sl-night .ce-sl-h2,.ce-sl:not(#ce) .ce-sl-night2 .ce-sl-h2,.ce-sl:not(#ce) .ce-sl-proof .ce-sl-h2{color:transparent;background:linear-gradient(180deg,#FFF3CF 0%,#F2D488 45%,#D7A947 100%);-webkit-background-clip:text;background-clip:text;text-shadow:none}.ce-sl:not(#ce) .ce-sl-night .ce-sl-h2::after,.ce-sl:not(#ce) .ce-sl-night2 .ce-sl-h2::after,.ce-sl:not(#ce) .ce-sl-proof .ce-sl-h2::after{filter:brightness(1.5)}.ce-sl:not(#ce) .ce-sl-h3{position:relative;margin:3.4em 0 1.5em;padding:0 0 .55em;font-family:"Shippori Mincho B1",serif;font-weight:800;font-size:clamp(21px,5.6vw,28px);line-height:1.6;letter-spacing:.03em;color:#18214D;border-bottom:1px solid var(--line);text-wrap:balance;word-break:keep-all;overflow-wrap:anywhere}.ce-sl:not(#ce) .ce-sl-h3::before{content:"";display:block;width:10px;height:10px;margin-bottom:12px;background:var(--gold2);transform:rotate(45deg)}.ce-sl:not(#ce) .ce-sl-night .ce-sl-h3,.ce-sl:not(#ce) .ce-sl-night2 .ce-sl-h3,.ce-sl:not(#ce) .ce-sl-proof .ce-sl-h3{color:var(--gold1)}.ce-sl:not(#ce) .ce-sl-p{color:var(--tx);text-wrap:pretty}.ce-sl:not(#ce) .ce-sl-h2,.ce-sl:not(#ce) .ce-sl-h3,.ce-sl:not(#ce) .ce-sl-big,.ce-sl:not(#ce) .ce-sl-em,.ce-sl:not(#ce) .ce-sl-q,.ce-sl:not(#ce) .ce-sl-stat,.ce-sl:not(#ce) .ce-sl-quote,.ce-sl:not(#ce) .ce-sl-lead,.ce-sl:not(#ce) .ce-sl-check-t,.ce-sl:not(#ce) .ce-sl-name p,.ce-sl:not(#ce) .ce-sl-fv-h,.ce-sl:not(#ce) .ce-sl-bclaim,.ce-sl:not(#ce) .ce-sl-pain,.ce-sl:not(#ce) .ce-sl-vs>.ce-sl-p{word-break:auto-phrase;text-wrap:balance}.ce-sl:not(#ce) .ce-sl-nb{display:inline-block}.ce-sl:not(#ce) .ce-sl-in>*+*{margin-top:1.35em}.ce-sl:not(#ce) .ce-sl-in>.ce-sl-gap2{margin-top:2.4em}.ce-sl:not(#ce) .ce-sl-in>.ce-sl-h3{margin-top:3.4em}.ce-sl:not(#ce) .ce-sl-center{text-align:center}.ce-sl:not(#ce) .ce-sl-lead{font-weight:700;color:var(--tx)}.ce-sl:not(#ce) .ce-sl-em{font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:1.12em;line-height:1.9;text-align:center}.ce-sl:not(#ce) .ce-sl-big{position:relative;margin-top:2em!important;margin-bottom:.8em;font-family:"Shippori Mincho B1",serif;font-weight:800;font-size:clamp(22px,6vw,30px);line-height:1.75;text-align:center;color:#18214D;text-wrap:balance}.ce-sl:not(#ce) .ce-sl-night .ce-sl-big,.ce-sl:not(#ce) .ce-sl-night2 .ce-sl-big,.ce-sl:not(#ce) .ce-sl-proof .ce-sl-big{color:#FFF6DE;text-shadow:0 0 22px rgba(240,200,110,.28)}.ce-sl:not(#ce) .ce-sl-big+*{margin-top:2.2em}.ce-sl:not(#ce) .ce-sl-q{font-weight:700;font-size:1.08em;text-align:center}.ce-sl:not(#ce) .ce-sl-q::after{content:"";display:block;width:12px;height:12px;margin:18px auto 0;border-right:2px solid var(--gold2);border-bottom:2px solid var(--gold2);transform:rotate(45deg);opacity:.9}.ce-sl:not(#ce) .ce-sl-quote{position:relative;padding:.9em 1.1em .9em 1.3em;font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:1.06em;line-height:1.85;border-left:3px solid var(--gold2);background:rgba(184,138,46,.07);border-radius:0 8px 8px 0}.ce-sl:not(#ce) .ce-sl-night .ce-sl-quote,.ce-sl:not(#ce) .ce-sl-proof .ce-sl-quote{background:rgba(255,255,255,.05);color:#F3F0E6}.ce-sl:not(#ce) .ce-sl-aside{font-size:.86em;color:var(--tx2);text-align:center}.ce-sl:not(#ce) .ce-sl-note{font-size:.84em;line-height:1.85;color:var(--tx2);text-align:center}.ce-sl:not(#ce) .ce-sl-pain{display:table;margin-left:auto;margin-right:auto;padding:.25em 1.2em;font-family:"Shippori Mincho B1",serif;font-weight:800;font-size:1.06em;color:#FFE3E8;border-top:1px solid rgba(255,140,160,.45);border-bottom:1px solid rgba(255,140,160,.45);text-align:center}.ce-sl:not(#ce) .ce-sl-time{margin-top:0;font-family:"Shippori Mincho B1",serif;font-weight:800;font-size:clamp(46px,14vw,76px);line-height:1.2;letter-spacing:.12em;text-align:center;color:#DCE3FF;text-shadow:0 0 30px rgba(120,150,255,.55),0 0 2px rgba(255,255,255,.6)}.ce-sl:not(#ce) .ce-sl-sunrise .ce-sl-time{color:#C2582E;text-shadow:0 0 30px rgba(255,170,90,.45)}.ce-sl:not(#ce) .ce-sl-stat{font-family:"Shippori Mincho B1",serif;font-weight:800;font-size:1.08em;line-height:1.7;text-align:center}.ce-sl:not(#ce) .ce-sl-stat .ce-sl-num{display:inline-block;margin:0 .06em;font-size:1.62em;line-height:1.25;letter-spacing:.01em;vertical-align:-.08em}.ce-sl:not(#ce) .ce-sl-num{font-weight:800;color:var(--acc);font-variant-numeric:lining-nums;white-space:nowrap}.ce-sl:not(#ce) .ce-sl-night .ce-sl-num,.ce-sl:not(#ce) .ce-sl-night2 .ce-sl-num,.ce-sl:not(#ce) .ce-sl-proof .ce-sl-num{color:transparent;background:linear-gradient(180deg,#FFF4D2,#F0CD78 55%,#D4A443);-webkit-background-clip:text;background-clip:text}.ce-sl:not(#ce) .ce-sl-mk{color:inherit;background:linear-gradient(transparent 62%,rgba(255,214,102,.62) 62%);padding:0 .05em}.ce-sl:not(#ce) .ce-sl-night .ce-sl-mk,.ce-sl:not(#ce) .ce-sl-night2 .ce-sl-mk{background:linear-gradient(transparent 82%,rgba(240,200,110,.85) 82%,rgba(240,200,110,.85) 90%,transparent 90%);color:#FFF4D6}.ce-sl:not(#ce) .ce-sl-fv{min-height:min(100svh,860px);display:flex;align-items:center;padding:88px 0 120px;text-align:center}.ce-sl:not(#ce) .ce-sl-fv .ce-sl-in{width:100%;position:static}.ce-sl:not(#ce) .ce-sl-fv .ce-sl-in>*+*{margin-top:0}.ce-sl:not(#ce) .ce-sl-fv::before{content:"";position:absolute;left:50%;bottom:-38%;width:150%;height:70%;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(92,120,255,.28),rgba(92,120,255,.08) 55%,transparent 75%);pointer-events:none}.ce-sl:not(#ce) .ce-sl-fv-h{font-family:"Shippori Mincho B1",serif;font-weight:800;line-height:1.35;letter-spacing:.04em}.ce-sl:not(#ce) .ce-sl-fv-1{display:block;font-size:clamp(28px,8.4vw,46px);color:#DFE5FA}.ce-sl:not(#ce) .ce-sl-fv-2{display:block;margin-top:.12em;font-size:clamp(28px,8.2vw,64px);white-space:nowrap;color:transparent;background:linear-gradient(180deg,#FFF6DA 0%,#F3D58B 42%,#D6A848 100%);-webkit-background-clip:text;background-clip:text;filter:drop-shadow(0 0 18px rgba(240,200,110,.25))}.ce-sl:not(#ce) .ce-sl-fv-3{display:inline-block;margin:34px auto 0!important;padding:.42em 1.5em;font-family:"Shippori Mincho B1",serif;font-weight:800;font-size:clamp(18px,5vw,25px);line-height:1.4;letter-spacing:.1em;color:#0A1130;background:linear-gradient(180deg,#FBE7AE,#E3B95C 60%,#C99A3C);border-radius:3px;box-shadow:0 0 0 1px rgba(255,240,200,.6) inset,0 10px 30px rgba(0,0,0,.35)}.ce-sl:not(#ce) .ce-sl-fv-4{margin-top:22px!important;font-family:"Shippori Mincho B1",serif;font-weight:800;font-size:clamp(30px,9.6vw,44px);line-height:1.4;letter-spacing:.02em;color:#FFFFFF;text-shadow:0 0 26px rgba(150,170,255,.35);word-break:keep-all}.ce-sl:not(#ce) .ce-sl-fv-5{margin-top:8px!important;font:600 italic clamp(15px,4.2vw,19px)/1.6 "Cormorant Garamond","Noto Serif JP",serif;letter-spacing:.14em;color:var(--gold1)}.ce-sl:not(#ce) .ce-sl-fv-scroll{position:absolute;left:50%;bottom:30px;width:26px;height:44px;margin-left:-13px;border:1px solid rgba(224,184,96,.6);border-radius:14px}.ce-sl:not(#ce) .ce-sl-fv-scroll i{position:absolute;left:50%;top:8px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:var(--gold1);animation:ceSlScroll 1.8s ease-in-out infinite}
+@keyframes ceSlScroll{0%{transform:translateY(0);opacity:0}30%{opacity:1}100%{transform:translateY(16px);opacity:0}}.ce-sl:not(#ce) .ce-sl-phone{position:relative;width:150px;height:210px;margin:2.2em auto 0}.ce-sl:not(#ce) .ce-sl-phone-glow{position:absolute;inset:-60px;background:radial-gradient(closest-side,rgba(130,160,255,.45),rgba(90,120,255,.12) 55%,transparent 75%);animation:ceSlGlow 3.2s ease-in-out infinite}.ce-sl:not(#ce) .ce-sl-phone-body{position:absolute;inset:0;border-radius:22px;background:linear-gradient(180deg,#25336E,#162253);box-shadow:0 0 0 2px #2E3B6C,0 0 0 6px #0B112C,0 20px 40px rgba(0,0,0,.6);overflow:hidden}.ce-sl:not(#ce) .ce-sl-phone-notice{position:absolute;left:12px;right:12px;top:36px;height:44px;border-radius:10px;background:rgba(235,240,255,.92);box-shadow:0 0 18px rgba(170,190,255,.6)}.ce-sl:not(#ce) .ce-sl-phone-notice i{position:absolute;left:8px;top:9px;width:26px;height:26px;border-radius:7px;background:linear-gradient(135deg,#FFB547,#F08A1C)}.ce-sl:not(#ce) .ce-sl-phone-notice b{position:absolute;left:42px;right:10px;top:12px;height:6px;border-radius:3px;background:#9AA5C4}.ce-sl:not(#ce) .ce-sl-phone-notice b+b{top:24px;right:30px;background:#C3CBE0}.ce-sl:not(#ce) .ce-sl-phone-notice.ce-sl-n2{top:88px;opacity:.55;transform:scale(.94)}
+@keyframes ceSlGlow{0%,100%{opacity:.75}50%{opacity:1}}.ce-sl:not(#ce) .ce-sl-name{position:relative;margin:1.6em auto!important;padding:34px 18px 30px;text-align:center;border:1px solid rgba(224,184,96,.75);box-shadow:0 0 0 5px rgba(10,17,48,.6),0 0 0 6px rgba(224,184,96,.45),0 24px 60px rgba(0,0,0,.35);background:radial-gradient(100% 80% at 50% 0%,rgba(224,184,96,.14),transparent 70%),rgba(8,13,38,.6)}.ce-sl:not(#ce) .ce-sl-name p{font-family:"Shippori Mincho B1",serif;font-weight:800;line-height:1.5}.ce-sl:not(#ce) .ce-sl-name-1{font-size:.95em;color:#DCE3F7}.ce-sl:not(#ce) .ce-sl-name-2{display:inline-block;margin-top:14px;padding:.25em 1.1em;font-size:1em;letter-spacing:.08em;color:#0A1130;background:linear-gradient(180deg,#FBE7AE,#E3B95C 60%,#C99A3C)}.ce-sl:not(#ce) .ce-sl-name-3{margin-top:12px;font-size:clamp(22px,6.6vw,34px);color:transparent;background:linear-gradient(180deg,#FFF6DA,#F3D58B 45%,#D6A848);-webkit-background-clip:text;background-clip:text;word-break:keep-all}.ce-sl:not(#ce) .ce-sl-name-4{margin-top:4px;font-size:.9em;letter-spacing:.1em;color:var(--gold1)}.ce-sl:not(#ce) .ce-sl-paper .ce-sl-name,.ce-sl:not(#ce) .ce-sl-white .ce-sl-name,.ce-sl:not(#ce) .ce-sl-sunrise .ce-sl-name{background:radial-gradient(100% 80% at 50% 0%,rgba(224,184,96,.18),transparent 70%),linear-gradient(180deg,#0E1640,#16215A);box-shadow:0 0 0 5px var(--paper),0 0 0 6px rgba(184,138,46,.55),0 20px 40px rgba(14,22,64,.25)}.ce-sl:not(#ce) .ce-sl-checks{display:grid;gap:14px;margin-top:1.8em}.ce-sl:not(#ce) .ce-sl-check{position:relative;padding:18px 18px 18px 60px;border:1px solid var(--cardline);border-radius:10px;background:var(--card)}.ce-sl:not(#ce) .ce-sl-check-t{font-family:"Shippori Mincho B1",serif;font-weight:800;font-size:1.04em;line-height:1.7;color:#FFF3D6}.ce-sl:not(#ce) .ce-sl-check-d{margin-top:6px;font-size:.9em;line-height:1.85;color:var(--tx2)}.ce-sl:not(#ce) .ce-sl-ck{position:absolute;left:16px;top:19px;display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;font:700 16px/1 sans-serif;color:#0A1130;background:linear-gradient(180deg,#FBE7AE,#D9AE55)}.ce-sl:not(#ce) .ce-sl-vs{display:grid;gap:14px;margin-top:2em}.ce-sl:not(#ce) .ce-sl-vs>.ce-sl-p{margin:0;padding:18px 18px;border-radius:10px;font-weight:700;line-height:1.85;text-align:center}.ce-sl:not(#ce) .ce-sl-vs>.ce-sl-p:first-child{background:#ECE8E1;color:#5A5F6E}.ce-sl:not(#ce) .ce-sl-vs>.ce-sl-p:last-child{background:linear-gradient(180deg,#14205A,#0E1640);color:#FFF3D6;box-shadow:0 0 0 1px rgba(224,184,96,.6) inset}
+@media (min-width:768px){.ce-sl:not(#ce) .ce-sl-vs{grid-template-columns:1fr 1fr;align-items:stretch}.ce-sl:not(#ce) .ce-sl-vs>.ce-sl-p{display:flex;align-items:center;justify-content:center}}.ce-sl:not(#ce) .ce-sl-belief{position:relative;margin-top:2.4em!important;padding:30px 20px 26px;border:1px solid var(--cardline);border-radius:4px;background:#FFFFFF;box-shadow:0 0 0 4px #FFFFFF,0 0 0 5px rgba(184,138,46,.3),0 18px 40px rgba(24,33,77,.08)}.ce-sl:not(#ce) .ce-sl-belief>*+*{margin-top:1.3em}.ce-sl:not(#ce) .ce-sl-blabel{position:absolute;top:-15px;left:50%;transform:translateX(-50%);margin:0!important;padding:.15em 1.2em;font-family:"Shippori Mincho B1",serif;font-weight:800;font-size:.92em;letter-spacing:.12em;white-space:nowrap;color:#FFF3D6;background:linear-gradient(180deg,#1C2866,#121A4A)}.ce-sl:not(#ce) .ce-sl-bclaim{margin-top:.4em!important;padding-bottom:.9em;font-family:"Shippori Mincho B1",serif;font-weight:800;font-size:1.18em;line-height:1.7;text-align:center;color:#18214D;border-bottom:1px dashed var(--line)}.ce-sl:not(#ce) .ce-sl-case{margin-top:2em!important;padding:24px 20px;border-top:3px solid var(--gold2);border-radius:0 0 10px 10px;background:var(--paper2)}.ce-sl:not(#ce) .ce-sl-case>*+*{margin-top:1.2em}.ce-sl:not(#ce) .ce-sl-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}.ce-sl:not(#ce) .ce-sl-chips li{padding:.3em 1em;border:1px solid var(--cardline);border-radius:999px;background:#FFFFFF;font-weight:700;line-height:1.6;color:#18214D}.ce-sl:not(#ce) .ce-sl-fig{margin-top:2em}.ce-sl:not(#ce) .ce-sl-frame{position:relative;padding:6px;border-radius:12px;background:#FFFFFF;box-shadow:0 0 0 1px rgba(184,138,46,.45),0 18px 40px rgba(5,8,23,.28)}.ce-sl:not(#ce) .ce-sl-img{width:100%;border-radius:7px}.ce-sl:not(#ce) .ce-sl-fig-photo .ce-sl-frame{padding:0;background:none;overflow:hidden}.ce-sl:not(#ce) .ce-sl-fig-photo .ce-sl-img{border-radius:12px}.ce-sl:not(#ce) .ce-sl-cap{margin-top:10px;font-size:13px;line-height:1.6;letter-spacing:.04em;text-align:center;color:var(--tx2)}.ce-sl:not(#ce) .ce-sl-badge{position:absolute;z-index:1;top:-12px;left:14px;padding:.1em .9em;font-family:"Shippori Mincho B1",serif;font-weight:800;font-size:15px;line-height:1.7;letter-spacing:.08em;color:#0A1130;background:linear-gradient(180deg,#FBE7AE,#D9AE55);border-radius:3px;box-shadow:0 4px 10px rgba(0,0,0,.25)}.ce-sl:not(#ce) .ce-sl-grid{display:grid;grid-template-columns:1fr;gap:22px 16px;margin-top:2em}.ce-sl:not(#ce) .ce-sl-grid .ce-sl-fig{margin-top:0}.ce-sl:not(#ce) .ce-sl-grid-media,.ce-sl:not(#ce) .ce-sl-grid-furusato{grid-template-columns:1fr 1fr}
+@media (min-width:768px){.ce-sl:not(#ce) .ce-sl-grid-genre{grid-template-columns:1fr 1fr}}.ce-sl:not(#ce) .ce-sl-ph .ce-sl-frame{display:flex;align-items:center;justify-content:center;min-height:140px;padding:16px;border:2px dashed rgba(184,138,46,.7);background:rgba(255,248,230,.9);box-shadow:none;font:600 13px/1.6 sans-serif;color:#7A5A12;text-align:center}.ce-sl:not(#ce) .ce-sl-ph-book .ce-sl-frame{width:180px;min-height:260px;margin:0 auto}.ce-sl:not(#ce) .ce-sl-ph-sign .ce-sl-frame{min-height:90px}.ce-sl:not(#ce) .ce-sl-vsfig{display:grid;grid-template-columns:1fr;gap:12px;margin-top:2em;text-align:center}.ce-sl:not(#ce) .ce-sl-vsfig-card{padding:18px 14px 16px;border-radius:12px}.ce-sl:not(#ce) .ce-sl-vsfig-card svg{width:120px;height:70px;margin:0 auto 8px;fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}.ce-sl:not(#ce) .ce-sl-vsfig-card p{font-size:.88em;line-height:1.75;font-weight:700}.ce-sl:not(#ce) .ce-sl-vsfig-card p b{display:block;margin-bottom:4px;font-family:"Shippori Mincho B1",serif;font-size:1.15em;letter-spacing:.1em}.ce-sl:not(#ce) .ce-sl-vsfig-bad{background:#ECE8E1;color:#5A5F6E}.ce-sl:not(#ce) .ce-sl-vsfig-bad svg{stroke:#8A8F9C}.ce-sl:not(#ce) .ce-sl-vsfig-good{background:linear-gradient(180deg,#14205A,#0E1640);color:#FFF3D6;box-shadow:0 0 0 1px rgba(224,184,96,.6) inset}.ce-sl:not(#ce) .ce-sl-vsfig-good svg{stroke:var(--gold2);animation:ceSlSpin 9s linear infinite;transform-origin:50% 50%}.ce-sl:not(#ce) .ce-sl-vsfig-arrow{width:14px;height:14px;margin:0 auto;border-right:2px solid var(--gold2);border-bottom:2px solid var(--gold2);transform:rotate(45deg)}
+@keyframes ceSlSpin{to{transform:rotate(360deg)}}
+@media (min-width:768px){.ce-sl:not(#ce) .ce-sl-vsfig{grid-template-columns:1fr 30px 1fr;align-items:center}.ce-sl:not(#ce) .ce-sl-vsfig-arrow{transform:rotate(-45deg)}}.ce-sl:not(#ce) .ce-sl-duo{display:flex;justify-content:center;gap:28px;margin-top:2em}.ce-sl:not(#ce) .ce-sl-duo-p{text-align:center;font-family:"Shippori Mincho B1",serif;font-weight:800;color:#18214D}.ce-sl:not(#ce) .ce-sl-duo-p span{display:block;margin-top:8px;font-size:.95em;letter-spacing:.2em}.ce-sl:not(#ce) .ce-sl-face{position:relative;width:96px;height:96px;margin:0 auto;border-radius:50%;overflow:hidden;background:#F4F6FA;box-shadow:0 0 0 3px #fff,0 0 0 4.5px var(--gold2),0 10px 22px rgba(26,33,82,.18)}.ce-sl:not(#ce) .ce-sl-face .ce-sl-img{position:absolute;top:var(--t,0);left:var(--l,-60%);width:var(--w,220%);max-width:none;height:auto;border-radius:0;mix-blend-mode:multiply}.ce-sl:not(#ce) .ce-sl-ctabox{margin:2.4em auto 0!important;max-width:520px;text-align:center}.ce-sl:not(#ce) .ce-sl-cta{position:relative;display:flex;align-items:center;justify-content:center;min-height:76px;padding:12px 74px 12px 30px;border-radius:999px;font-family:"Shippori Mincho B1",serif;font-weight:800;font-size:clamp(21px,5.8vw,25px);line-height:1.3;letter-spacing:.12em;color:#FFFFFF!important;text-decoration:none!important;text-shadow:0 1px 2px rgba(0,60,25,.55);background:linear-gradient(180deg,#3FD685 0%,var(--green1) 30%,var(--green2) 100%);box-shadow:0 0 0 2px #F1D186,0 0 0 4px rgba(184,138,46,.55),0 7px 0 var(--green3),0 16px 30px rgba(8,90,45,.35);overflow:hidden;transition:transform .12s ease,box-shadow .12s ease}.ce-sl:not(#ce) .ce-sl-cta::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);animation:ceSlSheen 3.6s ease-in-out 1s infinite}.ce-sl:not(#ce) .ce-sl-cta:active{transform:translateY(5px);box-shadow:0 0 0 2px #F1D186,0 0 0 4px rgba(184,138,46,.55),0 2px 0 var(--green3),0 8px 18px rgba(8,90,45,.3)}.ce-sl:not(#ce) .ce-sl-cta-arw{position:absolute;right:16px;top:50%;width:40px;height:40px;margin-top:-20px;border-radius:50%;background:#FFFFFF}.ce-sl:not(#ce) .ce-sl-cta-arw::before{content:"";position:absolute;left:12px;top:14px;width:11px;height:11px;border-right:3px solid var(--green2);border-top:3px solid var(--green2);transform:rotate(45deg)}
+@keyframes ceSlSheen{0%,55%{left:-60%}85%,100%{left:130%}}.ce-sl:not(#ce) .ce-sl-ctabox+.ce-sl-note{margin-top:1.2em}.ce-sl:not(#ce) .ce-sl-dock{position:fixed;left:0;right:0;bottom:0;z-index:950;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:linear-gradient(180deg,rgba(251,247,238,0),rgba(251,247,238,.94) 30%);opacity:0;visibility:hidden;pointer-events:none}.ce-sl:not(#ce) .ce-sl-dock .ce-sl-ctabox{margin:0 auto!important;max-width:460px}.ce-sl:not(#ce) .ce-sl-dock .ce-sl-cta{min-height:60px;font-size:20px}.ce-sl:not(#ce) .ce-sl-dock .ce-sl-cta-arw{width:34px;height:34px;margin-top:-17px}.ce-sl:not(#ce) .ce-sl-dock .ce-sl-cta-arw::before{left:9px;top:11px}
+@keyframes ceSlDock{0%,71%{opacity:0;visibility:hidden;transform:translateY(16px)}73%,97%{opacity:1;visibility:visible;transform:none}99%,100%{opacity:0;visibility:hidden;transform:translateY(16px)}}
+@supports (animation-timeline:scroll()){.ce-sl:not(#ce) .ce-sl-dock{pointer-events:auto;animation:ceSlDock linear both;animation-timeline:scroll(root block)}
+}.ce-sl:not(#ce) .ce-sl-progress{position:fixed;top:0;left:0;right:0;z-index:960;height:3px;background:rgba(128,128,160,.18);pointer-events:none}.ce-sl:not(#ce) .ce-sl-progress-bar{position:absolute;inset:0;background:linear-gradient(90deg,#4C6FFF,#8E7FA6 40%,#E0B860 75%,#FBE2C8);transform-origin:0 50%;transform:scaleX(0)}
+@keyframes ceSlProg{to{transform:scaleX(1)}}
+@supports (animation-timeline:scroll()){.ce-sl:not(#ce) .ce-sl-progress-bar{animation:ceSlProg linear both;animation-timeline:scroll(root block)}}
+@supports not (animation-timeline:scroll()){.ce-sl:not(#ce) .ce-sl-progress{display:none}}
+
+@media (prefers-reduced-motion:reduce){.ce-sl:not(#ce) .ce-sl-cta::after,.ce-sl:not(#ce) .ce-sl-fv-scroll i,.ce-sl:not(#ce) .ce-sl-phone-glow,.ce-sl:not(#ce) .ce-sl-vsfig-good svg{animation:none}
+}
+</style>
+</head>
+<body>
+<div class="ce-sl">
+<section class="ce-sl-sec ce-sl-night ce-sl-fv" id="sl-fv"><div class="ce-sl-in">
+<div class="ce-sl-fv-sky" aria-hidden="true"></div>
+<h1 class="ce-sl-fv-h"><span class="ce-sl-fv-1">せどり・転売？</span><span class="ce-sl-fv-2">今日から辞めていい。</span></h1>
+<p class="ce-sl-fv-3">無在庫&amp;予約で完売する</p>
+<p class="ce-sl-fv-4"><span class="ce-sl-nb">「自分ブランド</span><span class="ce-sl-nb">物販アカデミー」</span></p>
+<p class="ce-sl-fv-5">（通称：Crowd Edge）</p>
+<div class="ce-sl-fv-scroll" aria-hidden="true"><i></i></div>
+</div></section>
+<section class="ce-sl-sec ce-sl-night" id="sl-b0"><div class="ce-sl-in">
+<p class="ce-sl-p ce-sl-time ce-sl-gap2">深夜2時。</p>
+<p class="ce-sl-p ce-sl-em">スマホが、また光った。</p>
+<div class="ce-sl-phone" aria-hidden="true"><div class="ce-sl-phone-glow"></div><div class="ce-sl-phone-body"><div class="ce-sl-phone-notice"><i></i><b></b><b></b></div><div class="ce-sl-phone-notice ce-sl-n2"><i></i><b></b><b></b></div></div></div>
+<p class="ce-sl-p ce-sl-gap2">Amazonからの、あの通知音。</p>
+<p class="ce-sl-p">鳴るたびに、胸の奥が小さく縮む。<br>今度は、何の規約変更だろう？</p>
+<p class="ce-sl-p ce-sl-gap2">散らかったリビングで、ひとり、バーコードを読む。</p>
+<p class="ce-sl-p ce-sl-stat">1個、<b class="ce-sl-num">300円</b>の利益。</p>
+<p class="ce-sl-p">35歳にもなって、こんな夜中に、これをしている自分。</p>
+<p class="ce-sl-p ce-sl-gap2">この前、子どもに「お仕事、なにしてるの？」と聞かれて、うまく答えられなかった。</p>
+<p class="ce-sl-p">家族にも、ただ「ネットショップの運営」とだけ言ってある。</p>
+<p class="ce-sl-p">本当は、店の隅で隠れてスキャンしてたり、仕入れと称してネットでの価格のミスを刈り取ったり、必要な人が買えないのはお構いなしに棚の商品をゴッソリ買い占めたり。</p>
+<p class="ce-sl-p">誇れない転売をしているだけなのに。</p>
+<p class="ce-sl-p">「自分の金」のために、子どものオモチャを買い占めるママがSNSで炎上してたっけ。</p>
+<p class="ce-sl-p ce-sl-quote ce-sl-gap2">「炎上してないだけで、自分も一緒だわ」</p>
+<p class="ce-sl-p ce-sl-quote">「これ、別に俺じゃなくてもいいよな」</p>
+<p class="ce-sl-p ce-sl-q ce-sl-gap2">そんなふうに思った夜、一度でもありますか？</p>
+<p class="ce-sl-p ce-sl-big">もし、こんな夜が、あなたの昨日と少しでも重なるなら。<br>ここから先の話は、あなたひとりのために書きました。</p>
+<p class="ce-sl-p">これからお伝えするのは<mark class="ce-sl-mk">「在庫をひとつも持たず」</mark><mark class="ce-sl-mk">「お金を先払いもせず」</mark><mark class="ce-sl-mk">「自分だけの商品」</mark>を何度もくりかえし、<mark class="ce-sl-mk">「ファンだけ」</mark>に、<mark class="ce-sl-mk">「予約の段階で完売状態」</mark>で売っていく物販の方法です。</p>
+<p class="ce-sl-p ce-sl-em ce-sl-gap2">もう、誰かに叩かれる転売でもない。<br>家族に、うしろめたさを感じる仕事でもない。<br>胸を張って「これが俺の仕事だ」と言える、社会性のある働き方。<br>そして、ネットを探してもなかなか出てこない、明るい方法です。</p>
+<p class="ce-sl-p ce-sl-lead ce-sl-gap2">先に、正直に言っておきます。</p>
+<p class="ce-sl-p">これは、ラクをして一発当てる話ではありません。<br>毎日コツコツ、泥臭い手も動かします。</p>
+<p class="ce-sl-p ce-sl-gap2">それでも、店の隅でこっそりスキャンし続ける毎日とは、根っこから、違う。</p>
+<p class="ce-sl-p ce-sl-big">自分の名前で、自分の商品を。<br>誰かの規約に、二度とおびえなくていい働き方へ。</p>
+<p class="ce-sl-p ce-sl-center">こうした働き方へ向かう、ひとつの道。</p>
+</div></section>
+<section class="ce-sl-sec ce-sl-night2" id="sl-b0b"><div class="ce-sl-in">
+<p class="ce-sl-p ce-sl-center ce-sl-gap2">それが、</p>
+<div class="ce-sl-name"><p class="ce-sl-name-1">せどり・転売？今日から辞めていい。</p><p class="ce-sl-name-2">無在庫&amp;予約で完売する</p><p class="ce-sl-name-3"><span class="ce-sl-nb">「自分ブランド</span><span class="ce-sl-nb">物販アカデミー」</span></p><p class="ce-sl-name-4">（通称：Crowd Edge）</p></div>
+<p class="ce-sl-p ce-sl-center">です。</p>
+<p class="ce-sl-p ce-sl-lead ce-sl-center ce-sl-gap2">この先を読み進めると、こんな景色が見えてきます。</p>
+<div class="ce-sl-checks">
+<div class="ce-sl-check"><p class="ce-sl-check-t"><span class="ce-sl-ck" aria-hidden="true">✓</span>規約変更やアカウント停止の通知に、もう心臓を跳ねさせなくていい。</p><p class="ce-sl-check-d">ルールに従うだけの側から、自分の商品でルールを持つ側へ</p></div>
+<div class="ce-sl-check"><p class="ce-sl-check-t"><span class="ce-sl-ck" aria-hidden="true">✓</span>子どもや家族に、胸を張れる。</p><p class="ce-sl-check-d">「安く買って高く売る人」ではなく、メーカーと組んで世に商品を届ける作り手として表に立てる</p></div>
+<div class="ce-sl-check"><p class="ce-sl-check-t"><span class="ce-sl-ck" aria-hidden="true">✓</span>売って、終わりにしない。ひとつの商品を5回も売り、あとから静かに積み上がっていく資産に変えていく。</p></div>
+</div>
+<p class="ce-sl-p ce-sl-big">あの深夜のバーコードから、抜け出す道は、たしかにあります。</p>
+<p class="ce-sl-p ce-sl-q">その具体的な道のりを、ここから一緒にたどっていきませんか？</p>
+</div></section>
+<section class="ce-sl-sec ce-sl-proof" id="sl-b1"><div class="ce-sl-in">
+<div class="ce-sl-chap" aria-hidden="true"><span class="ce-sl-chap-k">CHAPTER</span><span class="ce-sl-chap-n">01</span></div>
+<p class="ce-sl-p ce-sl-lead ce-sl-gap2">先に、ひとつだけ見てほしいものがあります。</p>
+<p class="ce-sl-p">これは、ある1つの商品が歩んだ記録です。</p>
+<p class="ce-sl-p">歯の間を掃除する、フロス糸の交換ハンドル。<br>国産の技術で、チタンから削り出した、たった1つの製品。</p>
+<p class="ce-sl-p">その最初の販売で、生まれた売上が、これです。</p>
+<p class="ce-sl-p ce-sl-stat">売上の総額、<b class="ce-sl-num">9,692,475円</b>。<br>買ってくれた人は、<b class="ce-sl-num">1,841人</b>。</p>
+<p class="ce-sl-p">在庫を抱えることも、値下げ合戦をすることも、なくです。</p>
+<figure class="ce-sl-fig"><div class="ce-sl-frame"><span class="ce-sl-badge">1回目</span><a class="ce-sl-zoom" href="https://utagesystem.s3.ap-northeast-1.amazonaws.com/jW5amCPQZfus/v1Atm2sBDebtdQZdLqWgJH3BO2UyIch5Sy1Qlv73.jpg" target="_blank" rel="noopener"><img class="ce-sl-img" src="https://utagesystem.s3.ap-northeast-1.amazonaws.com/jW5amCPQZfus/v1Atm2sBDebtdQZdLqWgJH3BO2UyIch5Sy1Qlv73.jpg" alt="Makuake 実画面　応援購入総額 9,692,475円／サポーター 1,841人" width="1200" height="410" loading="lazy" decoding="async"></a></div><figcaption class="ce-sl-cap">Makuake 実画面　応援購入総額 9,692,475円／サポーター 1,841人</figcaption></figure>
+<p class="ce-sl-p ce-sl-gap2">ここで、多くの人はこう思います。</p>
+<p class="ce-sl-p ce-sl-quote">「たまたま、当たっただけでしょう？」と。</p>
+<p class="ce-sl-p ce-sl-q">では、これはどう見えますか？</p>
+<p class="ce-sl-p ce-sl-lead ce-sl-gap2">同じ商品で、5回目の販売。</p>
+<p class="ce-sl-p ce-sl-stat">それでも、<b class="ce-sl-num">2,620,632円</b>。<br><b class="ce-sl-num">487人</b>が、また財布を開いてくれました。</p>
+<figure class="ce-sl-fig"><div class="ce-sl-frame"><span class="ce-sl-badge">5回目</span><a class="ce-sl-zoom" href="../assets/letter/sl-floss-5th.jpg" target="_blank" rel="noopener"><img class="ce-sl-img" src="../assets/letter/sl-floss-5th.jpg" alt="実画面　2,620,632円／支援者 487人" width="1200" height="409" loading="lazy" decoding="async"></a></div><figcaption class="ce-sl-cap">実画面　2,620,632円／支援者 487人</figcaption></figure>
+<p class="ce-sl-p ce-sl-em ce-sl-gap2">売って、終わりではありません。</p>
+<p class="ce-sl-p ce-sl-em">一度きりの花火でも、ありません。</p>
+<p class="ce-sl-p ce-sl-big">たった1つの商品を、1回、2回、そして5回。</p>
+<p class="ce-sl-p ce-sl-big">くりかえし、お金を生み続ける。</p>
+<p class="ce-sl-p ce-sl-gap2">深夜にバーコードを読んでも、翌朝には消えていくあの労働とは、まるで逆の世界です。</p>
+<p class="ce-sl-p ce-sl-q">なぜ、こんなことが起きるのか？</p>
+<p class="ce-sl-p ce-sl-q">なぜ、同じ商品が、5回も売れ続けるのか？</p>
+<p class="ce-sl-p ce-sl-em ce-sl-gap2">これは、才能でも、まぐれでもありません。<br>きちんとした理由と、たどるべき順番があります。</p>
+<p class="ce-sl-p">いま見てもらったのは、ほんの入り口にすぎません。</p>
+<p class="ce-sl-p ce-sl-q">この続きで、その理由を、ひとつずつ解き明かしていきます。</p>
+</div></section>
+<section class="ce-sl-sec ce-sl-night ce-sl-todawn" id="sl-b2"><div class="ce-sl-in">
+<div class="ce-sl-chap" aria-hidden="true"><span class="ce-sl-chap-k">CHAPTER</span><span class="ce-sl-chap-n">02</span></div>
+<h2 class="ce-sl-h2">終わらない怯えと、誰にも言えない夜</h2>
+<p class="ce-sl-p">もう一度だけ、あの夜を思い出してみてください。</p>
+<p class="ce-sl-p">スマホが光る。Amazonからの通知。<br>その瞬間、指先が止まって、胸の奥がすっと冷たくなる。</p>
+<p class="ce-sl-p ce-sl-em">今度は何だ？<br>アカウント停止か。<br>規約変更か。</p>
+<p class="ce-sl-p ce-sl-gap2">考えてみれば、おかしな話です。</p>
+<p class="ce-sl-p">自分で働いて、自分で稼いでいるはずなのに、その生殺与奪をまったく別の誰かが握っている。<br>彼らが気まぐれにルールを一行変えれば、昨日まで積み上げてきたものが、一夜でゼロになる。</p>
+<p class="ce-sl-p ce-sl-q">その恐怖に、あなたはもう、何年おびえてきましたか？</p>
+<p class="ce-sl-p ce-sl-pain">これが、1つ目の痛みです。</p>
+<p class="ce-sl-p ce-sl-em">自分の足で立っているつもりで、その足場は、他人の手のひらの上にある。</p>
+<p class="ce-sl-p ce-sl-pain ce-sl-gap2">そして、もっと深いところに、2つ目の痛みがあります。</p>
+<p class="ce-sl-p">子どもに「パパ、何のお仕事してるの？」と聞かれて、言葉に詰まりませんでしたか？</p>
+<p class="ce-sl-p">家族には「ネットショップの運営」とだけ言ってある。</p>
+<p class="ce-sl-p ce-sl-em">嘘は、ついていない。<br>でも、本当のことも言っていない。</p>
+<p class="ce-sl-p">本当は、店の棚の陰で、店員の視線を気にしながら、こっそりスマホをかざしているだけ。</p>
+<p class="ce-sl-p">ネットで価格の付け間違いを見つけては、それを刈り取っているだけ。</p>
+<p class="ce-sl-p">ネットを開けば「転売ヤー」と叩かれる。<br>反論はできない。<br>心のどこかで、自分でもそう思っているから。</p>
+<p class="ce-sl-p ce-sl-em">胸を張れない。<br>子どもに、堂々と背中を見せられない。</p>
+<p class="ce-sl-p ce-sl-big">このうしろめたさは、口座にいくら入っても、消えてくれません。</p>
+<p class="ce-sl-p ce-sl-pain ce-sl-gap2">3つ目の痛みは、いちばん静かに、あなたをむしばみます。</p>
+<p class="ce-sl-p">必死でリサーチして、安く仕入れて、梱包して、発送して。<br>たしかに、いくらかは残る。</p>
+<p class="ce-sl-p ce-sl-em">でも、また明日、ゼロからやり直しです。</p>
+<p class="ce-sl-p">売上を伸ばそうとすればするほど、リサーチも、梱包も、発送も増えていく。<br>体は一つしかないのに、作業だけが積み上がる。</p>
+<p class="ce-sl-p">そして手元に残るのは、売れ残った在庫と、終わりの見えない徒労だけ。</p>
+<p class="ce-sl-p ce-sl-time ce-sl-gap2">深夜2時。</p>
+<p class="ce-sl-p ce-sl-gap2">誰もいないリビングで、バーコードを読みながら、ふと思う。</p>
+<p class="ce-sl-p ce-sl-quote">これ、別に俺じゃなくてもいいよな、と。</p>
+<p class="ce-sl-p ce-sl-em">35歳。<br>いい大人が、こんな夜中に、これを。</p>
+<p class="ce-sl-p ce-sl-big">一生、これを続けるのか？</p>
+<p class="ce-sl-p ce-sl-gap2">もし、ここまで読んで、胸のどこかがざわついたなら。</p>
+<p class="ce-sl-p ce-sl-big">それは、あなたが悪いからではありません。<br>ただ、乗っている船が、間違っているだけです。</p>
+</div></section>
+<section class="ce-sl-sec ce-sl-paper" id="sl-b3"><div class="ce-sl-in">
+<div class="ce-sl-chap" aria-hidden="true"><span class="ce-sl-chap-k">CHAPTER</span><span class="ce-sl-chap-n">03</span></div>
+<h2 class="ce-sl-h2">欲しいのは楽園ではなく、胸を張れる自分</h2>
+<p class="ce-sl-p">ここで、正直にお伝えしておきたいことがあります。</p>
+<p class="ce-sl-p">これからお話しするのは、「働かずに寝ているだけで大金が入る」といった類の話ではありません。<br>そういう甘い言葉に、あなたはもう、うんざりしているはずですから。</p>
+<p class="ce-sl-p">入口では、泥臭いこともします。</p>
+<p class="ce-sl-p">頭も使うし、手も動かす。<br>正しい順番で、たった一つ、本物を仕込む。</p>
+<p class="ce-sl-p ce-sl-gap2">ただ、その先に待っている景色が、今とはまるで違う。</p>
+<p class="ce-sl-p ce-sl-lead">想像してみてください。</p>
+<p class="ce-sl-p ce-sl-gap2">まず、あの通知音に、二度とおびえなくてよくなります。</p>
+<p class="ce-sl-p">なぜなら、売っているのは他人の商品ではなく、あなた自身の商品だから。<br>ルールに従わされる側から、自分でルールを持つ側へ、静かに立場が変わる。</p>
+<p class="ce-sl-p">子どもに「何のお仕事してるの？」と聞かれたら、こう答えられます。</p>
+<p class="ce-sl-p ce-sl-quote">「メーカーさんといっしょに、世の中にまだない物を作って、届ける仕事だよ」と。</p>
+<p class="ce-sl-p ce-sl-em ce-sl-gap2">店の陰で隠れる仕事ではない。<br>名前を出して、表に立てる仕事です。</p>
+<figure class="ce-sl-fig ce-sl-fig-photo"><div class="ce-sl-frame"><img class="ce-sl-img" src="https://utagesystem.s3.ap-northeast-1.amazonaws.com/jW5amCPQZfus/MiCAfXO8WjXn8ZnnOGJDZaYSIeYYjZeG2MvChfIo.jpg" alt="" width="1200" height="900" loading="lazy" decoding="async"></div></figure>
+<p class="ce-sl-p ce-sl-big">うしろめたさの代わりに、誇りが残る。</p>
+<p class="ce-sl-p ce-sl-lead ce-sl-gap2">そして、いちばん大きな違いが、ここです。</p>
+<p class="ce-sl-p">あなたが仕込んだ、たった一つの商品。<br>それは、一度売って終わりではありません。</p>
+<p class="ce-sl-p">同じ商品が、二度、三度、そして五度…と、くりかえし売れていく。</p>
+<p class="ce-sl-p">さっき見てもらったフロスが、まさにそれでした。</p>
+<p class="ce-sl-p ce-sl-gap2">しかも、話はそこで終わりません。</p>
+<p class="ce-sl-p">一度「売れるもの」を形にできれば、そこはゴールではなく、入口になります。</p>
+<p class="ce-sl-p ce-sl-em">その同じ商品を、別の販売サイトへ。<br>自分の店へ。<br>海外へ。<br>卸へ。</p>
+<p class="ce-sl-p">一つの商品が、いくつもの販路を自分で歩き始める。</p>
+<p class="ce-sl-p ce-sl-em">やることは、ほとんど、発注のメールを送ることだけ。</p>
+<p class="ce-sl-p ce-sl-gap2">仕入れて、隠れてスキャンして、梱包して、発送して……という毎日とは、根っこから違います。</p>
+<p class="ce-sl-p">仕込みさえ正しければ、あとは自動販売機のように、あなたが動いていない時間にも静かに売れ続ける。</p>
+<p class="ce-sl-p">せどりが「走り続けないと、その場で倒れる自転車」だとしたら、これは「一度こぎ出せば、あとは転がり続ける車輪」です。</p>
+<div class="ce-sl-vsfig" aria-hidden="true">
+<div class="ce-sl-vsfig-card ce-sl-vsfig-bad"><svg viewBox="0 0 120 70"><circle cx="28" cy="48" r="17"/><circle cx="92" cy="48" r="17"/><path d="M28 48 L50 22 L78 22 L92 48 M50 22 L62 48 L78 22 M62 48 L28 48 M44 16 L56 16 M74 14 L84 14"/></svg><p><b>せどり</b>走り続けないと、<br>その場で倒れる自転車</p></div>
+<div class="ce-sl-vsfig-arrow"></div>
+<div class="ce-sl-vsfig-card ce-sl-vsfig-good"><svg viewBox="0 0 120 70"><circle cx="60" cy="35" r="30"/><circle cx="60" cy="35" r="5"/><path d="M60 5 V65 M30 35 H90 M39 14 L81 56 M81 14 L39 56"/></svg><p><b>これ</b>一度こぎ出せば、<br>あとは転がり続ける車輪</p></div>
+</div>
+<p class="ce-sl-p ce-sl-em ce-sl-gap2">汗をかいて、種をまく。<br>だからこそ、あとから、実り続ける。</p>
+<p class="ce-sl-p ce-sl-big">これは、楽園の話ではなく、資産の話です。</p>
+<h3 class="ce-sl-h3">才能でも運でもない、たった一つの差</h3>
+<p class="ce-sl-p">ここまで読んで、それでも、こう思う人がいるはずです。</p>
+<p class="ce-sl-p ce-sl-quote ce-sl-gap2">「どうせ、一部の才能がある人だけの話だろう？」</p>
+<p class="ce-sl-p ce-sl-quote">「また、キレイな理想論を聞かされているだけじゃないか」と。</p>
+<p class="ce-sl-p ce-sl-gap2">その気持ちも、よく分かります。</p>
+<p class="ce-sl-p">これまで、そうやって何度も裏切られてきたのなら、なおさらです。</p>
+<p class="ce-sl-p">でも、思い出してください。</p>
+<p class="ce-sl-p ce-sl-gap2">さっきのフロスは、天才の作品でしょうか？</p>
+<p class="ce-sl-p">一度きりの、まぐれ当たりだったでしょうか？</p>
+<p class="ce-sl-p ce-sl-big ce-sl-gap2">違います。</p>
+<p class="ce-sl-p">同じ商品が、5回、くりかえし売れた。<br>それは、才能でも、運でもありません。</p>
+<div class="ce-sl-vs">
+<p class="ce-sl-p ce-sl-gap2">一発屋のギャンブルで、また明日ゼロに戻る人。</p>
+<p class="ce-sl-p">1つの商品を5回、その先の販路まで使い倒して「資産」に変えていく人。</p>
+</div>
+<p class="ce-sl-p ce-sl-em">この二人を分けるものは、たった一つです。</p>
+<p class="ce-sl-p ce-sl-big ce-sl-gap2">正しい順番が描かれた「設計図」を、持っているかどうか。</p>
+<p class="ce-sl-p ce-sl-q">その設計図が、どんなものなのか？</p>
+<p class="ce-sl-p ce-sl-q">なぜ、初心者や、あなたのように今もがいている人ほど、うまくいくのか？</p>
+<p class="ce-sl-p">その中身を、ここから、一つずつ、あなたにお見せしていきます。</p>
+<h3 class="ce-sl-h3">物販の常識は、9割が思い込み</h3>
+<p class="ce-sl-p">ここまで読んで、きっと、こう思っているはずです。</p>
+<p class="ce-sl-p ce-sl-quote">「言いたいことは分かる。でも、それって才能がある人の話でしょう」</p>
+<p class="ce-sl-p ce-sl-quote">「経験も実績もない自分に、できるわけがない」と。</p>
+<p class="ce-sl-p ce-sl-gap2">その気持ちに、まず、はっきり答えておきます。</p>
+<p class="ce-sl-p ce-sl-big">逆です。</p>
+<p class="ce-sl-p ce-sl-em ce-sl-gap2">これは、経験がある人よりも、あなたのような人ほど「うまくいく」世界です。</p>
+<p class="ce-sl-p">信じられないかもしれません。</p>
+<p class="ce-sl-p">なので、あなたを縛っている「思い込み」を、一つずつ外していきます。</p>
+<div class="ce-sl-belief">
+<p class="ce-sl-p ce-sl-blabel ce-sl-gap2">思い込み、その1</p>
+<p class="ce-sl-p ce-sl-bclaim">「物販は、在庫を抱えるリスク商売だ」</p>
+<p class="ce-sl-p ce-sl-gap2">これは、せどりの常識であって、ここでの常識ではありません。</p>
+<p class="ce-sl-p">これからお伝えするやり方は「注文が集まってから」作ります。<br>売れることがわかっている商品です。</p>
+<p class="ce-sl-p">先に大量に仕入れて、売れ残りにおびえる必要がない。</p>
+<p class="ce-sl-p ce-sl-big">在庫ゼロ。先払いもゼロ。</p>
+<p class="ce-sl-p">あの、部屋を埋めていく段ボールの山とは、無縁の世界です。</p>
+</div>
+<div class="ce-sl-belief">
+<p class="ce-sl-p ce-sl-blabel ce-sl-gap2">思い込み、その2</p>
+<p class="ce-sl-p ce-sl-bclaim">「クラファンなんて、一発当たればラッキーの運ゲーだ」</p>
+<p class="ce-sl-p">もし本当に運ゲーなら、さっきのフロスは説明がつきません。</p>
+<p class="ce-sl-p">同じ商品が、一度きりではなく5回。<br>運で、5回続けて当たる人はいません。</p>
+<p class="ce-sl-p ce-sl-em">これは運ではなく、正しい順番の結果です。</p>
+</div>
+<p class="ce-sl-p ce-sl-lead ce-sl-gap2">つまり、あなたが本当に選ぶべきなのは、こうです。</p>
+<div class="ce-sl-vs">
+<p class="ce-sl-p">在庫の山におびえながら、隠れてスキャンを続ける毎日か？</p>
+<p class="ce-sl-p">それとも、在庫を持たず、自分の商品を、堂々と積み上げていく道か？</p>
+</div>
+<h3 class="ce-sl-h3">なぜ、初心者ほど勝てるのか</h3>
+<p class="ce-sl-p ce-sl-lead">ここが、いちばん大事なところです。</p>
+<p class="ce-sl-p ce-sl-quote">「経験がないと勝てない」</p>
+<p class="ce-sl-p">これも、ただの思い込みです。</p>
+<p class="ce-sl-p ce-sl-gap2">むしろ、長くやってきた人ほど、変なクセや自己流が抜けず、正しい順番を素直に実行できない。</p>
+<p class="ce-sl-p">まっさらな初心者のほうが、教わったレシピを、そのままなぞれる。</p>
+<p class="ce-sl-p ce-sl-em">だから、結果が出るのが速い。</p>
+<p class="ce-sl-p ce-sl-gap2">これは、きれいごとではありません。</p>
+<p class="ce-sl-p">実際に、ここへ来ている人たちが、それを証明しています。</p>
+<ul class="ce-sl-chips"><li>看護師</li><li>職人主婦</li><li>会社員</li><li>飲食店の店主</li></ul>
+<p class="ce-sl-p">など。</p>
+<p class="ce-sl-p">その多くが、物販は未経験か、ほとんど手をつけたことのない人たちです。<br>本業のかたわら、1日1時間、2時間から始めた人ばかり。</p>
+<p class="ce-sl-p ce-sl-gap2">そして、その中には、こういう人もいます。</p>
+<p class="ce-sl-p">かつて、せどりで大きく稼いでいた人。<br>金額だけ見れば、成功していたように見える人です。</p>
+<p class="ce-sl-p">それでも、こう言って、ここへ来ました。</p>
+<p class="ce-sl-p ce-sl-quote ce-sl-gap2">「これは、一生は続けられない。世間体も悪い。いつか、胸を張れる自分の商品を持ちたかった」と。</p>
+<p class="ce-sl-p ce-sl-q ce-sl-gap2">この言葉に、あなたは、どこか自分を重ねませんでしたか？</p>
+<p class="ce-sl-p">数字の上では稼げていても、心が休まらない。</p>
+<p class="ce-sl-p">その苦しさを知っているからこそ、抜け出したくて、ここへたどり着く。<br>あなたが今、この文章を読んでいるのも、きっと同じ理由のはずです。</p>
+<h3 class="ce-sl-h3">一発の花火ではなく、積み上がる実績</h3>
+<p class="ce-sl-p ce-sl-q">では、実際に、未経験の人が何を生み出しているのか？</p>
+<p class="ce-sl-p ce-sl-aside">このページでは特定を避けるため、名前も商品も伏せますが事実だけをお伝えします。</p>
+<div class="ce-sl-case">
+<p class="ce-sl-p ce-sl-lead ce-sl-gap2">たとえば、ある希少な食材の作り手。</p>
+<p class="ce-sl-p">良いものを持ちながら、売り方はずっと単発で、お客さんとつながる導線に悩んでいました。</p>
+<p class="ce-sl-p">そこから、受注型の売り方に変え、在庫リスクを抱えずに売れる形を作った結果、累計で<b class="ce-sl-num">約4,000万円</b>規模の売上へ。</p>
+<p class="ce-sl-p">一度売って終わりのページではなく、これからも使い続けられる「資産」のような販売の仕組みが手に入りました。</p>
+</div>
+<p class="ce-sl-p">さらに、今まさに動いている案件でも、物販が未経験に近い作り手が、良いものを正しく見せて着実に伸ばしています。</p>
+<p class="ce-sl-p ce-sl-gap2">一過性の当たりではなく、順番どおりにやれば、初めての人でも結果が出る。</p>
+<p class="ce-sl-p ce-sl-em">それが、今日も、現在進行形で起きていることです。</p>
+<p class="ce-sl-p ce-sl-gap2">もう一度、言います。</p>
+<p class="ce-sl-p ce-sl-em">これらは、才能でも、運でもありません。</p>
+<p class="ce-sl-p">一発屋のギャンブルで、また明日ゼロに戻る人と、一つの商品を資産に変えていく人。<br>その差は、たった一つ。</p>
+<p class="ce-sl-p ce-sl-big ce-sl-gap2">正しい順番が描かれた「設計図」を、持っているかどうかだけです。</p>
+<p class="ce-sl-p ce-sl-q ce-sl-gap2">その設計図が、いったいどんなものなのか？</p>
+<p class="ce-sl-p ce-sl-q">なぜ、その順番どおりにやるだけで、初めての人でも売れてしまうのか？</p>
+<p class="ce-sl-p">その中身を、ここから、一つずつ、あなたにお見せしていきます。</p>
+</div></section>
+<section class="ce-sl-sec ce-sl-proof" id="sl-b4a"><div class="ce-sl-in">
+<div class="ce-sl-chap" aria-hidden="true"><span class="ce-sl-chap-k">CHAPTER</span><span class="ce-sl-chap-n">04</span></div>
+<h2 class="ce-sl-h2">これは、一つの商品の奇跡ではない</h2>
+<p class="ce-sl-p">ここまで、フロスの話をしてきました。</p>
+<p class="ce-sl-p">同じ商品が、5回、くりかえし売れた話です。<br>でも、もしかすると、こう思っているかもしれません。</p>
+<p class="ce-sl-p ce-sl-quote ce-sl-gap2">「それは、たまたまフロスが、当たりの商品だっただけでは？」と。</p>
+<p class="ce-sl-p ce-sl-em ce-sl-gap2">その疑いに、まっすぐ答えます。</p>
+<p class="ce-sl-p ce-sl-big">これは、フロスだけの話ではありません。</p>
+<p class="ce-sl-p ce-sl-stat ce-sl-gap2">季節の食材で、一つの企画が、<b class="ce-sl-num">約800万円</b>。<br>腕時計で、<b class="ce-sl-num">約700万円</b>。<br>キッチン用品、生活家電、照明、ファッション。</p>
+<p class="ce-sl-p ce-sl-em">ジャンルは、てんでバラバラです。</p>
+<p class="ce-sl-p ce-sl-stat">中には、ある家庭用の生活家電で、たった一つの企画が<b class="ce-sl-num">約4,800万円</b>に届いたものさえあります。</p>
+<div class="ce-sl-grid ce-sl-grid-genre">
+<figure class="ce-sl-fig"><div class="ce-sl-frame"><a class="ce-sl-zoom" href="https://utagesystem.s3.ap-northeast-1.amazonaws.com/jW5amCPQZfus/KNSa3R3OR9iauyGK0O7vmRF1sfJlJQrpO4Myfn3q.jpg" target="_blank" rel="noopener"><img class="ce-sl-img" src="https://utagesystem.s3.ap-northeast-1.amazonaws.com/jW5amCPQZfus/KNSa3R3OR9iauyGK0O7vmRF1sfJlJQrpO4Myfn3q.jpg" alt="腕時計　7,112,630円" width="1200" height="409" loading="lazy" decoding="async"></a></div><figcaption class="ce-sl-cap">腕時計　7,112,630円</figcaption></figure>
+<figure class="ce-sl-fig ce-sl-ph"><div class="ce-sl-frame"><span>素材待ち：家庭用レーザー彫刻機 48,562,400円 の実画面</span></div><figcaption class="ce-sl-cap">家庭用レーザー彫刻機　48,562,400円</figcaption></figure>
+<figure class="ce-sl-fig ce-sl-ph"><div class="ce-sl-frame"><span>素材待ち：松茸 8,097,200円 の実画面</span></div><figcaption class="ce-sl-cap">松茸　8,097,200円</figcaption></figure>
+<figure class="ce-sl-fig"><div class="ce-sl-frame"><a class="ce-sl-zoom" href="https://utagesystem.s3.ap-northeast-1.amazonaws.com/jW5amCPQZfus/hf7DF4bmagR5RZrQxLrof5Qj4wr7cDo7FiM4mxlr.jpg" target="_blank" rel="noopener"><img class="ce-sl-img" src="https://utagesystem.s3.ap-northeast-1.amazonaws.com/jW5amCPQZfus/hf7DF4bmagR5RZrQxLrof5Qj4wr7cDo7FiM4mxlr.jpg" alt="天然石アイスキューブ　5,422,886円" width="1200" height="409" loading="lazy" decoding="async"></a></div><figcaption class="ce-sl-cap">天然石アイスキューブ　5,422,886円</figcaption></figure>
+<figure class="ce-sl-fig"><div class="ce-sl-frame"><a class="ce-sl-zoom" href="https://utagesystem.s3.ap-northeast-1.amazonaws.com/jW5amCPQZfus/qxJqEiLEiZRvjJ75ysL6w5lU3NGxTyjEdlYRFH8s.jpg" target="_blank" rel="noopener"><img class="ce-sl-img" src="https://utagesystem.s3.ap-northeast-1.amazonaws.com/jW5amCPQZfus/qxJqEiLEiZRvjJ75ysL6w5lU3NGxTyjEdlYRFH8s.jpg" alt="インソール　3,382,148円" width="1200" height="409" loading="lazy" decoding="async"></a></div><figcaption class="ce-sl-cap">インソール　3,382,148円</figcaption></figure>
+<figure class="ce-sl-fig"><div class="ce-sl-frame"><a class="ce-sl-zoom" href="https://utagesystem.s3.ap-northeast-1.amazonaws.com/jW5amCPQZfus/grxqMXhBBeRrCoSZHK763t8q6PT1735GOfZje9u2.jpg" target="_blank" rel="noopener"><img class="ce-sl-img" src="https://utagesystem.s3.ap-northeast-1.amazonaws.com/jW5amCPQZfus/grxqMXhBBeRrCoSZHK763t8q6PT1735GOfZje9u2.jpg" alt="舌クリーナー　5,559,578円" width="1200" height="409" loading="lazy" decoding="async"></a></div><figcaption class="ce-sl-cap">舌クリーナー　5,559,578円</figcaption></figure>
+</div>
+<p class="ce-sl-p ce-sl-q ce-sl-gap2">なぜ、こんなにもジャンルを問わず、結果が出るのか？</p>
+<p class="ce-sl-p ce-sl-em">売れているのが「特定の商品」だからではなく、「正しい順番」だからです。</p>
+<p class="ce-sl-p ce-sl-em ce-sl-gap2">どんなジャンルにも当てはめられる、再現できる順番。</p>
+<p class="ce-sl-p">だから、食材でも、時計でも、家電でも、同じように結果が出る。</p>
+<p class="ce-sl-p ce-sl-stat ce-sl-gap2">これらを合わせると、Makuakeというひとつの場所だけで、確認できるものだけでも、<b class="ce-sl-num">約1億8,000万円</b>分の応援購入が生まれています。</p>
+<p class="ce-sl-p">さらに、この道を歩むある実践者のアカウントを、一つ覗くだけでも。<br>累計で、<b class="ce-sl-num">約7,200万円</b>。</p>
+<p class="ce-sl-p ce-sl-stat">買ってくれた人は、<b class="ce-sl-num">1万人</b>を超えています。</p>
+<figure class="ce-sl-fig"><div class="ce-sl-frame"><a class="ce-sl-zoom" href="../assets/letter/sl-makuake-total.jpg" target="_blank" rel="noopener"><img class="ce-sl-img" src="../assets/letter/sl-makuake-total.jpg" alt="Makuake 実行者ページ　応援購入総額 72,208,222円／サポーター数 10,427人" width="1200" height="424" loading="lazy" decoding="async"></a></div><figcaption class="ce-sl-cap">Makuake 実行者ページ　応援購入総額 72,208,222円／サポーター数 10,427人</figcaption></figure>
+<p class="ce-sl-p ce-sl-big">数字は、嘘をつきません。</p>
+</div></section>
+<section class="ce-sl-sec ce-sl-paper" id="sl-b4b"><div class="ce-sl-in">
+<h2 class="ce-sl-h2">売上だけではない。信用と広がり。</h2>
+<p class="ce-sl-p">でも、本当にすごいのは、金額のほうではありません。</p>
+<p class="ce-sl-p">もう一度、あのフロスに戻ります。</p>
+<p class="ce-sl-p ce-sl-gap2">あのフロスは、Makuakeで売れて、終わりではありませんでした。</p>
+<p class="ce-sl-p ce-sl-em">名だたるメディアが、次々と取り上げたのです。</p>
+<p class="ce-sl-p">「日本の医療機器メーカーが、本気で作った」と紹介され、暮らしの情報を扱う有名メディアにも、いくつも載りました。</p>
+<div class="ce-sl-grid ce-sl-grid-media">
+<figure class="ce-sl-fig"><div class="ce-sl-frame"><a class="ce-sl-zoom" href="../assets/letter/sl-media-goodspress.jpg" target="_blank" rel="noopener"><img class="ce-sl-img" src="../assets/letter/sl-media-goodspress.jpg" alt="Goods Press" width="1040" height="1000" loading="lazy" decoding="async"></a></div><figcaption class="ce-sl-cap">Goods Press</figcaption></figure>
+<figure class="ce-sl-fig"><div class="ce-sl-frame"><a class="ce-sl-zoom" href="../assets/letter/sl-media-lifehacker.jpg" target="_blank" rel="noopener"><img class="ce-sl-img" src="../assets/letter/sl-media-lifehacker.jpg" alt="ライフハッカー" width="1110" height="960" loading="lazy" decoding="async"></a></div><figcaption class="ce-sl-cap">ライフハッカー</figcaption></figure>
+<figure class="ce-sl-fig"><div class="ce-sl-frame"><a class="ce-sl-zoom" href="../assets/letter/sl-media-gizmodo.jpg" target="_blank" rel="noopener"><img class="ce-sl-img" src="../assets/letter/sl-media-gizmodo.jpg" alt="ギズモード" width="1130" height="960" loading="lazy" decoding="async"></a></div><figcaption class="ce-sl-cap">ギズモード</figcaption></figure>
+<figure class="ce-sl-fig"><div class="ce-sl-frame"><a class="ce-sl-zoom" href="../assets/letter/sl-media-tabilabo.jpg" target="_blank" rel="noopener"><img class="ce-sl-img" src="../assets/letter/sl-media-tabilabo.jpg" alt="TABI LABO" width="1194" height="662" loading="lazy" decoding="async"></a></div><figcaption class="ce-sl-cap">TABI LABO</figcaption></figure>
+</div>
+<p class="ce-sl-p ce-sl-gap2">考えてみてください。</p>
+<p class="ce-sl-p">店の棚の陰で、店員の視線を気にしながら、こっそりスキャンしていたあの日々を。</p>
+<p class="ce-sl-p ce-sl-gap2">そして、自分の商品が、名前を出してメディアに紹介される日々を。</p>
+<p class="ce-sl-p ce-sl-big">これは、真逆の世界です。</p>
+<p class="ce-sl-p ce-sl-gap2">話は、まだ終わりません。</p>
+<p class="ce-sl-p ce-sl-em">同じフロスが、今度は、ふるさと納税の返礼品にもなりました。</p>
+<div class="ce-sl-grid ce-sl-grid-furusato">
+<figure class="ce-sl-fig"><div class="ce-sl-frame"><a class="ce-sl-zoom" href="../assets/letter/sl-furusato-satofull.jpg" target="_blank" rel="noopener"><img class="ce-sl-img" src="../assets/letter/sl-furusato-satofull.jpg" alt="さとふる（福井県鯖江市）" width="1200" height="596" loading="lazy" decoding="async"></a></div><figcaption class="ce-sl-cap">さとふる（福井県鯖江市）</figcaption></figure>
+<figure class="ce-sl-fig"><div class="ce-sl-frame"><a class="ce-sl-zoom" href="../assets/letter/sl-furusato-choice.jpg" target="_blank" rel="noopener"><img class="ce-sl-img" src="../assets/letter/sl-furusato-choice.jpg" alt="ふるさとチョイス（福井県鯖江市）" width="1200" height="724" loading="lazy" decoding="async"></a></div><figcaption class="ce-sl-cap">ふるさとチョイス（福井県鯖江市）</figcaption></figure>
+<figure class="ce-sl-fig"><div class="ce-sl-frame"><a class="ce-sl-zoom" href="../assets/letter/sl-furusato-jal.jpg" target="_blank" rel="noopener"><img class="ce-sl-img" src="../assets/letter/sl-furusato-jal.jpg" alt="JALふるさと納税（福井県鯖江市）" width="1200" height="722" loading="lazy" decoding="async"></a></div><figcaption class="ce-sl-cap">JALふるさと納税（福井県鯖江市）</figcaption></figure>
+<figure class="ce-sl-fig"><div class="ce-sl-frame"><a class="ce-sl-zoom" href="../assets/letter/sl-furusato-ana.jpg" target="_blank" rel="noopener"><img class="ce-sl-img" src="../assets/letter/sl-furusato-ana.jpg" alt="ANAのふるさと納税（福井県鯖江市）" width="1200" height="604" loading="lazy" decoding="async"></a></div><figcaption class="ce-sl-cap">ANAのふるさと納税（福井県鯖江市）</figcaption></figure>
+</div>
+<p class="ce-sl-p ce-sl-gap2">それも、一つの窓口ではありません。</p>
+<p class="ce-sl-p">名の知れた、いくつもの窓口に、返礼品として並んでいます。</p>
+<p class="ce-sl-p ce-sl-gap2">思い出してください。<br>最初のほうで話した、あの景色を。</p>
+<p class="ce-sl-p">一つの商品を仕込めば、それがクラファンで売れ、メディアに載り、ふるさと納税へ広がっていく。</p>
+<p class="ce-sl-p ce-sl-em">一つの商品が、いくつもの販路を、自分で歩き始める。</p>
+<p class="ce-sl-p">そのあいだ、あなたは、ほとんど動いていません。</p>
+<p class="ce-sl-p">仕込みさえ正しければ、あとは、あの自動販売機のように、勝手に広がり、静かに売れ続ける。</p>
+<p class="ce-sl-p ce-sl-big">これは、たとえ話ではありませんでした。<br>現実に、一つのフロスの上で、起きたことです。</p>
+</div></section>
+<section class="ce-sl-sec ce-sl-sunrise" id="sl-b4c"><div class="ce-sl-in">
+<h2 class="ce-sl-h2">では、あなたの1年後は？</h2>
+<p class="ce-sl-p ce-sl-lead">少しだけ、想像してみてください。<br>1年後の、あなたの夜を。</p>
+<p class="ce-sl-p ce-sl-aside">（実際は3〜5ヶ月目で想像できるでしょう）</p>
+<p class="ce-sl-p ce-sl-time ce-sl-gap2">深夜2時。</p>
+<p class="ce-sl-p ce-sl-em ce-sl-gap2">でも、もう、バーコードは握っていません。</p>
+<p class="ce-sl-p">あの通知音に、心臓を跳ねさせることも、ありません。</p>
+<p class="ce-sl-p ce-sl-em ce-sl-gap2">かわりに、手元には、自分の名前で作った、たった一つの商品がある。</p>
+<p class="ce-sl-p ce-sl-big ce-sl-gap2">それが、あなたが眠っている間にも、いくつもの窓口で、静かに売れていく。</p>
+<p class="ce-sl-p">子どもに「何のお仕事してるの？」と聞かれても、もう、詰まりません。<br>胸を張って、こう言えます。</p>
+<p class="ce-sl-p ce-sl-quote">「世の中にまだない物を、作って、届ける仕事だよ」と。</p>
+<p class="ce-sl-p ce-sl-gap2">念のため、もう一度だけ言っておきます。</p>
+<p class="ce-sl-p">これは、寝ているだけで大金が入る、という楽園の話ではありません。<br>入口では、汗もかくし、頭も使います。</p>
+<p class="ce-sl-p">それでも、その先に待っているのは、確かに、今とはまるで違う景色です。</p>
+<p class="ce-sl-p ce-sl-lead ce-sl-gap2">でも、ここで一つ、正直にお伝えしなければならないことがあります。</p>
+<p class="ce-sl-p">ここまで見てきた結果は、才能でも、運でもない。<br>それは、はっきりしています。</p>
+<p class="ce-sl-p">ですが、同時に。</p>
+<p class="ce-sl-p ce-sl-em">たった一人、独学で、我流のまま、たどり着けるものでもありませんでした。</p>
+<p class="ce-sl-p ce-sl-em ce-sl-gap2">そこには、正しい順番が描かれた「設計図」と、それを手渡せる人の存在が、どうしても必要だったのです。</p>
+<p class="ce-sl-p ce-sl-q">その設計図とは、いったい何なのか？<br>そして、それを手渡せる人とは、誰なのか？</p>
+<p class="ce-sl-p ce-sl-q">ここから、その核心に、触れていきます。</p>
+</div></section>
+<div class="ce-sl-progress" aria-hidden="true"><div class="ce-sl-progress-bar"></div></div>
+</div>
+<div class="ce-sl">
+<section class="ce-sl-sec ce-sl-paper" id="sl-b5"><div class="ce-sl-in">
+<div class="ce-sl-chap" aria-hidden="true"><span class="ce-sl-chap-k">CHAPTER</span><span class="ce-sl-chap-n">05</span></div>
+<h2 class="ce-sl-h2">安心してください。あなたが、天才になる必要はありません</h2>
+<p class="ce-sl-p">先に、いちばん大事なことを、お伝えします。</p>
+<p class="ce-sl-p ce-sl-gap2">あなたが、リサーチの天才になる必要は、ありません。<br>交渉の達人になる必要も、ありません。<br>たった一人で、正解を探し当てる必要も、ないのです。</p>
+<p class="ce-sl-p ce-sl-gap2">なぜなら、その「設計図」は、もう、完成しているからです。</p>
+<p class="ce-sl-p">何年もの試行錯誤は、あなたより先にその道を歩いた人たちが、すでに終わらせてくれています。<br>何百人もの初心者が、その順番をなぞるだけで、結果を出してきました。</p>
+<p class="ce-sl-p ce-sl-gap2">あなたがやることは、ゼロから何かを生み出すことではありません。</p>
+<p class="ce-sl-p">完成した順番を、受け取ること。<br>ただ、それだけです。</p>
+<p class="ce-sl-p ce-sl-gap2">その設計図を丸ごと手渡し、隣で伴走してくれる場所。</p>
+<p class="ce-sl-p">それが、最初にお伝えした、</p>
+<div class="ce-sl-name"><p class="ce-sl-name-1">せどり・転売？今日から辞めていい。</p><p class="ce-sl-name-2">無在庫&amp;予約で完売する</p><p class="ce-sl-name-3"><span class="ce-sl-nb">「自分ブランド</span><span class="ce-sl-nb">物販アカデミー」</span></p><p class="ce-sl-name-4">（通称：Crowd Edge）</p></div>
+<p class="ce-sl-p">です。</p>
+<p class="ce-sl-p ce-sl-gap2">そして、この道を導くのは、ふたりの実践者です。</p>
+<div class="ce-sl-duo" aria-hidden="true">
+<div class="ce-sl-duo-p"><div class="ce-sl-face" style="--w:222%;--l:-62%;--t:4px"><img class="ce-sl-img" src="https://utagesystem.s3.ap-northeast-1.amazonaws.com/jW5amCPQZfus/Qyr18HZMddDM0WNoaes1WyPr4cxbGslxH9wIga81.jpg" alt="" width="1122" height="1402" loading="lazy" decoding="async"></div><span>辻本</span></div>
+<div class="ce-sl-duo-p"><div class="ce-sl-face" style="--w:197%;--l:-43%;--t:2px"><img class="ce-sl-img" src="https://utagesystem.s3.ap-northeast-1.amazonaws.com/jW5amCPQZfus/nBhJj6nUMm0ytsmZSgbjcMthDqHTRcuPlckooUMg.jpg" alt="" width="1024" height="1536" loading="lazy" decoding="async"></div><span>田村</span></div>
+</div>
+<p class="ce-sl-p ce-sl-gap2">ひとりは、かつて海外の商品を独占契約で売るビジネスに深く関わってきた人。</p>
+<p class="ce-sl-p">その世界で、痛いほど思い知ったことがありました。</p>
+<p class="ce-sl-p">どれだけ売っても、それは所詮、借り物の商品だということ。</p>
+<p class="ce-sl-p ce-sl-gap2">現に、ある人は数億円を売り上げた直後、メーカーから一方的に契約を切られました。<br>「日本で売れると分かったので、これからは自社で売る」と。</p>
+<p class="ce-sl-p">他人の商品を借りているかぎり、生殺与奪は、いつも相手の手のなかにある。</p>
+<p class="ce-sl-p">この経験から、彼はたどり着きました。<br>本当に強いのは、自分のオリジナル商品を持つことだと。</p>
+<p class="ce-sl-p">日本の埋もれた技術に光を当て、市場をデータで読み、自分の資産になる商品を作る道へ。</p>
+<p class="ce-sl-p ce-sl-gap2">もうひとりは、元・海上自衛隊の幹部から、たった一人で起業した叩き上げの実践者です。</p>
+<p class="ce-sl-p">10回挑戦して、9回、負けました。<br>最後の1勝を必死でものにして、そこから道を切り拓いた人です。</p>
+<p class="ce-sl-p">今では、国内最大級のクラウドファンディングサイトの公式パートナーを務め、自ら手がけた実績は、累計で<b class="ce-sl-num">約2億円</b>規模。</p>
+<p class="ce-sl-p">その方法を、一冊の本にまでまとめています。</p>
+<figure class="ce-sl-fig ce-sl-ph ce-sl-ph-book"><div class="ce-sl-frame"><span>素材待ち：田村さんの書籍の表紙</span></div></figure>
+<p class="ce-sl-p">生まれも、歩んできた道も、まるで違う二人。<br>けれど、たどり着いた確信は、同じでした。</p>
+<p class="ce-sl-p">借り物ではなく、自分の商品を。使い捨てではなく、積み上がる資産を。</p>
+<p class="ce-sl-p">この二人が、どんな人生を経てここへたどり着いたのか？</p>
+<p class="ce-sl-p">その詳しい物語は、この先で、じっくりお話しします。</p>
+<h3 class="ce-sl-h3">一から作るのではなく「完成した設計図」をたどれる</h3>
+<p class="ce-sl-p">では、その設計図で、具体的に何が手に入るのか？</p>
+<p class="ce-sl-p">売れるジャンルの、データに基づいた選び方。</p>
+<p class="ce-sl-p">日本のメーカーとの、組み方。</p>
+<p class="ce-sl-p">在庫を一つも持たずに売る、受注発注の仕組み。</p>
+<p class="ce-sl-p">そして、一つの商品を、いくつもの販路へ広げていく方法。</p>
+<p class="ce-sl-p ce-sl-gap2">本来なら、何年もかけて、失敗を重ねながら身につけるものです。</p>
+<p class="ce-sl-p">それを、まるごと、ショートカットできる。</p>
+<p class="ce-sl-p ce-sl-gap2">しかも、目指す場所は、人それぞれで構いません。</p>
+<p class="ce-sl-p">大きく狙いたい人もいるでしょう。</p>
+<p class="ce-sl-p">まずは本業のかたわら、月に数万円、数十万円から、という人もいるはずです。</p>
+<p class="ce-sl-p ce-sl-gap2">どちらでも、いい。</p>
+<p class="ce-sl-p">あなたのペースで、あなたの人生に合わせて、進められます。</p>
+<p class="ce-sl-p ce-sl-gap2">ここまで読んで、それでも、心の奥にひとつだけ、引っかかっている人がいると思います。</p>
+<p class="ce-sl-p">「言いたいことは分かった。でも、本当に、この自分にもできるのか？」と。</p>
+<p class="ce-sl-p">その答えを、なぜ初めてのあなたでも大丈夫なのか？<br>ここから、お見せしていきます。</p>
+</div></section>
+<section class="ce-sl-sec ce-sl-paper" id="sl-b6"><div class="ce-sl-in">
+<div class="ce-sl-chap" aria-hidden="true"><span class="ce-sl-chap-k">CHAPTER</span><span class="ce-sl-chap-n">06</span></div>
+<p class="ce-sl-p ce-sl-gap2">さて、さきほどの疑問に、正直に答えます。</p>
+<p class="ce-sl-p">「本当に、この自分にも、できるのか？」と。</p>
+<p class="ce-sl-p ce-sl-gap2">その答えは、こうです。</p>
+<p class="ce-sl-p">これは、あなたに才能があるかどうかの話では、ありません。</p>
+<p class="ce-sl-p">どんな働き方を選ぶか、ただ、それだけの話です。</p>
+<p class="ce-sl-p ce-sl-gap2">少し、想像してみてください。</p>
+<p class="ce-sl-p">せどりという働き方は、走り続けないと止まる自転車に、よく似ています。</p>
+<p class="ce-sl-p">リサーチして、仕入れて、梱包して、発送する。</p>
+<p class="ce-sl-p">売上を伸ばそうとすれば、その作業も、まるごと増えていく。</p>
+<p class="ce-sl-p">体は一つしかないのに、こなす量だけが、どんどん膨らんでいく。</p>
+<p class="ce-sl-p">足を止めた瞬間、収入も止まる。</p>
+<p class="ce-sl-p ce-sl-gap2">だから、多くの人が、抜け出せません。</p>
+<p class="ce-sl-p ce-sl-gap2">稼げば稼ぐほど、忙しくなり、時間がなくなり、また明日も同じことを繰り返す。</p>
+<p class="ce-sl-p">気づけば、何年も。</p>
+<p class="ce-sl-p">でも、それは、もう過去の話にできます。</p>
+<p class="ce-sl-p ce-sl-gap2">なぜなら、これからあなたが手にする仕組みは、根っこから、造りが違うからです。</p>
+<p class="ce-sl-p">一度、正しく仕込んでしまえば、同じ商品が、くりかえし売れる。</p>
+<p class="ce-sl-p">販路が、勝手に広がっていく。</p>
+<p class="ce-sl-p">あなたが手を動かしていない時間にも、静かに、売れ続ける。</p>
+<p class="ce-sl-p ce-sl-gap2">走り続ける自転車ではなく、一度こぎ出せば転がっていく車輪です。</p>
+<h2 class="ce-sl-h2">これは、一部の天才の裏技ではありません</h2>
+<p class="ce-sl-p">ここで、はっきりさせておきたいことがあります。</p>
+<p class="ce-sl-p">今からあなたが挑むこの方法は、一部の天才だけが使える、あやしい裏技ではありません。</p>
+<p class="ce-sl-p">もう、世の中に認められた、表の道です。</p>
+<p class="ce-sl-p ce-sl-gap2">その方法は、一冊の本になりました。<br>書店に並び、多くの人に読まれています。</p>
+<p class="ce-sl-p">国内最大級のクラウドファンディングのプラットフォームは、この道の実践者を、公式のパートナーとして認めています。</p>
+<p class="ce-sl-p">生み出された商品は、名だたるメディアに取り上げられ、ふるさと納税の返礼品にまで、選ばれました。</p>
+<p class="ce-sl-p">隠れてこそこそやる、うしろめたい仕事ではないのです。<br>胸を張って、名前を出して、堂々と歩ける道です。</p>
+<p class="ce-sl-p ce-sl-gap2">もちろん、こう思う人もいるでしょう。</p>
+<p class="ce-sl-p">「今のせどりを、続けながらでもいいのか？」と。</p>
+<p class="ce-sl-p">もちろん、構いません。<br>両輪で回しても、いい。</p>
+<p class="ce-sl-p">最初は、本業やせどりを続けながら、少しずつ始める人がほとんどです。</p>
+<p class="ce-sl-p ce-sl-gap2">ただ、一つだけ、正直にお伝えします。</p>
+<p class="ce-sl-p">せどりだけに頼り続ける働き方は、どうしても、拡大しづらい。</p>
+<p class="ce-sl-p">そして何より、あなたの時間と人生を、少しずつ、確実に削っていきます。</p>
+<p class="ce-sl-p">ひたすら走り続けて。</p>
+<p class="ce-sl-p">その先に、いったい、何が残るのでしょうか？</p>
+</div></section>
+<section class="ce-sl-sec ce-sl-paper" id="sl-b7"><div class="ce-sl-in">
+<div class="ce-sl-chap" aria-hidden="true"><span class="ce-sl-chap-k">CHAPTER</span><span class="ce-sl-chap-n">07</span></div>
+<h2 class="ce-sl-h2">いくら稼ぐか？、より、どう生きたいか？</h2>
+<p class="ce-sl-p">結局、いちばん大事なのは、いくら稼ぐかではないのかもしれません。</p>
+<p class="ce-sl-p ce-sl-gap2">あなたが、どう生きたいか？</p>
+<p class="ce-sl-p ce-sl-gap2">本当は、ただ、それだけなのだと思います。</p>
+<p class="ce-sl-p">深夜2時に、誰にも言えない仕事のバーコードを、ひとりで読み続ける人生か。</p>
+<p class="ce-sl-p">それとも、自分の名前でつくった商品が、あなたの代わりに働いてくれて、子どもに胸を張れて、心に少しの余裕がある人生か。</p>
+<p class="ce-sl-p ce-sl-gap2">はっきり言っておきます。</p>
+<p class="ce-sl-p">これは、寝ているだけで大金が舞い込む、という夢物語ではありません。<br>入口では、汗もかくし、頭も使います。</p>
+<p class="ce-sl-p">それでも、その先にあるのは、お金の多い少ないだけでは測れない、生き方そのものの違いです。</p>
+<p class="ce-sl-p">あなたは、これからの人生を、どう生きたいですか？</p>
+<p class="ce-sl-p ce-sl-gap2">最大のメリットは、あなたが眠っている間も、商品が働いてくれること</p>
+<p class="ce-sl-p">せどりをしていた頃の時間の使い方を、思い出してみてください。</p>
+<p class="ce-sl-p">リサーチした分だけ、仕入れられる。<br>仕入れた分だけ、売れる。</p>
+<p class="ce-sl-p">あなたが動いた、その分しか、<b class="ce-sl-num">1円</b>も生まれない。<br>手を止めれば、その瞬間に、すべてが止まる。</p>
+<p class="ce-sl-p">これから手にする働き方は、そこが、根本から違います。</p>
+<p class="ce-sl-p ce-sl-gap2">一度、正しく仕込んだ商品は、あなたが手を離しても、動き続けます。</p>
+<p class="ce-sl-p">クラウドファンディングで売れたあと、別の販売サイトへ。<br>自分のお店へ。<br>ふるさと納税へ。<br>海外へ。<br>卸へ。</p>
+<p class="ce-sl-p">ひとつの商品が、いくつもの入口を、勝手に増やしていく。</p>
+<p class="ce-sl-p">あなたがやることは、届いた注文に合わせて、発注のメールを送ること。<br>ほとんど、それだけです。</p>
+<p class="ce-sl-p ce-sl-gap2">これは、きれいごとや、たとえ話ではありません。</p>
+<p class="ce-sl-p">さきほどのフロスが、まさに、それを地でいきました。</p>
+<p class="ce-sl-p">ひとつのフロスが、クラファンで5回売れて。<br>その同じ商品が、いくつものメディアに載って。<br>さらに、いくつものふるさと納税の窓口に、返礼品として並んだ。</p>
+<p class="ce-sl-p ce-sl-gap2">ここで、注目してほしいのは、その広がっていく速さです。</p>
+<p class="ce-sl-p">販路がひとつ増えるたびに、あなたが一から仕入れ直したり、また別の商品をゼロから探し直したりする必要は、ありません。</p>
+<p class="ce-sl-p">最初に一度、正しく仕込む。</p>
+<p class="ce-sl-p">あとは、その一つの商品が、自分の力で、旅をするように広がっていく。<br>眠っている間に、誰かがあなたの商品を見つけて、買っていく。<br>朝、スマホを開くと、あなたが動いていない時間に、注文が入っている。</p>
+<p class="ce-sl-p ce-sl-gap2">深夜にバーコードを読んで、その一個ぶんしか残らなかった、あの働き方とは。</p>
+<p class="ce-sl-p">時間との関係そのものが、逆になります。</p>
+<p class="ce-sl-p ce-sl-gap2">血の滲むような努力だけが、正しいと思うなら、ここで正直に、線を引いておきます。</p>
+<p class="ce-sl-p">もし、あなたが心のどこかで、歯を食いしばって、長い時間働くことだけが、価値のある働き方だ。</p>
+<p class="ce-sl-p">そう固く信じているなら。<br>この方法は、もしかすると、少し物足りないかもしれません。</p>
+<p class="ce-sl-p ce-sl-gap2">私が大切にしてほしいのは、そこではないからです。</p>
+<p class="ce-sl-p ce-sl-gap2">たとえば、日曜の昼下がり。</p>
+<p class="ce-sl-p">仕事のことを一切考えずに、子どもと近所を、あてもなく散歩できる時間。</p>
+<p class="ce-sl-p ce-sl-gap2">今日のごはん、何食べようか？と家族と迷える、なんてことのない夕方。</p>
+<p class="ce-sl-p">夜、明日の通知音におびえずに、ぐっすり眠れること。</p>
+<p class="ce-sl-p">そういう、ささやかな時間を、削らずに済むこと。</p>
+<p class="ce-sl-p ce-sl-gap2">深夜のリビングで、家族が寝静まったあと、誰にも言えない仕事のバーコードを、ひとり読み続ける。</p>
+<p class="ce-sl-p">そんな夜と引き換えにしていた、当たり前の時間を、そっと取り戻すこと。</p>
+<p class="ce-sl-p">それが、この働き方が本当に運んでくるものだと、私は思っています。</p>
+<p class="ce-sl-p ce-sl-gap2">時間を切り売りするしか道がない。<br>その働き方から、降りていい。</p>
+<p class="ce-sl-p ce-sl-gap2">とはいえ、こうも思うかもしれません。</p>
+<p class="ce-sl-p">自分は不器用だから、量をこなして稼ぐしかない、と。</p>
+<p class="ce-sl-p ce-sl-gap2">でも、その量をこなすしかない、という発想こそが、あなたを、いちばん苦しめてきた正体です。</p>
+<p class="ce-sl-p">作業を増やすことでしか売上を伸ばせない働き方は、体がひとつしかないという壁に、遅かれ早かれ必ずぶつかります。</p>
+<p class="ce-sl-p">そして、その壁の前で、多くの人が、すり減っていきます。</p>
+<p class="ce-sl-p">もっと稼ぐには、もっと働くしかない。</p>
+<p class="ce-sl-p">もっと働けば、時間がなくなる。</p>
+<p class="ce-sl-p">時間がなくなれば、家族との時間も、自分の心の余裕も、静かに削れていく。</p>
+<p class="ce-sl-p">この、出口のないループから、降りていいのです。</p>
+<p class="ce-sl-p ce-sl-gap2">根性が足りないからでも、あなたが劣っているからでも、ありません。</p>
+<p class="ce-sl-p">ただ、乗っている乗り物が、そういう造りだった。<br>それだけのことです。</p>
+<p class="ce-sl-p">やることを増やすのではなく、やらないことを、決める。</p>
+<p class="ce-sl-p">では、そのループから、どうやって降りるのか？</p>
+<p class="ce-sl-p ce-sl-gap2">多くの人は、もっと頑張ろう、とします。</p>
+<p class="ce-sl-p">もっとリサーチを、もっと仕入れを、もっと時間を。</p>
+<p class="ce-sl-p">やることを、増やそうとする。</p>
+<p class="ce-sl-p ce-sl-gap2">でも、本当に人生が変わる人は、逆をやります。</p>
+<p class="ce-sl-p ce-sl-gap2">やることを増やすのではなく、やらないことを、決める。</p>
+<p class="ce-sl-p">あれもこれもと手を広げるのをやめて、これだけをやればいいという、一本の道に、すべてを注ぐ。</p>
+<p class="ce-sl-p ce-sl-gap2">思い出してください。</p>
+<p class="ce-sl-p">あなたが本当に欲しいのは、無数の選択肢ではないはずです。</p>
+<p class="ce-sl-p">迷わずに進める、たった一本の、確かな道のはずです。</p>
+<p class="ce-sl-p">Crowd Edge があなたに渡すのは、まさに、それです。</p>
+<p class="ce-sl-p ce-sl-gap2">何をやらなくていいかまで、すでに決められた、絞り込まれた道。</p>
+<p class="ce-sl-p">遠回りも、寄り道も、あらかじめ削ぎ落とされた、最短の順序です。</p>
+<p class="ce-sl-p ce-sl-gap2">では、その一本の道の中身は、具体的にどうなっているのか？</p>
+<p class="ce-sl-p">なぜ、その順番どおりに進むだけで、初めての人でも結果が出るのか？</p>
+<p class="ce-sl-p ce-sl-gap2">ここから、その道のりの中身へ、一緒に踏み込んでいきます。</p>
+</div></section>
+<section class="ce-sl-sec ce-sl-paper" id="sl-b8"><div class="ce-sl-in">
+<div class="ce-sl-chap" aria-hidden="true"><span class="ce-sl-chap-k">CHAPTER</span><span class="ce-sl-chap-n">08</span></div>
+<p class="ce-sl-p ce-sl-gap2">これまでの「自己流」は、一度、脇に置いてください</p>
+<p class="ce-sl-p">はっきりお伝えします。</p>
+<p class="ce-sl-p">一番「良い結果」は、これまでのやり方を手放したときに、手に入ります。</p>
+<p class="ce-sl-p">思い返してみてください。<br>売れる商品を探そうと、YouTubeを開いては、断片的な知識をかき集める。</p>
+<p class="ce-sl-p">本を何冊も買って、なんとなく分かった気になる。<br>そして、自分なりのやり方で、試してみる。</p>
+<p class="ce-sl-p">その努力は、嘘ではありません。</p>
+<p class="ce-sl-p">でも、正直に言えば、それでたどり着けるのは、いつも「そこそこ」の場所まで。</p>
+<p class="ce-sl-p ce-sl-gap2">なぜか？</p>
+<p class="ce-sl-p">正しい順番を知らないまま走ると、今、自分が道のどのあたりにいるのかさえ、わからなくなるからです。</p>
+<p class="ce-sl-p">何をどの順で手をつければいいのか、わからない。</p>
+<p class="ce-sl-p">調べているうちに、夜が更けていく。</p>
+<p class="ce-sl-p">気づけば、時間だけが、静かに溶けていく。</p>
+<p class="ce-sl-p">その手探りの毎日が、あなたを、いちばん消耗させてきたのではないですか？</p>
+<h2 class="ce-sl-h2">ここで、まったく別の道を一つ提案させてください</h2>
+<p class="ce-sl-p">その手探りを、根本から終わらせる方法があります。</p>
+<p class="ce-sl-p ce-sl-gap2">Crowd Edge があなたに渡すのは、今も現役で結果を出し続けている人間が、何年もかけて「これだけをやればいい」という一本の順序にまで、削ぎ落とした設計図です。</p>
+<p class="ce-sl-p ce-sl-gap2">もう、何から始めるかで迷わなくていい。</p>
+<p class="ce-sl-p">あれもこれもと、手を広げなくていい。</p>
+<p class="ce-sl-p">目の前の、決められた一手に、ただ集中すればいい。</p>
+<p class="ce-sl-p">迷っている時間が消える。<br>これは、想像以上に、大きな変化です。</p>
+<p class="ce-sl-p ce-sl-gap2">なぜなら、あなたがこれまで失ってきたものの正体は、才能でも努力の量でもなく、迷い、立ち止まり、調べ直していた、あの膨大な時間だったからです。</p>
+<p class="ce-sl-p">「これで十分だろう」という自己流の判断こそが、遠回りの正体。</p>
+<p class="ce-sl-p ce-sl-gap2">ここで、少し厳しいことも、正直に言います。</p>
+<p class="ce-sl-p">同じように商品を探しても、結果は、まるで違ってきます。</p>
+<p class="ce-sl-p">その差を生むのは、誰の設計図をなぞっているか、です。</p>
+<p class="ce-sl-p ce-sl-gap2">あなたが「まあ、これで十分だろう」と判断する、その一つひとつに、経験を積んだ人間から見れば、いくつもの落とし穴が埋もれています。</p>
+<p class="ce-sl-p">このジャンルは需要があるように見えて、実は競合が強すぎる。<br>この商品は、一見よさそうでも、利益が残らない構造になっている。</p>
+<p class="ce-sl-p">そういう見極めを、たった一人で、我流で下していく。</p>
+<p class="ce-sl-p">その怖さに、あなたはもう、気づいているはずです。</p>
+<p class="ce-sl-p">見逃したまま突き進めば、伸び悩むのは、当たり前のことなのです。</p>
+<h3 class="ce-sl-h3">結局、よくある物販スクールと同じなのでは？</h3>
+<p class="ce-sl-p">ここまで読んで、こう思った人も、いるかもしれません。</p>
+<p class="ce-sl-p">「どうせ、よくある物販スクールと、大差ないんだろう」と。</p>
+<p class="ce-sl-p">その警戒は、当然です。<br>むしろ、これまで裏切られてきた人ほど、そう思って当たり前です。</p>
+<p class="ce-sl-p ce-sl-gap2">薄いPDFを渡されて、数十万円。<br>質問しても、返ってくるのは通りいっぺんの言葉だけ。</p>
+<p class="ce-sl-p">気づけば講師は、もう自分では現場に立っていない。<br>過去の栄光を語るだけの、いわゆる「エアプ」の人だった。</p>
+<p class="ce-sl-p">なけなしのお金を差し出したのに、まるで、講師の遊び代に消えたようだった。</p>
+<p class="ce-sl-p ce-sl-gap2">そんな苦い経験に、心当たりはありませんか？</p>
+<p class="ce-sl-p">だからこそ、はっきり言います。</p>
+<p class="ce-sl-p">私たちが決定的に違うのは、ここです。</p>
+<p class="ce-sl-p">教える人間が、今も、現役で数字を出し続けている。<br>その実際の数字を、隠さず、あなたに見せている。</p>
+<p class="ce-sl-p ce-sl-gap2">そして、教材を渡して終わりではなく、あなたのページや、広告を出す、その隣にまで、一緒に立つ。</p>
+<p class="ce-sl-p">飾った成功談ではなく、検証できる事実だけを差し出す。<br>それが、私たちが最も大切にしていることです。</p>
+<h3 class="ce-sl-h3">飾りではない、実際に売って磨き上げられた設計図</h3>
+<p class="ce-sl-p">もう一度、言わせてください。</p>
+<p class="ce-sl-p">この設計図は、頭の中で組み立てた、机上の空論ではありません。</p>
+<p class="ce-sl-p">現役の実践者が、実際に何度も売り、ときに失敗し、そのたびに、要らないものを削り、洗練させ続けてきた。</p>
+<p class="ce-sl-p">血の通った、生きた順序です。</p>
+<p class="ce-sl-p ce-sl-gap2">だからこそ、初めての人がなぞっても、同じように結果が出る。</p>
+<p class="ce-sl-p ce-sl-gap2">証拠は、すでにあります。</p>
+<p class="ce-sl-p">看護師の人がいます。<br>長く職人の世界で腕を磨いてきた、職人の人がいます。<br>小さな子どもを育てながらの、主婦の人がいます。</p>
+<p class="ce-sl-p">その多くが、物販は初めてか、ほとんど経験のなかった人たちです。</p>
+<p class="ce-sl-p">本業や家事のかたわら、1日1時間、2時間から始めて、それでも、着実に、自分の商品を形にしています。</p>
+<p class="ce-sl-p ce-sl-gap2">彼らに、特別な才能があったわけでは、ありません。</p>
+<p class="ce-sl-p">ただ、正しい設計図を、正しい順番でなぞった。</p>
+<p class="ce-sl-p">それだけです。</p>
+<p class="ce-sl-p ce-sl-gap2">もし、あなたがまだ、心のどこかで、「それでも、自分にできるだろうか」と半信半疑だとしても。</p>
+<p class="ce-sl-p">それで、いいのです。</p>
+<p class="ce-sl-p ce-sl-gap2">その疑いに、これから、一つずつ答えていきます。</p>
+<p class="ce-sl-p">その設計図が、具体的にどんな順序でできているのか？</p>
+<p class="ce-sl-p">ここから、その中身を、さらに詳しくお見せしていきます。</p>
+</div></section>
+<section class="ce-sl-sec ce-sl-proof" id="sl-b9"><div class="ce-sl-in">
+<div class="ce-sl-chap" aria-hidden="true"><span class="ce-sl-chap-k">CHAPTER</span><span class="ce-sl-chap-n">09</span></div>
+<h2 class="ce-sl-h2">論より証拠</h2>
+<p class="ce-sl-p">ここまで、正しい順番なら、才能がなくても結果が出る。</p>
+<p class="ce-sl-p">そう、くりかえしお伝えしてきました。<br>でも、言葉は、いくらでも飾れます。</p>
+<p class="ce-sl-p">だから、言葉ではなく、実際に生まれた結果を、そのまま見てください。</p>
+<p class="ce-sl-p ce-sl-gap2">先ほどのフロスは、デンタルケアの商品でした。</p>
+<p class="ce-sl-p">では、こう思った人もいるはずです。<br>たまたま、フロスというジャンルが、良かっただけではないか、と。</p>
+<p class="ce-sl-p">その疑いに、数字で、まっすぐ答えます。</p>
+<p class="ce-sl-p">季節の食材で、ひとつの企画が、<b class="ce-sl-num">約810万円</b>。<br>腕時計で、<b class="ce-sl-num">約710万円</b>。<br>キッチン用品。生活家電。照明。ファッションの、靴。</p>
+<p class="ce-sl-p">ジャンルはバラバラです。</p>
+<p class="ce-sl-p">それでも、どれも、数百万円という数字が並んでいます。</p>
+<p class="ce-sl-p ce-sl-gap2">中には、家庭用のある生活家電で、たったひとつの企画が<b class="ce-sl-num">約4,800万円</b>に届いたものまであります。</p>
+<p class="ce-sl-p">これらを、ひとつの場所で確認できるものだけ、合わせてみます。</p>
+<p class="ce-sl-p">Makuakeという、たったひとつの入口だけでその総額は、<b class="ce-sl-num">約1億8,000万円</b>。<br>買ってくれた人の数は、延べで、<b class="ce-sl-num">1万7,000人</b>を超えています。</p>
+<p class="ce-sl-p ce-sl-gap2">もう一度言います。</p>
+<p class="ce-sl-p ce-sl-gap2">これは、特定の誰かの、特別な才能ではありません。</p>
+<p class="ce-sl-p">これは、才能ではなく、なぞれる順番だからです</p>
+<p class="ce-sl-p ce-sl-gap2">考えてみてください。</p>
+<p class="ce-sl-p">もし、これが「センスのある人が、たまたま当てた」だけなら食材も、時計も、家電も、照明も、これほど揃って結果が出るでしょうか？</p>
+<p class="ce-sl-p">出るはずが、ありません。</p>
+<p class="ce-sl-p ce-sl-gap2">売れているのは、「特定の商品」だからではないのです。</p>
+<p class="ce-sl-p">「正しい順番」でやっているから、なのです。</p>
+<p class="ce-sl-p ce-sl-gap2">食材だろうと、時計だろうと、家電だろうと。<br>どんなジャンルにも当てはめられる、再現できる順番。</p>
+<p class="ce-sl-p">だから、ジャンルが変わっても、同じように結果が出る。</p>
+<p class="ce-sl-p ce-sl-gap2">これが意味することは、とてもシンプルです。</p>
+<p class="ce-sl-p">あなたが、これから何のジャンルを選んだとしても、同じ、ひとつの設計図がそのまま使えるということです。</p>
+<h3 class="ce-sl-h3">気づいた人たちが、次々と動き始めている</h3>
+<p class="ce-sl-p">この事実に気づいた人から、静かに、動き始めています。</p>
+<p class="ce-sl-p">看護師をしながらの、K.Sさん。<br>長く職人の世界で腕を磨いてきた、T.Aさん。<br>小さな子どもを育てる主婦の、M.Yさん。</p>
+<p class="ce-sl-p">その多くが、物販は初めてか、ほとんど触れたことのなかった人たちです。</p>
+<p class="ce-sl-p ce-sl-gap2">なぜ、未経験の人たちが、わざわざここへ来るのか？</p>
+<p class="ce-sl-p">届いた言葉は、驚くほど、似ています。</p>
+<p class="ce-sl-p ce-sl-gap2">せどりは、もう一生は続けられない。</p>
+<p class="ce-sl-p">世間体だって、正直、よくない。</p>
+<p class="ce-sl-p">いつか、胸を張れる、自分の商品を持ちたかった。</p>
+<p class="ce-sl-p ce-sl-gap2">この声に、あなたは、どこか自分を重ねませんでしたか？</p>
+<p class="ce-sl-p">彼らに、特別な才能があったわけでは、ありません。</p>
+<p class="ce-sl-p">ただ、「これは、再現性がある順番だ」と気づき、そして、正しい設計図を手にできる場所に、たどり着いた。</p>
+<p class="ce-sl-p">それだけの違いです。</p>
+<p class="ce-sl-p ce-sl-gap2">では、その設計図を渡す場所が、あなたに、具体的に何をしてくれるのか？</p>
+<p class="ce-sl-p">どんなふうに、あなたの隣で、伴走してくれるのか？</p>
+<p class="ce-sl-p">いよいよ、ここから、その中身の全貌に入っていきます。</p>
+</div></section>
+<section class="ce-sl-sec ce-sl-paper" id="sl-b10"><div class="ce-sl-in">
+<div class="ce-sl-chap" aria-hidden="true"><span class="ce-sl-chap-k">CHAPTER</span><span class="ce-sl-chap-n">10</span></div>
+<h2 class="ce-sl-h2">なぜ、私たちがこの方法にたどり着いたのか？</h2>
+<p class="ce-sl-p">少しだけ、私たちの話を、させてください。</p>
+<p class="ce-sl-p">講師の一人である辻本は、もともと、まったく違うことをしていました。</p>
+<p class="ce-sl-p ce-sl-gap2">海外で流行っている商品を見つけ、そのメーカーと独占契約を結び、日本で販売する。<br>その権利を売買する、コンサルティングです。</p>
+<p class="ce-sl-p">決して、悪いビジネスではありません。</p>
+<p class="ce-sl-p">うまくいけば、日本で一気に、数千万、数億という売上も狙えます。</p>
+<p class="ce-sl-p ce-sl-gap2">でも、辻本の心には、ずっと、小さな引っかかりがありました。</p>
+<p class="ce-sl-p ce-sl-gap2">それは、どこまでいっても、他人の商品を、借りて売っているにすぎない、ということです。</p>
+<h3 class="ce-sl-h3">一番強いのは、自分の商品を持っている人だった</h3>
+<p class="ce-sl-p">ある日、それを決定づける出来事が起きました。</p>
+<p class="ce-sl-p">辻本の周りにいた、ある実行者の話です。</p>
+<p class="ce-sl-p">その人は、海外から独占販売権を取った商品を、日本で、数億円の規模にまで、売り上げました。<br>誰が見ても、大成功です。</p>
+<p class="ce-sl-p ce-sl-gap2">ところが、その矢先。</p>
+<p class="ce-sl-p ce-sl-gap2">本国のメーカーから、一通の通知が届きます。</p>
+<p class="ce-sl-p ce-sl-gap2">日本で売れることが、わかった。<br>だから、これからは、自社で売ります。</p>
+<p class="ce-sl-p ce-sl-gap2">たったそれだけの理由で、契約は打ち切られました。</p>
+<p class="ce-sl-p">独占販売契約といっても、その実態はただの代理店契約。<br>メーカーに「終わり」と言われれば、こちらは従うしかない。</p>
+<p class="ce-sl-p ce-sl-gap2">血の滲む思いで積み上げた、数億円のビジネスが、自分ではどうにもできない理由で、一夜にして、消えていく。この光景を、目のあたりにして、辻本は確信しました。</p>
+<p class="ce-sl-p ce-sl-gap2">どれだけ売っても、他人の商品では、何ひとつ自分に積み上がらない。</p>
+<p class="ce-sl-p">本当に強いのは、自分たちで企画し、自分たちで作り、自分の資産として残っていく商品を持っている人だ、と。</p>
+<p class="ce-sl-p ce-sl-gap2">そして、もう一つ、気づいたことがあります。</p>
+<p class="ce-sl-p ce-sl-gap2">この日本には、世界に誇る技術を持ちながら、売り方がわからず、埋もれているメーカーが山ほどある。<br>日本ってメーカー大国なのです。</p>
+<p class="ce-sl-p ce-sl-gap2">地方に、ひっそりと眠っている、すごい技術。<br>そこに、光を当てられないか？</p>
+<p class="ce-sl-p">市場のデータを読んで、本当に売れるものを見極め、それを、日本のメーカーの技術で形にする。</p>
+<p class="ce-sl-p">そして、在庫を抱えない受注発注の形で、世に届ける。</p>
+<p class="ce-sl-p ce-sl-gap2">お客様は、心から欲しいと思える商品を、手にできる。</p>
+<p class="ce-sl-p">メーカーは、自分たちの技術で、新しい商品を生み出せる。</p>
+<p class="ce-sl-p">そして、あなたは、自分の資産となる商品を、リスクを抑えて持てる。</p>
+<p class="ce-sl-p ce-sl-gap2">その、三方すべてが幸せになる道を探した先に、この方法がありました。</p>
+<h3 class="ce-sl-h3">低リスクで、何度でも試せる。それが決め手</h3>
+<p class="ce-sl-p">もう一人の講師、田村さんが、この道に賭けた理由も、同じ方向を向いていました。</p>
+<p class="ce-sl-p">田村さんは、少し変わった経歴の持ち主です。</p>
+<p class="ce-sl-p">元は、海上自衛隊の幹部でした。</p>
+<p class="ce-sl-p">そこから、一人で起業し、そして、10回挑戦して、9回負けています。<br>その、負ける痛みを、誰よりも知っている人です。</p>
+<p class="ce-sl-p ce-sl-gap2">だからこそ、たどり着いた答えがありました。</p>
+<p class="ce-sl-p">大きな資金を、はじめに投じない。<br>大量の在庫を、抱え込まない。<br>注文が入って、はじめて、発注する。</p>
+<p class="ce-sl-p">この形なら、何度でも、小さく試せる。<br>たとえ一度、負けたとしても、致命傷には、ならない。</p>
+<p class="ce-sl-p ce-sl-gap2">その後、田村さんは、日本最大級のクラウドファンディングサイトの公式パートナーにまで認められる存在になりました。</p>
+<p class="ce-sl-p">10回のうち9回、負けた人だからこそ、負けない戦い方を誰よりも知っている。<br>私は、そう思っています。</p>
+<h3 class="ce-sl-h3">だから私たちは、教えるだけの人間ではいたくない</h3>
+<p class="ce-sl-p">ここまで読んで、気づいたかもしれません。</p>
+<p class="ce-sl-p">私たちが渡したいのは、ただの、知識ではないのです。</p>
+<p class="ce-sl-p ce-sl-gap2">他人の商品に振り回されて、一夜で、すべてを失う人。<br>負ける痛みに、たった一人で、耐えている人。</p>
+<p class="ce-sl-p">そういう人を、私たちは、もう見たくありません。</p>
+<p class="ce-sl-p">その痛みを、身をもって知っているからこそ、あなたが、同じ轍を踏まないように、隣で伴走したい。</p>
+<p class="ce-sl-p ce-sl-gap2">教材だけを渡して、あとは自分でどうぞ。</p>
+<p class="ce-sl-p">そんな、突き放すやり方をするつもりは、ありません。</p>
+<h3 class="ce-sl-h3">我流で、遠回りしている時間はもうない</h3>
+<p class="ce-sl-p">もちろん、すべてを独学で、我流で試すこともできます。</p>
+<p class="ce-sl-p">でも、それは、二人が何年もかけて、負けて、傷ついて、そのたびに削ぎ落としてきた順番を、あなたが、また一からなぞり直すということです。</p>
+<p class="ce-sl-p ce-sl-gap2">その遠回りをしている時間が、あなたに、残されていますか？</p>
+<p class="ce-sl-p">では、その二人がたどり着いた設計図を、まるごと受け取れる場所とは、どんなものなのか。</p>
+<p class="ce-sl-p ce-sl-gap2">しかし、その前に。<br>どうしても、あなたに伝えておかなければならないことがあります。</p>
+</div></section>
+</div>
+<div class="ce-sl">
+<section class="ce-sl-sec ce-sl-paper" id="sl-b11"><div class="ce-sl-in">
+<div class="ce-sl-chap" aria-hidden="true"><span class="ce-sl-chap-k">CHAPTER</span><span class="ce-sl-chap-n">11</span></div>
+<h2 class="ce-sl-h2">ここまでは、いわば、準備運動です</h2>
+<p class="ce-sl-p">ここまで、なぜこの方法なのか？<br>私たちが、どうやってここにたどり着いたのかを、話してきました。</p>
+<p class="ce-sl-p">でも、あなたが本当に知りたいのは、きっと、こういうことですよね。</p>
+<p class="ce-sl-p ce-sl-gap2">「で、結局、私は、具体的に何を手に入れられるのか」と。</p>
+<p class="ce-sl-p">ここからが、本題です。<br>その中身を、包み隠さず、お見せします。</p>
+<h3 class="ce-sl-h3">あなたが手にするのは、一生モノの「5つの力」です</h3>
+<p class="ce-sl-p">はじめに、一つだけ、はっきりさせておきたいことがあります。</p>
+<p class="ce-sl-p">Crowd Edgeで、あなたが手にするのは単なる「クラウドファンディングの出し方」ではありません。</p>
+<p class="ce-sl-p">それだけなら、いつか、通用しなくなる日が来ます。<br>私たちがお渡ししたいのは、もっと根本的な力です。</p>
+<p class="ce-sl-p ce-sl-gap2">どんな時代でも、どんな商品でも通用する、5つの力。</p>
+<p class="ce-sl-p">一度、自分のものにすれば、二度と失われない、あなただけの資産。</p>
+<p class="ce-sl-p">その5つを、これから、一つずつ、お見せしていきます。</p>
+<p class="ce-sl-p ce-sl-gap2">1つ目の力<br>どこに宝が埋まっているかを、数字で掘り当てる力</p>
+<p class="ce-sl-p">多くの人が、物販でつまずく、いちばん最初の原因。</p>
+<p class="ce-sl-p ce-sl-gap2">それは、商品の選び方です。</p>
+<p class="ce-sl-p ce-sl-gap2">自分が作りたいもの。<br>なんとなく、売れそうな気がするもの。</p>
+<p class="ce-sl-p">その、ふわっとした感覚で選んでしまう。</p>
+<p class="ce-sl-p">Crowd Edgeが教えるのは、その真逆です。</p>
+<p class="ce-sl-p ce-sl-gap2">需要は、どれくらいあるのか。<br>競合は、強いのか。価格帯は。原価は。利益率は。<br>一度売れたあと、繰り返し売れる商品なのか。<br>そのすべてを、数字で見ます。</p>
+<p class="ce-sl-p ce-sl-gap2">感覚の博打ではなく、データで、勝てる場所を先に見つける。</p>
+<p class="ce-sl-p ce-sl-gap2">この目が、一度あなたのものになれば、どうなるか？</p>
+<p class="ce-sl-p">日常の買い物でも、街の展示会でも、ふらりと入った旅先でも、「あ、これは売れる」という宝の在り処が、見えるようになるのです。</p>
+<p class="ce-sl-p ce-sl-gap2">2つ目の力<br>「作る人」を見つけ、対等に組む力</p>
+<p class="ce-sl-p">売れる場所が分かっても、肝心の商品がなければ、始まりません。<br>そこで、商品を生み出すルートを、学びます。</p>
+<p class="ce-sl-p">日本の、地方の、埋もれたメーカー。<br>腕のいい職人。<br>工場。<br>中国のOEM。<br>海外商品の独占販売権。</p>
+<p class="ce-sl-p">どこに、どう声をかけ、どう対等に交渉するか。</p>
+<p class="ce-sl-p ce-sl-gap2">ここを越えたとき、あなたは、他人の商品を仕入れて売るだけの人から商品を生み出す、メーカー側の人間へと、変わります。</p>
+<p class="ce-sl-p ce-sl-gap2">3つ目の力<br>売れると分かった場所から、逆算して商品を生む力</p>
+<p class="ce-sl-p">ここでも、順番が、すべてです。</p>
+<p class="ce-sl-p">作りたいものを、作るのではありません。</p>
+<p class="ce-sl-p">「売れる」と数字で分かった場所から、逆算して、商品を設計する。<br>価格。機能。見せ方。ターゲット。利益率。</p>
+<p class="ce-sl-p">そして、一度きりで終わらせず、シリーズとして育てられる形まで。</p>
+<p class="ce-sl-p">だから、世に出す前から、すでに「売れる」の輪郭が見えている。</p>
+<p class="ce-sl-p">出してみるまで分からない、という博打をしなくて済むのです。</p>
+<p class="ce-sl-p ce-sl-gap2">4つ目の力<br>どんな商品でも「欲しい」と言わせる、売る力</p>
+<p class="ce-sl-p">正直に言えば、ここが、最も価値のある部分かもしれません。</p>
+<p class="ce-sl-p ce-sl-gap2">どれだけ良い商品でも、売り方が弱ければ、1つも売れません。</p>
+<p class="ce-sl-p">だから、売るための技術を、まるごと学びます。</p>
+<p class="ce-sl-p">人の心を動かす、販売ページ。<br>目を止める見出し。<br>写真の見せ方。メール。LINEの配信。<br>広告への導線。<br>販売前の、期待の高め方。<br>買ってくれた人が、また戻ってくる流れ。</p>
+<p class="ce-sl-p ce-sl-gap2">そして、ここが大事なところです。</p>
+<p class="ce-sl-p">この力は、クラウドファンディングだけのものでは、ありません。</p>
+<p class="ce-sl-p ce-sl-gap2">自分のお店でも、Amazonでも、広告でも、卸でも、海外でも。<br>売る場所が変わっても、ずっと通用する。</p>
+<p class="ce-sl-p">一度、身につけてしまえば、一生、あなたを食わせてくれる力です。</p>
+<p class="ce-sl-p ce-sl-gap2">5つ目の力<br>一度売れた商品を、何度も稼ぐ「資産」に育てる力</p>
+<p class="ce-sl-p">思い出してください。</p>
+<p class="ce-sl-p">せどりが、あんなに苦しかった理由。<br>それは、どれだけ売っても、売っても、手元に、何ひとつ、積み上がっていかなかったからでは、ないですか？</p>
+<p class="ce-sl-p">売った瞬間に、ゼロに戻る。<br>また、次を探しにいく。<br>その、終わりのない繰り返しが、あなたをすり減らしてきた。</p>
+<p class="ce-sl-p ce-sl-gap2">Crowd Edgeは、そこが、決定的に違います。</p>
+<p class="ce-sl-p ce-sl-gap2">1つの商品を、2回、3回、5回、それ以上と繰り返し売る。</p>
+<p class="ce-sl-p">売るたびに、公式LINEの読者が、購入者のリストが、レビューが、ブランドの信頼が、あなたの手元に、積み上がっていく。</p>
+<p class="ce-sl-p">たった1つの商品が、何度もあなたを稼がせてくれる、資産に育つ。</p>
+<p class="ce-sl-p ce-sl-gap2">そして、その先には。</p>
+<p class="ce-sl-p">育てたブランドそのものを、大きな金額で売る、という未来さえ、現実的な選択肢として見えてきます。<br>（日本M&amp;Aセンターとも公式に提携しております）</p>
+<p class="ce-sl-p ce-sl-gap2">これは、机上の空論では、ありません<br>ここまで読んで、こう思ったかもしれません。</p>
+<p class="ce-sl-p">「理屈は分かった。でも、本当に結果が出るのか？」と。</p>
+<p class="ce-sl-p ce-sl-gap2">その5つの力で、実際に、結果は出ています。</p>
+<p class="ce-sl-p">ある実践者は、ゼロから、受注販売だけで、累計<b class="ce-sl-num">4億円</b>を売り上げました。</p>
+<p class="ce-sl-p">食品を扱う別の方は、たった1回の販売で、利益<b class="ce-sl-num">1,000万円</b>を超えています。</p>
+<p class="ce-sl-p">このモデルを軸に、累計<b class="ce-sl-num">1億5,000万円</b>を積み上げた方もいます。</p>
+<p class="ce-sl-p ce-sl-gap2">なかでも、印象的な方がいます。</p>
+<p class="ce-sl-p">希少な食材を扱う、Z.Aさん。</p>
+<p class="ce-sl-p">品質には、誰よりも自信がありました。<br>でも、以前は、Amazonなどに出して売るだけ。</p>
+<p class="ce-sl-p">買ってくれたお客様と、その後もつながる導線がなくどうしても、単発の販売で、終わってしまう。<br>そのことに、長く、悩んでいました。</p>
+<p class="ce-sl-p ce-sl-gap2">Z.Aさんが、この5つの力を、一つずつ積み上げた結果。</p>
+<p class="ce-sl-p">商品の背景やこだわりを伝え、ファンになってもらう仕組みができ、さらに、すべてを受注してから手配する形に切り替えられた。</p>
+<p class="ce-sl-p">結果として、累計<b class="ce-sl-num">4,000万円</b>以上を売り上げ、一度きりで終わらない、繰り返し使える販売の仕組みを手にしました。</p>
+<h3 class="ce-sl-h3">教材を渡してあとは自分でどうぞ。ではありません</h3>
+<p class="ce-sl-p">そして、Crowd Edgeが、世の中のスクールと決定的に違う点。</p>
+<p class="ce-sl-p">それは、この5つの力すべてを、1年間、あなたの隣で、伴走しながら身につけてもらうことです。</p>
+<p class="ce-sl-p ce-sl-aside">そうは言っても、実際は3〜5ヶ月目で収益がでますので伴走が必要なくなるでしょう。<br>そんなレベルの高い伴走です。</p>
+<p class="ce-sl-p ce-sl-gap2">売れる市場のリサーチから、メーカーとの交渉、商品の設計、販売ページの作り込み、そして、ブランドとして育てるところまで。</p>
+<p class="ce-sl-p">そのすべての工程を、実務のレベルで、一緒に進んでいきます。</p>
+<p class="ce-sl-p ce-sl-gap2">薄いテキストを一式渡して、あとは各自でどうぞ。</p>
+<p class="ce-sl-p">そんな、突き放すやり方は、しません。</p>
+<p class="ce-sl-p ce-sl-gap2">なぜなら、私たちは、痛みを知っているからです。</p>
+<p class="ce-sl-p">たった一人で、迷い、負けていく、その心細さを。</p>
+<p class="ce-sl-p ce-sl-gap2">では、その1年間で、具体的にどう進んでいくのか？</p>
+<p class="ce-sl-p">そして、これだけの中身が、いったい、いくらなのか？</p>
+<p class="ce-sl-p">その話に、そろそろ、入っていきましょう。</p>
+</div></section>
+<section class="ce-sl-sec ce-sl-paper" id="sl-b12"><div class="ce-sl-in">
+<div class="ce-sl-chap" aria-hidden="true"><span class="ce-sl-chap-k">CHAPTER</span><span class="ce-sl-chap-n">12</span></div>
+<h2 class="ce-sl-h2">なぜ、よりによって「クラウドファンディング」なのか？</h2>
+<p class="ce-sl-p">ここまで読んで、当然の疑問がわいているかもしれません。</p>
+<p class="ce-sl-p">5つの力が大事なのは、分かった。</p>
+<p class="ce-sl-p">でも、なぜ、その力を使う場所が、クラウドファンディングなのか？<br>Amazonでも、メルカリでも、自分のお店でも、ないのか？と。</p>
+<p class="ce-sl-p ce-sl-gap2">実は、この舞台にこだわることには、他ではどうしても代えのきかない、はっきりとした理由があります。</p>
+<p class="ce-sl-p">その理由を、包み隠さず、お話しします。</p>
+<h3 class="ce-sl-h3">実績も信用もない。その「ゼロ」こそが、ここでは武器になる</h3>
+<p class="ce-sl-p">普通のビジネスは、残酷なほど、信用がものを言います。</p>
+<p class="ce-sl-p">実績がなければ、メーカーは、取引してくれない。<br>名前が知られていなければ、お客様も、振り向いてくれない。</p>
+<p class="ce-sl-p ce-sl-gap2">思い返してみてください。</p>
+<p class="ce-sl-p">せどりを、どれだけ続けても。<br>どれだけ、数をこなして売っても。</p>
+<p class="ce-sl-p">その「信用」だけは、一向に、あなたの手元に貯まっていかなかった。</p>
+<p class="ce-sl-p">売った瞬間に、また、名もなき一人に、戻っていく。</p>
+<p class="ce-sl-p ce-sl-gap2">そうではなかったですか？</p>
+<p class="ce-sl-p ce-sl-gap2">でも、クラウドファンディングは、そこが、根本から違います。</p>
+<p class="ce-sl-p">ここは、まだ世に出ていない、新しい挑戦を、みんなで応援する場所です。</p>
+<p class="ce-sl-p">だから、無名で、いい。</p>
+<p class="ce-sl-p">実績なんて、なくて、いい。</p>
+<p class="ce-sl-p">むしろ、これから挑む一人として、応援が、集まっていく。</p>
+<p class="ce-sl-p ce-sl-gap2">考えてみれば、これは、とてつもないことです。</p>
+<p class="ce-sl-p ce-sl-gap2">信用も、実績もない人間が、その信用を、ゼロから、自分の手で創り出せる。</p>
+<p class="ce-sl-p">そんな場所は、この世界に、そう多くありません。</p>
+<p class="ce-sl-p ce-sl-gap2">そして、一度でも成功すれば。</p>
+<p class="ce-sl-p ce-sl-gap2">「あの人は、クラウドファンディングで、これだけの支援を集めた人だ」</p>
+<p class="ce-sl-p">その実績と信用そのものが、あなたの手元に、残ります。</p>
+<p class="ce-sl-p ce-sl-gap2">それは、次にメーカーと組むときも、お店に卸してもらうときもこれから先、ずっとあなたを助け続ける、一生モノの名刺になるのです。</p>
+<h3 class="ce-sl-h3">売れるかどうかは、もう「答え」が出ている</h3>
+<p class="ce-sl-p">物販で、いちばん怖いこと。</p>
+<p class="ce-sl-p">それは、売れるかどうか分からないものに、お金を賭けることです。</p>
+<p class="ce-sl-p ce-sl-gap2">せどりだって、そうでした。</p>
+<p class="ce-sl-p">仕入れてみるまで、本当に売れるかどうかは、誰にも分からない。</p>
+<p class="ce-sl-p">その、見えない不安と、ずっと隣り合わせだった。</p>
+<p class="ce-sl-p ce-sl-gap2">でも、クラウドファンディングは、そこも、違います。</p>
+<p class="ce-sl-p">これまでに、どんな商品が、いくら売れたのか？</p>
+<p class="ce-sl-p">その、膨大な記録のすべてが、誰にでも見られる形で、公開されています。</p>
+<p class="ce-sl-p">つまり、あなたは「答え」を見ながら、勝ち筋を組み立てられる。</p>
+<p class="ce-sl-p ce-sl-gap2">勘や、思いつきの、博打ではありません。</p>
+<p class="ce-sl-p">すでに、目の前で売れている、という事実から、逆算していく。</p>
+<p class="ce-sl-p">さきほどお伝えした「数字で、売れる市場を掘り当てる力」も、この、答えが見える舞台があるからこそ、本当の威力を発揮するのです。</p>
+<h3 class="ce-sl-h3">値段で選ぶ客ではなく、想いに共感するファンが集まる</h3>
+<p class="ce-sl-p">もう一つ。</p>
+<p class="ce-sl-p">見過ごされがちですが、これは、とても大きな違いです。</p>
+<p class="ce-sl-p ce-sl-gap2">たとえば、Amazonで、ものを買う人。</p>
+<p class="ce-sl-p">その多くは、<b class="ce-sl-num">1円</b>でも、安いほうを選びます。<br>でも、それは、悪いことではありません。</p>
+<p class="ce-sl-p">ただ、値段で選ばれた相手は、もっと安い店が出てくれば、あっさりと、そちらへ離れていく。</p>
+<p class="ce-sl-p ce-sl-gap2">クラウドファンディングで、お金を払う人は違います。</p>
+<p class="ce-sl-p">その人たちは「応援」で、買うのです。</p>
+<p class="ce-sl-p">その商品が生まれた背景や、作り手の想いに、心を動かされて。<br>共感して、財布を開く。</p>
+<p class="ce-sl-p">だから、値段では、離れていかない。<br>あなた自身の、ファンに、なってくれる。</p>
+<p class="ce-sl-p ce-sl-gap2">この、いちばん最初に集まってくれる、質の高いファン。</p>
+<p class="ce-sl-p">それこそが、これから作るあなたのブランドの、最初の、そして、いちばん大切な資産になるのです。</p>
+<p class="ce-sl-p ce-sl-gap2">実績も、信用も、そしてファンさえも。<br>ゼロから、自分の手で創り出せる。</p>
+<p class="ce-sl-p">これが、私たちが、数ある方法の中から、あえて、この舞台を選び続けている、いちばんの理由です。</p>
+<p class="ce-sl-p ce-sl-gap2">では、その舞台の上で。</p>
+<p class="ce-sl-p">二人の講師は、あなたに、具体的に何をしてくれるのか？<br>一年をかけて、どう、隣を歩いてくれるのか？</p>
+<p class="ce-sl-p">その話に、入っていきましょう。</p>
+</div></section>
+<section class="ce-sl-sec ce-sl-paper" id="sl-b13"><div class="ce-sl-in">
+<div class="ce-sl-chap" aria-hidden="true"><span class="ce-sl-chap-k">CHAPTER</span><span class="ce-sl-chap-n">13</span></div>
+<h2 class="ce-sl-h2">ここで、はっきり約束しておきたいことがあります</h2>
+<p class="ce-sl-p">想像してみてください。</p>
+<p class="ce-sl-p">深夜、家族が寝静まったリビング。<br>あなたは一人、パソコンの前で、手を止めています。</p>
+<p class="ce-sl-p">このジャンルで、本当にいいのか？<br>この価格で、利益は残るのか？<br>メーカーに、どう声をかければいいのか？</p>
+<p class="ce-sl-p">調べても、答えが見つからない<br>誰に聞けばいいのかも、分からない。</p>
+<p class="ce-sl-p">気づけば、また夜が更けていく。</p>
+<p class="ce-sl-p ce-sl-gap2">せどりで、いちばん苦しかったのは、もしかすると、稼げないことよりも、この「一人ぼっち」だったのではないですか？</p>
+<p class="ce-sl-p">相談できる相手もいないまま、自分の判断だけを頼りに、暗い夜道を、手探りで進んでいく。</p>
+<p class="ce-sl-p ce-sl-gap2">ここで、はっきりお約束します。</p>
+<p class="ce-sl-p">Crowd Edgeで、あなたは二度とその夜を、一人で過ごしません。</p>
+<h3 class="ce-sl-h3">教材を渡して「あとは頑張って」ではありません</h3>
+<p class="ce-sl-p">世の中の多くのスクールは、こうです。</p>
+<p class="ce-sl-p">分厚いテキストや、動画を一式、どさっと渡す。<br>そして、こう言うのです。</p>
+<p class="ce-sl-p">「あとは、ご自分で進めてください」と。</p>
+<p class="ce-sl-p ce-sl-gap2">リサーチのやり方は教えても、実際にあなたが選んだジャンルが正しいかは、見てくれない。</p>
+<p class="ce-sl-p">販売ページの作り方は教えても、あなたが書いたページは、添削してくれない。<br>してくれたとしても「思います」「頑張ってください」と抽象度が高い。</p>
+<p class="ce-sl-p ce-sl-gap2">いちばん難しくて、いちばん怖い「実際に売る」ところは、たった一人に、丸投げされる。</p>
+<p class="ce-sl-p">私たちが、その現実を、いちばん許せません。</p>
+<p class="ce-sl-p ce-sl-gap2">世の中には、自分ではもう現場に立っていない人が、過去の栄光だけで、高額な塾を売っている例が、あまりにも多い。</p>
+<p class="ce-sl-p">そういう場所で、なけなしのお金を差し出した人が、何の成果も出せないまま、一人、また一人と、消えていきます。</p>
+<p class="ce-sl-p">一人の人生を、狂わせてしまう。<br>それが、いとも簡単に起きてしまう。</p>
+<p class="ce-sl-p ce-sl-gap2">だから、私たちは、逆を行きます。</p>
+<p class="ce-sl-p">Crowd Edgeの講師は、今も現役で、自分の商品を売り続けています。</p>
+<p class="ce-sl-p">そして、その全員が、人の心を動かす文章を、専門として学んでいます。<br>だからこそ、教えて終わり、ではありません。</p>
+<p class="ce-sl-p">あなたが選んだジャンルが本当に売れるか、隣で一緒に数字を見る。<br>あなたが書いた販売ページを、一行ずつ、一緒に直していく。<br>広告をどう出すか、そのすぐ隣にまで、私たちが立ちます。</p>
+<p class="ce-sl-p">いちばん難しいところを、あなた一人に、背負わせない。<br>これが、私たちの、譲れない一線です。</p>
+<h3 class="ce-sl-h3">一年、具体的にどう隣を歩くか？</h3>
+<p class="ce-sl-p">きれいごとに聞こえないよう、具体的にお話しします。</p>
+<p class="ce-sl-p">まず、いちばん最初に、顔を合わせる場を持ちます。</p>
+<p class="ce-sl-p">あなたがこれまで何をしてきたのか、何に困っているのかを、じっくりうかがい、一年をどう進んでいくか、その地図を、一緒に描くところから始めます。</p>
+<p class="ce-sl-p">そこから先は、二人三脚です。</p>
+<p class="ce-sl-p">日々の細かい疑問や、ふと立ち止まった瞬間にはチャットで、いつでも相談できます。<br>時間は、問いません。</p>
+<p class="ce-sl-p">「これで合っているのかな…」と、一人で抱えて夜を明かす必要は、もうありません。</p>
+<p class="ce-sl-p ce-sl-gap2">そして、二週間に一度。</p>
+<p class="ce-sl-p">画面を共有しながら、じっくり話す時間を持ちます。<br>ここが、他とは違うところです。</p>
+<p class="ce-sl-p ce-sl-gap2">ただ質問に答えるだけでは、ありません。</p>
+<p class="ce-sl-p">あなたが今、正しい順番で、正しく進めているか？<br>その手元を、私たちが一緒に覗き込んで、確かめる。</p>
+<p class="ce-sl-p">道を、間違えていないか。<br>遠回りを、していないか。</p>
+<p class="ce-sl-p">それを、二人で確認しながら、前に進んでいきます。</p>
+<p class="ce-sl-p ce-sl-gap2">一つの商品が売れたら、そこで終わりでもありません。</p>
+<p class="ce-sl-p">同じ商品を、もう一度、もう一度と売っていく、その進め方まで、隣で教えます。</p>
+<p class="ce-sl-p ce-sl-gap2">一人で迷って、検索しては閉じて、また迷う。<br>あの、出口のない夜は、もう終わりです。</p>
+<p class="ce-sl-p">これからは、道の先を知っている人間が、ずっと隣にいます。</p>
+<h3 class="ce-sl-h3">あなたは「仕入れる人」から「作る人」へ変わる</h3>
+<p class="ce-sl-p">この一年で、変わるのは、売上の数字だけではありません。</p>
+<p class="ce-sl-p">あなたが、何者であるか？<br>それ自体が、変わります。</p>
+<p class="ce-sl-p ce-sl-gap2">これまでのあなたは、他人が作った商品を、安く見つけて、売る人でした。</p>
+<p class="ce-sl-p">どこまでいっても、扱っているのは、誰かの商品です。</p>
+<p class="ce-sl-p ce-sl-gap2">でも、これからは、違います。</p>
+<p class="ce-sl-p ce-sl-gap2">売れる市場を、数字で見つけ、その商品を作れるメーカーと、対等に組み、自分の名前で世の中にまだない商品を、生み出す。</p>
+<p class="ce-sl-p">あなたは、商品を「仕入れる」側から、商品を「作る」側へ。</p>
+<p class="ce-sl-p ce-sl-gap2">メーカーと肩を並べる、作り手へと、変わっていきます。</p>
+<p class="ce-sl-p ce-sl-gap2">思い出してください。</p>
+<p class="ce-sl-p">子どもに「何のお仕事してるの？」と聞かれて、言葉に詰まったあの夜を。</p>
+<p class="ce-sl-p ce-sl-gap2">もう、今日からは詰まりません。</p>
+<p class="ce-sl-p">「メーカーさんと組んで、世の中にまだない物を作って、届ける仕事だよ」</p>
+<p class="ce-sl-p">胸を張って、そう言える人になっているからです。</p>
+<h3 class="ce-sl-h3">一発の売上ではなく、積み上がる「事業」を建てる</h3>
+<p class="ce-sl-p">そして、話はそこで終わりません。</p>
+<p class="ce-sl-p">一つの商品が売れると、あなたの手元には、目に見えない財産が残ります。</p>
+<p class="ce-sl-p">買ってくれたお客様の名簿。<br>公式LINEの読者。<br>レビュー。<br>販売の実績。</p>
+<p class="ce-sl-p">そして、あなたのブランドの信頼。</p>
+<p class="ce-sl-p">これらは、次の商品を売るときに、そのまま使える、あなただけの資産です。</p>
+<p class="ce-sl-p ce-sl-gap2">ここから、道は、いくつもの方向へ大きく広がっていきます。</p>
+<p class="ce-sl-p">同じ商品を、自分のお店で売る。<br>Amazonや楽天に、並べる。<br>お店に、卸す。</p>
+<p class="ce-sl-p">海外のクラウドファンディングや、海外の販売サイトへ出していく。</p>
+<p class="ce-sl-p ce-sl-gap2">一つの商品から始まったものが、いくつもの柱を持つ。<br>一つの事業へと育っていく。</p>
+<p class="ce-sl-p">現に、この道を歩いた人の中には、たった一つの傘という商品から始めて、今ではその分野で、年に二億、三億という規模のブランドを築いた人もいます。</p>
+<p class="ce-sl-p">クラウドファンディングだけでも、累計で四億円を超えました。</p>
+<p class="ce-sl-p ce-sl-gap2">深夜に、誰にも言えないバーコードを読んでいた働き方とは、もう、住んでいる世界がまるで違います。</p>
+<p class="ce-sl-p ce-sl-gap2">そして、ブランドとして育て上げた、その先には。</p>
+<p class="ce-sl-p ce-sl-gap2">築いたブランドそのものを、大きな金額で、誰かに引き継ぐ。<br>そんな出口さえ、決して夢物語ではなく、現実的な選択肢として、見えてきます。</p>
+<p class="ce-sl-p">あなたが建てているのは、その場しのぎの副業収入ではありません。<br>あとに残り、積み上がっていく、一つの事業そのものです。</p>
+<h3 class="ce-sl-h3">だから、一人で抱えなくていい</h3>
+<p class="ce-sl-p">なぜ、私たちが、ここまで隣に立つことにこだわるのか？</p>
+<p class="ce-sl-p">それは、私たち自身が、痛みを知っているからです。</p>
+<p class="ce-sl-p ce-sl-gap2">一人は、他人の商品に頼りきって、数億円のビジネスを一夜で失うのを見ました。</p>
+<p class="ce-sl-p">もう一人は、十回挑戦して、九回、負けてきました。</p>
+<p class="ce-sl-p ce-sl-gap2">たった一人で、迷い、負けていく。</p>
+<p class="ce-sl-p">その心細さが、どれだけ人をすり減らすかを、身をもって知っています。</p>
+<p class="ce-sl-p">だからこそ、あなたには、同じ道をたった一人で歩いてほしくない。</p>
+<p class="ce-sl-p">そのために、私たちは、教えるだけの人間でいるつもりはありません。</p>
+<p class="ce-sl-p ce-sl-gap2">リサーチから、メーカー交渉、商品設計、販売ページ、そして事業として育てるところまで。<br>その一年を、まるごと、あなたの隣で、一緒に歩きます。</p>
+<p class="ce-sl-p ce-sl-gap2">さて、ここまでで、一年の伴走と、その先に広がる事業の話をしてきました。</p>
+<p class="ce-sl-p">でも、あなたが受け取るのは、この伴走だけではありません。</p>
+<p class="ce-sl-p">この道のりを、さらに確かで、さらに速いものにするために、私たちは、いくつかの強力な後押しを、用意しています。</p>
+<p class="ce-sl-p">次に、その中身を、お見せします。</p>
+</div></section>
+<section class="ce-sl-sec ce-sl-proof" id="sl-b14"><div class="ce-sl-in">
+<div class="ce-sl-chap" aria-hidden="true"><span class="ce-sl-chap-k">CHAPTER</span><span class="ce-sl-chap-n">14</span></div>
+<h2 class="ce-sl-h2">これで終わり、ではありません</h2>
+<p class="ce-sl-p">ここまで読んで、こう思ったかもしれません。</p>
+<p class="ce-sl-p">一年、隣で伴走してくれる。<br>それだけでも、もう十分じゃないか、と。</p>
+<p class="ce-sl-p ce-sl-gap2">でも、私たちは、それだけで終わらせる気はありません。</p>
+<p class="ce-sl-p ce-sl-gap2">なぜなら、あなたには、一日でも早く、そして一円でも多く結果を出してほしいからです。</p>
+<p class="ce-sl-p ce-sl-gap2">正直に言います。</p>
+<p class="ce-sl-p">どれだけ手厚く伴走しても、初心者が必ず一度は固まる場所があります。</p>
+<p class="ce-sl-p ce-sl-gap2">「で、結局、私は何を売ればいいの？」</p>
+<p class="ce-sl-p">「これ、本当に儲かるの？」</p>
+<p class="ce-sl-p">「そもそも、いい商品と、どこで出会えばいいの？」</p>
+<p class="ce-sl-p ce-sl-gap2">この、いちばん最初の、いちばん大きな壁。<br>ここで、多くの人が、一歩も動けなくなります。</p>
+<p class="ce-sl-p">だからこそ、私たちは、その壁を先回りして壊すための道具を用意しました。<br>一年の伴走に加えて、あなたに渡す4つの武器です。</p>
+<h3 class="ce-sl-h3">1つ目｜結局、何を売ればいいのか。その答えを、先に渡します</h3>
+<p class="ce-sl-p">初心者が、いちばん最初にぶつかる壁。</p>
+<p class="ce-sl-p">それは間違いなく「何を売るか」です。</p>
+<p class="ce-sl-p ce-sl-gap2">市場を数字で見るやり方は、伴走の中でじっくり教えます。<br>でも、あなたがゼロからその目を養い、宝を掘り当てるまでには、どうしても時間がかかる。</p>
+<p class="ce-sl-p ce-sl-gap2">その時間を、まるごと飛ばしてもらいます。</p>
+<p class="ce-sl-p">私たちが渡すのは、成功する確率の高いジャンルを厳選した10の候補です。<br>逆にいえば、外すべきジャンル、特徴を全て伝えます。</p>
+<p class="ce-sl-p">これは、机の上で考えた理想論ではありません。</p>
+<p class="ce-sl-p ce-sl-gap2">今も現役で数字を出し続けている人間が、実際の市場を見て、「ここは、まだ勝てる」と判断した、生きた市場のリストです。</p>
+<p class="ce-sl-p">普通なら、何を売るか決めるだけで、何ヶ月も、暗闇の中をさまようことになる。</p>
+<p class="ce-sl-p">その、いちばん苦しい遠回りを、あなたはしなくていい。<br>最初の一歩を、どこに踏み出せばいいのか。</p>
+<p class="ce-sl-p">その地図を、いちばん最初に、あなたの手に渡します。</p>
+<h3 class="ce-sl-h3">2つ目｜「儲かるのか」を、勘ではなく数字で確かめる道具</h3>
+<p class="ce-sl-p">せどりをやっていて、いちばん胃が痛かった瞬間を思い出してください。</p>
+<p class="ce-sl-p ce-sl-gap2">仕入れてみるまで、本当に利益が出るのか、分からない。</p>
+<p class="ce-sl-p">売れ残ったらどうしよう、と、いつも心のどこかで怯えている。</p>
+<p class="ce-sl-p">その恐怖と、もうお別れです。</p>
+<p class="ce-sl-p ce-sl-gap2">あなたに渡すのは、損益分岐点を、一目で確かめられる道具です。</p>
+<p class="ce-sl-p">いくらで、いくつ売れれば、利益が出るのか。<br>どこを下回ると、損が出るのか。</p>
+<p class="ce-sl-p">それが、商品を出す前に、数字で、はっきりと見える。<br>勘や、根性で勝負するのではありません。</p>
+<p class="ce-sl-p">数字で、安全な地点を確かめてから、踏み出せる。</p>
+<p class="ce-sl-p ce-sl-gap2">さらに、この中には、メーカーへ最初に送る問い合わせの下書きも入っています。<br>「なんて声をかければいいのか…」で固まっていた、あの最初の一通が、穴を埋めるだけでそのまま完成します。</p>
+<p class="ce-sl-p">いちばん怖い一歩を、いちばん軽くする。<br>そのための道具です。</p>
+<h3 class="ce-sl-h3">3つ目｜宝の在り処を、現場で一緒に見に行く</h3>
+<p class="ce-sl-p">基本的にはクラウドファンディング上、オンライン上で完結できる内容です。</p>
+<p class="ce-sl-p">しかし、さらなる高みを目指すために、いい商品と、どこで出会えばいいのか？</p>
+<p class="ce-sl-p">これも、一人では、まったく見当がつかない場所です。<br>だから、私たちが、一緒に行きます。</p>
+<p class="ce-sl-p ce-sl-gap2">全国で開かれている展示会。</p>
+<p class="ce-sl-p">そこには、まだ世に知られていない、優れた技術を持ったメーカーや職人が、集まっています。</p>
+<p class="ce-sl-p">でも、初めての人にとっては、どう歩けばいいのか、誰に、どう声をかければいいのかさえ、分からない場所です。</p>
+<p class="ce-sl-p">その現場へ、案内人と一緒に、足を運ぶ。<br>どこを見て、何を基準に「これは化ける」と嗅ぎ分けるのか？</p>
+<p class="ce-sl-p">教室では決して分からない、その感覚を、現場で、あなたの体に染み込ませます。<br>一人では入口で立ちすくんでいたはずの世界に、これからは、隣に、道を知っている人間がいます。</p>
+<h3 class="ce-sl-h3">4つ目｜世界を、あなたの仕入れ先にする</h3>
+<p class="ce-sl-p">そして、4つ目。</p>
+<p class="ce-sl-p">これは、次なる売上・利益のステージをあげるために、あなたの視野を日本の外まで一気に押し広げる特典です。</p>
+<p class="ce-sl-p">海外の展示会には、日本ではまだ誰も扱っていない、面白い商品が、眠っています。<br>そこで見つけた商品の、日本での独占的な販売権を、手に入れる。</p>
+<p class="ce-sl-p">そして、それを、あなたのブランドの商品として、日本で売り出す。</p>
+<p class="ce-sl-p ce-sl-gap2">かつて、深夜に、他人が作った商品のバーコードを、黙って読んでいたあなたが。<br>世界を歩いて、自分の商品を、自分の手で見つけてくる。</p>
+<p class="ce-sl-p">そんな景色が、決して大げさな話ではなく、現実の、次の一手として見えてきます。</p>
+<p class="ce-sl-p">もちろん、いきなり一人で海外へ、とは言いません。<br>その最初の一歩にも、私たちが、一緒に立ちます。</p>
+<h3 class="ce-sl-h3">これは、おまけではありません</h3>
+<p class="ce-sl-p">4つの特典を、並べてきました。</p>
+<p class="ce-sl-p">でも、これらは、契約を迫るための、ただのおまけではありません。</p>
+<p class="ce-sl-p ce-sl-gap2">もう一度、思い出してください。<br>初心者が、必ず固まる場所を。</p>
+<p class="ce-sl-p ce-sl-gap2">何を売ればいいのか？</p>
+<p class="ce-sl-p">本当に儲かるのか？</p>
+<p class="ce-sl-p">いい商品と、どこで出会うのか？</p>
+<p class="ce-sl-p">そして、その先、どこまで大きくできるのか？</p>
+<p class="ce-sl-p ce-sl-gap2">この4つの特典は、その一つひとつの壁をあなたが立ちすくむ前に、先回りして壊すために、用意したものです。</p>
+<p class="ce-sl-p">1年の伴走で、隣を歩く。<br>スタートして3〜5ヶ月で収益があがる。<br>そして、この4つの武器で、遠回りを消す。</p>
+<p class="ce-sl-p">ここまでで、あなたが受け取るものの、全体像が見えたはずです。</p>
+<p class="ce-sl-p ce-sl-gap2">では、これだけの中身が、いったいいくらなのか？<br>その話を、これからします。</p>
+</div></section>
+<section class="ce-sl-sec ce-sl-paper" id="sl-b15"><div class="ce-sl-in">
+<div class="ce-sl-chap" aria-hidden="true"><span class="ce-sl-chap-k">CHAPTER</span><span class="ce-sl-chap-n">15</span></div>
+<h2 class="ce-sl-h2">価格の前に、1つだけ答えておきたい不安があります</h2>
+<p class="ce-sl-p">これだけの中身なら、いくらするのか？</p>
+<p class="ce-sl-p">それを、これからお話しします。</p>
+<p class="ce-sl-p ce-sl-gap2">でも、その前に。</p>
+<p class="ce-sl-p">高いお金を払う前に、あなたの胸に、きっと一つ引っかかっていることがあるはずです。</p>
+<p class="ce-sl-p">「今はいいかもしれない。でも、この知識、来年には古くなるんじゃないか」<br>「また、新しいやり方を、一から買い直すことになるんじゃないか」</p>
+<p class="ce-sl-p">その不安は、当然です。</p>
+<p class="ce-sl-p">むしろ、これまで真剣にやってきた人ほど、そう感じます。</p>
+<p class="ce-sl-p ce-sl-gap2">思い出してみてください。</p>
+<p class="ce-sl-p">便利だと聞いて買ったツールが、半年後には、もう使いものにならなかった。</p>
+<p class="ce-sl-p">高いお金を出した有料の教材が、気づけば、古い情報の塊になっていた。</p>
+<p class="ce-sl-p">買った瞬間が、いちばん価値が高くて、そこからは、ゆっくり錆びていく。</p>
+<p class="ce-sl-p ce-sl-gap2">そんな買い物を、あなたは、何度も繰り返してきたのではないですか？</p>
+<p class="ce-sl-p">だから、先に、はっきりお答えしておきます。</p>
+<h3 class="ce-sl-h3">この一年で渡すものは、時間とともに古びるどころか強くなります</h3>
+<p class="ce-sl-p">なぜ、そう言い切れるのか？</p>
+<p class="ce-sl-p">クラウドファンディングで、今、何が売れているのか。<br>どんな見せ方が、財布のひもを緩めるのか。<br>どのジャンルが、いま熱くて、どこが冷えてきたのか。</p>
+<p class="ce-sl-p">これは、去年と今年で、違います。</p>
+<p class="ce-sl-p">下手をすれば、数ヶ月で、景色が変わります。<br>つまり、この世界の勝ち方は、止まっていない。</p>
+<p class="ce-sl-p">だからこそ、「一度教えて、はい終わり」には、できないのです。</p>
+<p class="ce-sl-p ce-sl-gap2">私たちは、今も、自分自身で、この現場に立っています。</p>
+<p class="ce-sl-p ce-sl-gap2">今この瞬間に、実際に売れているものを、生きた情報として、あなたに渡し続けます。</p>
+<p class="ce-sl-p ce-sl-gap2">去年の正解ではありません。<br>今日、目の前で売れているものを、そのまま。</p>
+<p class="ce-sl-p">そして、忘れないでください。</p>
+<p class="ce-sl-p">私たちが渡すのは、小手先のテクニックではありません。<br>数字で市場を読み、お客さんが本当に欲しいものから逆算する。</p>
+<p class="ce-sl-p">この考え方さえ、体に入れば、流行が変わろうと、あなたは、当て続けられます。</p>
+<p class="ce-sl-p">主役は、いつだって、あなたではなく、その先にいるお客さんです。<br>そこさえ外さなければ、勝ち筋が変わっても、あなたはもう、迷いません。</p>
+<h3 class="ce-sl-h3">なぜ、それが約束できるのか？</h3>
+<p class="ce-sl-p">正直に言えば、この約束は、誰にでもできるものではありません。</p>
+<p class="ce-sl-p">世の中には、「昔、すごかった」という話だけで、高額な塾を売っている人が、大勢います。</p>
+<p class="ce-sl-p ce-sl-gap2">でも、考えてみてください。</p>
+<p class="ce-sl-p">その人が語っているのは、いつの話でしょうか？</p>
+<p class="ce-sl-p">現場を離れて、何年も経っている。<br>渡されるノウハウは、その人が現役だった頃の、古い地図のまま。</p>
+<p class="ce-sl-p">どれだけ立派なことを言っても、渡している中身が過去のものなら出てくる結果もまた、過去のものにしかなりません。</p>
+<p class="ce-sl-p ce-sl-gap2">私たちは、違います。</p>
+<p class="ce-sl-p ce-sl-gap2">今も、自分の手で、新しい商品を世に出しています。</p>
+<p class="ce-sl-p">今も、勝ったり、負けたりしながら、現場で戦い続けています。</p>
+<p class="ce-sl-p">今も、工場や海外へ出張しています。</p>
+<p class="ce-sl-p ce-sl-gap2">この文章を書いている今も、教えている生徒さんの一人は、まさに販売の真っ最中。<br>数字を伸ばし続けています。</p>
+<p class="ce-sl-p ce-sl-gap2">講師の一人は、クラウドファンディングで作った商品を、今もその先の販路で売り続け、その売上は、積み上がって、いくつもの節目を超えました。</p>
+<p class="ce-sl-p ce-sl-gap2">過去形ではありません。</p>
+<p class="ce-sl-p">すべて、現在進行形の話です。</p>
+<p class="ce-sl-p">だから、私たちが渡すものは、いつも、今、戦える最新版であり続けます。</p>
+<h3 class="ce-sl-h3">だから、あなたはもう追いかけなくていい</h3>
+<p class="ce-sl-p">新しいツールが出るたびに、飛びつく。</p>
+<p class="ce-sl-p">新しい塾の広告を見るたびに、また乗り換えようか、と揺れる。</p>
+<p class="ce-sl-p">そうやって、次から次へと、何かを追いかけ続ける。</p>
+<p class="ce-sl-p ce-sl-gap2">その消耗を、ここで、終わりにしませんか？</p>
+<p class="ce-sl-p ce-sl-gap2">一年が過ぎても、あなたの手には、一生ものの技術が残ります。</p>
+<p class="ce-sl-p">流行を追いかける側から、流行が変わっても動じない側へ。<br>その場しのぎで稼ぐ人から、いつでも当てにいける人へ。</p>
+<p class="ce-sl-p">あなたが手に入れるのは、そういう場所です。</p>
+</div></section>
+<section class="ce-sl-sec ce-sl-paper" id="sl-b16"><div class="ce-sl-in">
+<div class="ce-sl-chap" aria-hidden="true"><span class="ce-sl-chap-k">CHAPTER</span><span class="ce-sl-chap-n">16</span></div>
+<h2 class="ce-sl-h2">しかし、ここで一つ、お詫びをさせてください</h2>
+<p class="ce-sl-p ce-sl-gap2">正直に、一つだけ、謝らせてください。</p>
+<p class="ce-sl-p">ここまで私は、何度も言ってきました。</p>
+<p class="ce-sl-p">順番がある、と。<br>設計図がある、と。<br>その通りに進めれば、才能はいらない、と。</p>
+<p class="ce-sl-p ce-sl-gap2">でも、この文章を読みながら、あなたの心のどこかが、ずっと薄く笑っていたかもしれません。</p>
+<p class="ce-sl-p">またそれか、と。</p>
+<p class="ce-sl-p">「やり方は全部教えます」</p>
+<p class="ce-sl-p">あの言葉に、あなたは一度ならず、お金を払ってきた。<br>そして、いざ始めてみたら、どうだったか？</p>
+<p class="ce-sl-p">肝心なところで、言葉が急に曖昧になる。</p>
+<p class="ce-sl-p">「あとはご自身のリサーチ次第です」<br>「ここは経験を積めば分かります」</p>
+<p class="ce-sl-p ce-sl-gap2">結局、いちばん知りたかった一歩目で、そっと手を離される。</p>
+<p class="ce-sl-p">高いお金を払ったのに、また、一人にされた。<br>その感覚を、あなたは体で覚えている。</p>
+<p class="ce-sl-p ce-sl-gap2">だから、私が「設計図がある」と言っても、心の底では、まだ半分しか信じていないはずです。</p>
+<p class="ce-sl-p">それを、ここまで、言葉のままで進めてしまった。<br>それが、私のお詫びです。</p>
+<p class="ce-sl-p">だから、ここから先は、言葉で約束するのを、やめます。</p>
+<h3 class="ce-sl-h3">私たちが、今この瞬間に使っている物を、そのままお渡しします</h3>
+<p class="ce-sl-p">きれいに清書した、教材用の資料ではありません。</p>
+<p class="ce-sl-p">私たちが、自分の商品を世に出すために、今も現場で使っている。<br>その実物を、そっくりそのまま渡します。</p>
+<p class="ce-sl-p ce-sl-gap2">1つ目は、作業チェックシート</p>
+<p class="ce-sl-p">名前だけ聞くと、よくある「チェック項目が並んだ、結局使わない紙」を思い浮かべるかもしれません。<br>私も、最初はそう思われても仕方がないと思っています。</p>
+<p class="ce-sl-p">でも、中身は、まったく違います。</p>
+<p class="ce-sl-p">やり方の解説と、作業の順番が、一枚に溶け合っている。</p>
+<p class="ce-sl-p ce-sl-gap2">「まずこれをやる、次にこれ、その次はこれ」という流れが、そのまま手順書になっている。</p>
+<p class="ce-sl-p">読むための資料と、手を動かすための道具が一体になっているのです。<br>辻本は、これを「料理のレシピ」と呼びます。</p>
+<p class="ce-sl-p ce-sl-gap2">玉ねぎをみじん切りにする。<br>そこから順番に、最後の一皿までを書いた初心者のためのレシピ。<br>いや、初心者を超えたあとでも再現性MAXの伴走するレシピ。</p>
+<p class="ce-sl-p ce-sl-gap2">そして、ここが肝心なのですが、「これ以外は、やらなくていい」まで書いてあります。</p>
+<p class="ce-sl-p">やることが多くて迷うのではありません。<br>むしろ逆。</p>
+<p class="ce-sl-p">実際に手を動かしてみると、拍子抜けするはずです。</p>
+<p class="ce-sl-p">本当に、この流れだけ。<br>これだけをやればいい。</p>
+<p class="ce-sl-p">余計な寄り道をしないための、最短の一本道。<br>それが、この一枚に収まっています。</p>
+<p class="ce-sl-p ce-sl-gap2">2つ目は、リサーチシート</p>
+<p class="ce-sl-p">売れる市場を、感覚ではなく、数字で埋めていくための表です。</p>
+<p class="ce-sl-p">これを埋め終える頃には、あなたの手元には何がおこるか？<br>売れる可能性の高い商品の候補が、数字の裏付けとともに並んでいます。</p>
+<p class="ce-sl-p ce-sl-gap2">3つ目は、メーカーへの問い合わせと交渉の文面</p>
+<p class="ce-sl-p">初心者が、いちばん足のすくむ瞬間。<br>それは、会ったこともないメーカーに、最初の一通を送るときです。</p>
+<p class="ce-sl-p">何と書けばいいのか分からず、カーソルが点滅する画面の前で、何十分も固まる。</p>
+<p class="ce-sl-p">あの時間を、あなたはもう、過ごさなくていい。<br>送る文面が、もう、用意してあります。</p>
+<p class="ce-sl-p">この3つを、渡します。</p>
+<h3 class="ce-sl-h3">世の中の塾が、いちばん見せたがらない部分です</h3>
+<p class="ce-sl-p">考えてみてください。</p>
+<p class="ce-sl-p">なぜ、多くの塾は、この「実物」を見せないのでしょうか？<br>理由は、単純です。</p>
+<p class="ce-sl-p ce-sl-gap2">手の内を、全部見せてしまったら、あなたが一人でできるようになってしまうから。</p>
+<p class="ce-sl-p">だから、小出しにする。<br>肝心な部分は、ぼかしておく。<br>「詳しくは個別で」と、先に延ばす。</p>
+<p class="ce-sl-p">そうやって、いつまでも自分たちが必要な状態にあなたを置いておく。</p>
+<p class="ce-sl-p">その方が、売る側には、都合がいいのです。</p>
+<p class="ce-sl-p ce-sl-gap2">私たちは、その逆をやります。</p>
+<p class="ce-sl-p ce-sl-gap2">今あなたに渡すこの3つは、しまい込んでいた古い資料ではありません。</p>
+<p class="ce-sl-p">この文章を書いている今も、私たち自身が、次の商品を探すために、まさにこのシートを開いて、数字を埋めています。</p>
+<p class="ce-sl-p">本当にこれだけ。</p>
+<p class="ce-sl-p ce-sl-gap2">現役が、今も回している物。<br>それを、薄めず、隠さず、そのまま渡す。</p>
+<p class="ce-sl-p">見せられるのは、それが、本物だからです。</p>
+<h3 class="ce-sl-h3">なぜ、そこまで見せるのか？</h3>
+<p class="ce-sl-p">ここまでして、なぜ手の内を全部渡すのか。<br>不思議に思うかもしれません。</p>
+<p class="ce-sl-p">理由は、一つです。</p>
+<p class="ce-sl-p">私たちは、あなたを、いつまでも私たちに頼らせる関係を、作りたくないのです。</p>
+<p class="ce-sl-p">一年後、あなたが、私たちなしでも、自分の力で次の商品を世に出せる。<br>数字を見て、自分で勝ち筋を選べる。<br>誰かの正解を待つのではなく、自分で判断できる。</p>
+<p class="ce-sl-p">そうなってくれることが、私たちの、いちばんの願いです。</p>
+<p class="ce-sl-p ce-sl-gap2">そして、もしできることなら。</p>
+<p class="ce-sl-p">一年後、あなたと私たちが、同じ目線で、次に何を作ろうかと商品のアイデアを出し合っている。<br>一緒に展示会の会場を歩いて、面白い技術を見つけて笑っている。<br>あなたが、自分のブースを出して、そこに人が集まっている。<br>海を越えたメーカーと、交渉のテーブルに着いている。</p>
+<p class="ce-sl-p ce-sl-gap2">いつか、そんな関係になれたら、これ以上に嬉しいことはありません。</p>
+<p class="ce-sl-p">教える側と、教わる側。その線が、いつのまにか消えている。<br>あなたが、私たちの隣に立つ、一人の作り手になっている。</p>
+<p class="ce-sl-p">私たちが本当に見たいのは、その景色です。</p>
+<p class="ce-sl-p">だからこそ、依存させるための出し惜しみを、私たちはしません。</p>
+<p class="ce-sl-p ce-sl-gap2">全部、渡します。</p>
+<p class="ce-sl-p">その上で、なお、一年間、隣を歩く意味がある。</p>
+<p class="ce-sl-p">一人で立てるように、全部渡す。<br>でも、最初のうちは、一人にしない。</p>
+<p class="ce-sl-p ce-sl-gap2">この矛盾のように見えるものこそが、私たちの伴走の、本当の中身です。</p>
+<p class="ce-sl-p">実物は、これで、すべてお渡ししました。</p>
+<p class="ce-sl-p">あとは、これを一年、隣で一緒に回していくだけです。</p>
+<p class="ce-sl-p">その先に、あなたがどこまで行けるのか？<br>その話を、この続きでお伝えします。</p>
+</div></section>
+</div>
+<div class="ce-sl">
+<section class="ce-sl-sec ce-sl-paper" id="sl-b17"><div class="ce-sl-in">
+<div class="ce-sl-chap" aria-hidden="true"><span class="ce-sl-chap-k">CHAPTER</span><span class="ce-sl-chap-n">17</span></div>
+<p class="ce-sl-p ce-sl-gap2">もう一段だけ、上の話をさせてください。</p>
+<p class="ce-sl-p">ここまで私は、クラウドファンディングで商品を売れるようになる、という話をしてきました。</p>
+<p class="ce-sl-p">でも、この力の本当の値打ちは、その先にあります。</p>
+<p class="ce-sl-p ce-sl-gap2">一年後、あなたに起きている、いちばん大きな変化。<br>それは、稼いだ金額のことでは、ないかもしれません。</p>
+<p class="ce-sl-p">あなたの、立っている場所そのものが、変わっているのです。</p>
+<h2 class="ce-sl-h2">あなたは、棚を借りる人では、なくなります</h2>
+<p class="ce-sl-p">今のあなたを、少しだけ突き放して見てみます。</p>
+<p class="ce-sl-p">せどりや転売というのは、突き詰めれば、他人の棚を借りて、その手数料をいただく仕事です。</p>
+<p class="ce-sl-p">メーカーが作った物を、Amazonという棚に、並べさせてもらう。<br>売れれば、その一部が、自分の取り分になる。</p>
+<p class="ce-sl-p ce-sl-gap2">でも、その棚は、あなたの物ではありません。</p>
+<p class="ce-sl-p">だから、ある日突然、棚の持ち主の都合で、締め出される。<br>アカウントが止まる。<br>ルールが変わる。</p>
+<p class="ce-sl-p">あの、いつ来るか分からない不安の正体は、これです。</p>
+<p class="ce-sl-p">自分の足で立っているつもりで、実は、ずっと他人の地面の上にいた。</p>
+<p class="ce-sl-p ce-sl-gap2">そして、これはもっと稼いでいる人でも、同じです。</p>
+<p class="ce-sl-p">海外のメーカーと独占契約を結んで、日本で数億円を売った人がいました。<br>誰が見ても、大成功です。</p>
+<p class="ce-sl-p">その直後、本国から、こう告げられました。</p>
+<p class="ce-sl-p">「日本で売れると分かったので、あとは、うちが自分で売ります」</p>
+<p class="ce-sl-p ce-sl-gap2">独占販売と言っても、その実態は、ただの代理店です。</p>
+<p class="ce-sl-p">売れると分かった瞬間に、いちばんおいしいところを、持っていかれる。<br>何年かけて育てても、地面ごと、取り上げられる。</p>
+<p class="ce-sl-p">規模が大きくなっても、他人の棚を借りている限り、この怖さからは、逃げられないのです。</p>
+<p class="ce-sl-p ce-sl-gap2">でも、あなたがこれから手にするのは、それとは、まるで違うものです。</p>
+<p class="ce-sl-p">自分で市場を読んで、自分で企画して、日本の職人と一緒に作った、自分の商品。</p>
+<p class="ce-sl-p">誰かに借りた棚ではなく、自分の棚。締め出される心配のない、あなたの名前がついた商品。<br>これが、この一年の、行き着く先です。</p>
+<h3 class="ce-sl-h3">日本の、埋もれた技術に、光を当てる側へ</h3>
+<p class="ce-sl-p">私（辻本）が、いつも言っていることがあります。</p>
+<p class="ce-sl-p">日本には、とんでもない技術を持っているのに、売り方が分からず、埋もれてしまっているメーカーが、山ほどある、と。</p>
+<p class="ce-sl-p">地方の、小さな工場。<br>何十年も、黙々と、いい物を作り続けてきた職人。</p>
+<p class="ce-sl-p">世界に誇れる技術があるのに、それを世の中に届ける方法を、知らないだけの人たち。</p>
+<p class="ce-sl-p">あなたがこれからやるのは、その技術に、光を当てることです。</p>
+<p class="ce-sl-p ce-sl-gap2">市場の数字を読んで、「この技術は、こういう形にすれば、絶対に売れる」と見極める。</p>
+<p class="ce-sl-p">そして、その工場の扉を叩いて、一緒に、世の中がまだ知らない商品を作る。</p>
+<p class="ce-sl-p">そのとき、3つの立場の人が、同時に幸せになります。</p>
+<p class="ce-sl-p">お客さんは、本当に欲しかった、便利な物を手に入れる。</p>
+<p class="ce-sl-p">職人は、自分の技術が、やっと世の中に届く喜びを知る。</p>
+<p class="ce-sl-p">そして、あなたは、胸を張れる、自分の商品を持つ。</p>
+<p class="ce-sl-p ce-sl-gap2">家族に、堂々と言えます。<br>「これは、私が作った商品なんだ」と。</p>
+<p class="ce-sl-p">あの、深夜にバーコードを読みながら、子どもに仕事を説明できなかった夜とは、もう、別の場所に立っています。</p>
+<p class="ce-sl-p">そして、一つ生み出せるようになれば、そこから先は、広がっていきます。</p>
+<p class="ce-sl-p">一つの商品を、クラウドファンディングだけで終わらせず、その先の販路へ。</p>
+<p class="ce-sl-p">ネットの各店舗へ、卸へ、海を越えた海外へ。<br>一つが、二つ、三つのシリーズになり、やがて、一つのブランドになる。</p>
+<p class="ce-sl-p">育て上げたブランドは、いつか、それ自体を誰かに引き継ぐ、という選択肢すら、持てるようになります。</p>
+<p class="ce-sl-p">積み上がった資産が、最後に、まとまった形であなたに返ってくる。<br>そこまでが、射程に入るのです。</p>
+<p class="ce-sl-p ce-sl-gap2">一生、他人の棚を借りて、手数料を数える人でいるのか？</p>
+<p class="ce-sl-p">それとも、自分の商品を生み出し、誰かの人生を便利にする側に回るのか？</p>
+<h3 class="ce-sl-h3">そして、もし叶うなら</h3>
+<p class="ce-sl-p">ここまで話してきて、私たちが本当に願っていること。<br>それはあなたが、そういう場所に立つことです。</p>
+<p class="ce-sl-p">一年後、あなたと私たちが、教える側と教わる側という関係ではなく、同じ一人の作り手として、隣に並んでいる。</p>
+<p class="ce-sl-p ce-sl-gap2">ただ、一つだけ、正直に、線を引かせてください。<br>これは、魔法ではありません。</p>
+<p class="ce-sl-p ce-sl-gap2">申し込んだ翌日に、作り手になれるわけでも、放っておいて誰かがやってくれるわけでもない。</p>
+<p class="ce-sl-p">泥臭く手を動かして、数字と向き合って、何度か転びながら進んだ人だけが、たどり着ける場所です。</p>
+<p class="ce-sl-p ce-sl-aside">（実際は3〜5ヶ月で収益があがります）</p>
+<p class="ce-sl-p ce-sl-gap2">でも、その覚悟さえあるのなら。</p>
+<p class="ce-sl-p">私たちは、持っているものを、全部、あなたに渡します。<br>手の内も、実物も、一年の時間も、そして、この場所へ続く地図も。</p>
+<p class="ce-sl-p ce-sl-gap2">では、その最初の一歩を、どう踏み出せばいいのか？</p>
+<p class="ce-sl-p">ここからは、その、具体的な進め方の話をします。</p>
+</div></section>
+<section class="ce-sl-sec ce-sl-white" id="sl-b18"><div class="ce-sl-in">
+<div class="ce-sl-chap" aria-hidden="true"><span class="ce-sl-chap-k">CHAPTER</span><span class="ce-sl-chap-n">18</span></div>
+<p class="ce-sl-p ce-sl-gap2">ここから先は、行動の話です。</p>
+<p class="ce-sl-p">とはいえ、身構えないでください。</p>
+<p class="ce-sl-p">手続きそのものは、驚くほど簡単です。<br>最後まで、あなたを迷子にはしません。</p>
+<p class="ce-sl-p ce-sl-gap2">1つだけ、先に言っておきたいことがあります。</p>
+<p class="ce-sl-p">ここから先が簡単だ、というのは、あくまで「申し込みの手続き」の話です。</p>
+<p class="ce-sl-p">ビジネスそのものが、ボタン1つで簡単になるわけではありません。<br>そこは、これまでお伝えしてきた通り、一年、手を動かして進んでいく道のりです。</p>
+<p class="ce-sl-p">その上で、始めるための入り口は、拍子抜けするほどシンプルです。</p>
+<h2 class="ce-sl-h2">お手続きは、3つのステップだけです</h2>
+<p class="ce-sl-p">1つ目、お申し込み</p>
+<p class="ce-sl-p">このページのいちばん下に、申し込みのボタンをご用意しています。<br>そこから、フォームに進んでください。</p>
+<p class="ce-sl-p">お支払いは、クレジットカード、または銀行振込。<br>どちらでも選べます。</p>
+<p class="ce-sl-p ce-sl-gap2">決済のページを見て、「怪しいところじゃないだろうか」と身構える必要はありません。</p>
+<p class="ce-sl-p">安心して使える、きちんとした決済の仕組みを通しています。<br>あなたの大切なお金を、いい加減に扱うことは、絶対にしません。</p>
+<p class="ce-sl-p ce-sl-gap2">二つ目、ご参加の登録</p>
+<p class="ce-sl-p">お支払いが終わると、ご参加のご案内が、あなたのもとに届きます。</p>
+<p class="ce-sl-p">そこから、あなた専用のチャットワーク（Chatwork）のグループにご招待します。</p>
+<p class="ce-sl-p">このグループには、あなたと、私たち講師だけでなく、事務局の人間も、最初から一緒に入ります。</p>
+<p class="ce-sl-p">一人の講師が、大勢を、たった一人で見るのではありません。<br>講師と事務局が組んで、あなたへの対応に抜けや漏れが出ないように、そして、そのやり取りの品質が、いつも最高であるように、支える体制です。</p>
+<p class="ce-sl-p">手順どおりに進めていただくだけで、登録は終わります。<br>難しい設定は、何もありません。</p>
+<p class="ce-sl-p">ここで、ようやく、あなたと私たちが直接つながります。</p>
+<p class="ce-sl-p ce-sl-gap2">3つ目、道具一式を、受け取る</p>
+<p class="ce-sl-p">先ほど、隠さず全部お渡しすると約束したあの実物です。</p>
+<p class="ce-sl-p">作業チェックシート。<br>リサーチシート。<br>メーカーへの問い合わせと交渉の文面。</p>
+<p class="ce-sl-p">など、これをあなたの手元にお届けします。</p>
+<p class="ce-sl-p">使い方も、最初の一歩から、丁寧にご案内します。<br>「自分に、使いこなせるだろうか」と、今から心配する必要はありません。</p>
+<h3 class="ce-sl-h3">入金して終わり、には絶対にしません</h3>
+<p class="ce-sl-p">ここで、一つだけ、はっきりとお約束させてください。</p>
+<p class="ce-sl-p">あなたには、こんな経験が、あるかもしれません。</p>
+<p class="ce-sl-p">高いお金を払って、申し込んだ。<br>その瞬間まで、あんなに丁寧だった。</p>
+<p class="ce-sl-p">なのに、入金した途端、連絡がぱったり途絶えた。</p>
+<p class="ce-sl-p ce-sl-gap2">「あとは、教材を見ておいてください」</p>
+<p class="ce-sl-p">それきり、誰も、こちらを気にかけてくれない。</p>
+<p class="ce-sl-p">高い授業料を払って、また、一人にされた。</p>
+<p class="ce-sl-p ce-sl-gap2">あの感覚を、あなたは、もう二度と味わわなくていい。</p>
+<p class="ce-sl-p">私たちは、あなたが、最初のスタートをちゃんと切れるまで隣にいます。<br>3〜5ヶ月後、あなたの商品がMakuakeで成功している姿を共に見ましょう。</p>
+<p class="ce-sl-p">1年間、ずっと、隣にいます。</p>
+<p class="ce-sl-p ce-sl-gap2">分からないことがあれば、いつでもチャットワークで聞いてください。<br>24時間、いつでも構いません。</p>
+<p class="ce-sl-p">1週間に一度は、画面を一緒に見ながら、30分ほどじっくり話す時間もあります。</p>
+<p class="ce-sl-p">あなたが今、正しい道を歩けているのか？<br>その一歩まで、一緒に確かめます。</p>
+<p class="ce-sl-p">お金を払わせて、はい終わり。<br>そんな関係を作るために、私たちはこの場所を用意したわけではありません。</p>
+<p class="ce-sl-p ce-sl-gap2">まとめると、こうです。</p>
+<p class="ce-sl-p">1つ、安全な入り口から、申し込む。<br>2つ、登録して、私たちとつながる。<br>3つ、道具を受け取り、1年の伴走が始まる。</p>
+<p class="ce-sl-p ce-sl-gap2">たった、これだけです。</p>
+<p class="ce-sl-p">あの、深夜に、散らかった部屋で、一人きりで画面と向き合っていた時間を。<br>ここで、終わりにしませんか？</p>
+<p class="ce-sl-p">その最初の一歩を、下のボタンから、踏み出してください。</p>
+<div class="ce-sl-ctabox"><a class="ce-sl-cta" href="#ce-pay">　すぐに参加する<span class="ce-sl-cta-arw" aria-hidden="true"></span></a></div>
+<p class="ce-sl-p ce-sl-gap2">そして、もし。</p>
+<p class="ce-sl-p">ここまで読んでも、たった一つだけ、どうしても引っかかることが残っているのなら。</p>
+<p class="ce-sl-p">そのまま、このページを閉じないでください。</p>
+<p class="ce-sl-p ce-sl-gap2">あなたのお手元に届いている、私たちからのメール。<br>あちらにご返信の形で、その引っかかりをそのまま送ってください。<br>どんな小さなことでも構いません。</p>
+<p class="ce-sl-p">私たちが、直接、お答えします。</p>
+<p class="ce-sl-p">一人で抱えて、また今夜も悩む。<br>そういう夜を、もう、増やさなくていいのです。</p>
+</div></section>
+<section class="ce-sl-sec ce-sl-white" id="sl-b19"><div class="ce-sl-in">
+<div class="ce-sl-chap" aria-hidden="true"><span class="ce-sl-chap-k">CHAPTER</span><span class="ce-sl-chap-n">19</span></div>
+<p class="ce-sl-p ce-sl-gap2">価格の話に入る前に、お伝えしておきたいことがあります。</p>
+<p class="ce-sl-p">私は、ここで「これだけの価値があるので、この値段は安いんです」という、よくある値段の正当化をするつもりはありません。</p>
+<p class="ce-sl-p">ああいう話が、私はあまり好きではないのです。<br>あなたも、もううんざりしているはずです。</p>
+<p class="ce-sl-p">「本来なら<b class="ce-sl-num">50万円</b>のところ」とか「総額<b class="ce-sl-num">300万円</b>相当」とか。</p>
+<p class="ce-sl-p">そういう、盛られた数字を見るたびに、心が冷めていく感覚をあなたはよく知っている。</p>
+<p class="ce-sl-p">だから、盛りません。<br>その代わりに、一度だけ。</p>
+<p class="ce-sl-p">あなたがこれから手にするものの全体像を、正直に並べさせてください。</p>
+<h2 class="ce-sl-h2">あなたが手にするものを、一度全部並べます</h2>
+<p class="ce-sl-p">ここまで、いろいろな話をしてきました。</p>
+<p class="ce-sl-p">一つずつ、お伝えしてきたので、全体でどれだけのものになるのか見えにくかったかもしれません。<br>ここで、一度まとめます。</p>
+<p class="ce-sl-p ce-sl-gap2">1つ　一生、使える5つの力</p>
+<p class="ce-sl-p">売れる市場を数字で見つける力。<br>メーカーを探して交渉する力。<br>売れる商品を設計する力。</p>
+<p class="ce-sl-p">そして、それを売る力と、売った後に伸ばして資産に変えていく力。</p>
+<p class="ce-sl-p ce-sl-gap2">流行が変わっても、扱う商品が変わっても消えることのない、一生ものの技術です。</p>
+<p class="ce-sl-p ce-sl-gap2">2つ　1年間の伴走</p>
+<p class="ce-sl-p">あなたが正しい道を歩けているかを、隣で確かめ続ける時間。<br>しかも、一人の講師が抱え込むのではなく、講師と事務局が組んであなたを放置しない体制で。</p>
+<p class="ce-sl-p ce-sl-gap2">3つ　私たちが今も自分の手で使っている道具の一式</p>
+<p class="ce-sl-p">作業チェックシート。<br>リサーチシート。<br>メーカーへの交渉の文面など。</p>
+<p class="ce-sl-p">清書した見本ではなく、現役が回している実物そのもの。</p>
+<p class="ce-sl-p ce-sl-gap2">4つ　4つの特典</p>
+<p class="ce-sl-p">何を売ればいいか迷う夜を終わらせる売れ筋ジャンルの一覧。<br>出す前に安全を確かめる損益分岐点の道具。<br>宝の眠る現場を一緒に歩く国内と海外の展示会への案内。</p>
+<p class="ce-sl-p ce-sl-gap2">5つ　2つの保証</p>
+<p class="ce-sl-p">一度もクラウドファンディングに挑戦できなかったときの、期間の延長。</p>
+<p class="ce-sl-p">そして、条件を満たした上でなお納得できなかったときの、全額返金。</p>
+<p class="ce-sl-p ce-sl-gap2">これだけのものが、一つに組み上がっています。</p>
+<p class="ce-sl-p">でも、正直に言えば。</p>
+<p class="ce-sl-p">あなたが本当に受け取るのは、この一覧そのものではありません。</p>
+<p class="ce-sl-p ce-sl-gap2">あなたが、もし、たった一人でこの道を始めていたら。何を売ればいいのか分からず、何ヶ月もさまよう。<br>間違ったメーカーに問い合わせて、時間を溶かす。<br>売れない商品に、在庫を抱えてまた落ち込む。</p>
+<p class="ce-sl-p">そうやって、数年分の遠回りをして、何十万円もの授業料を失敗として払っていく。</p>
+<p class="ce-sl-p">その、遠回りと、失敗の全部を。<br>丸ごと、省ける。</p>
+<p class="ce-sl-p">あなたが本当に手にするのは、それです。</p>
+<p class="ce-sl-p">失わずに済む時間。<br>払わずに済む、授業料。</p>
+<p class="ce-sl-p">この中身の、本当の値打ちはそこにあります。</p>
+<h3 class="ce-sl-h3">これは、儲け話ではありません</h3>
+<p class="ce-sl-p">もう一つ、はっきりさせておきたいことがあります。</p>
+<p class="ce-sl-p">世の中には、「これをやれば、月に何百万」という話があふれています。</p>
+<p class="ce-sl-p">私たちが、あなたに差し出しているのは、そういう類のものではありません。<br>これは、儲け話ではないのです。</p>
+<p class="ce-sl-p ce-sl-gap2">これは、分かれ道です。</p>
+<p class="ce-sl-p ce-sl-gap2">このまま、一生、他人の棚を借りて、その手数料を数えながら、いつ棚を取り上げられるかに怯えて生きるのか？</p>
+<p class="ce-sl-p">それとも、自分の商品を持ち、自分の名前で、誰かの暮らしを便利にする側に、回るのか？</p>
+<p class="ce-sl-p ce-sl-gap2">その、二つの人生の分かれ道に、あなたは今、立っています。</p>
+<p class="ce-sl-p ce-sl-gap2">実は、この道を選んでいる人たちが、今どんどん増えています。</p>
+<p class="ce-sl-p">その多くが、あなたと、同じ場所から来ています。</p>
+<p class="ce-sl-p ce-sl-gap2">店舗を歩き回るせどりで、月に<b class="ce-sl-num">90万円</b>を売りながら、手元には<b class="ce-sl-num">15万円</b>しか残らなかった人。</p>
+<p class="ce-sl-p">Amazonの制約と、いつ止まるか分からないアカウントに、神経をすり減らしてきた人。</p>
+<p class="ce-sl-p">別の物販の塾に、一年通ったのに、結局、何も結果が出なかった人。</p>
+<p class="ce-sl-p">何年も、この世界で戦ってきたのに、手元に積み上がるものが何もなかった人。</p>
+<p class="ce-sl-p ce-sl-gap2">そういう人たちが、「もう、他人の棚を借りるのは終わりにしたい」と、この道にたどり着いています。</p>
+<p class="ce-sl-p">あなたは、一人ではありません。<br>同じ夜を過ごしてきた人たちが、今、同じ方向へ歩き出しています。</p>
+<p class="ce-sl-p ce-sl-gap2">そして、その先で、立っている場所が変わった人も、実際にいます。</p>
+<p class="ce-sl-p">希少な食材を扱う、Z.Aさんという方がいます。</p>
+<p class="ce-sl-p">以前は、作った物をネットのお店に並べて売るだけで、どうしても、一回売って終わりの繰り返しから、抜け出せずにいました。</p>
+<p class="ce-sl-p">それが、商品の背景やこだわりを伝えてファンになってもらう売り方に変えたことで、今では、積み上げた売上が、<b class="ce-sl-num">4,000万円</b>を超えています。<br>しかも、そのほとんどが、注文を受けてから手配する、在庫を抱えない形で。</p>
+<p class="ce-sl-p ce-sl-gap2">特別な才能があった人では、ありません。</p>
+<p class="ce-sl-p">ただ、棚を借りる側から、作る側へ、立ち位置を移しただけです。</p>
+<p class="ce-sl-p ce-sl-gap2">では。<br>これだけのものがいったい、いくらなのか？</p>
+<p class="ce-sl-p">あなたが、さっきから、いちばん気になっているはずの、その数字の話にいよいよ入ります。</p>
+</div></section>
+<section class="ce-sl-sec ce-sl-white" id="sl-b20"><div class="ce-sl-in">
+<div class="ce-sl-chap" aria-hidden="true"><span class="ce-sl-chap-k">CHAPTER</span><span class="ce-sl-chap-n">20</span></div>
+<div class="ce-sl-name"><p class="ce-sl-name-1">せどり・転売？今日から辞めていい。</p><p class="ce-sl-name-2">無在庫&amp;予約で完売する</p><p class="ce-sl-name-3"><span class="ce-sl-nb">「自分ブランド</span><span class="ce-sl-nb">物販アカデミー」</span></p><p class="ce-sl-name-4">（通称：Crowd Edge）</p></div>
+<p class="ce-sl-p ce-sl-gap2">正規の価格をお伝えします。</p>
+<p class="ce-sl-p ce-sl-stat"><b class="ce-sl-num">120万円</b>です。</p>
+<p class="ce-sl-p">高い、と感じたと思います。<br>その感覚を、否定するつもりはありません。</p>
+<p class="ce-sl-p">むしろ、正直な反応だと思います。</p>
+<p class="ce-sl-p">ただ、価格の話をする前に。<br>一つだけ、あなたに聞いてみたいことがあります。</p>
+<h2 class="ce-sl-h2">あなたは今まで、「安いもの」にいくら払ってきましたか？</h2>
+<p class="ce-sl-p">世の中には、安く見えるものがあふれています。</p>
+<p class="ce-sl-p"><b class="ce-sl-num">5万円</b>の教材。<br><b class="ce-sl-num">30万円</b>の塾。<br>数千円のnoteの記事。</p>
+<p class="ce-sl-p ce-sl-gap2">手が届きやすくて、つい買ってしまう。</p>
+<p class="ce-sl-p">あなたも、これまでいくつも買ってきたのではないでしょうか？</p>
+<p class="ce-sl-p ce-sl-gap2">では、そのうちのいくつが、あなたの人生を、本当に変えてくれましたか？</p>
+<p class="ce-sl-p">正直に思い返してみてください。</p>
+<p class="ce-sl-p ce-sl-gap2">安いものを、次から次へと買い集めて、気づけばその合計は何十万円にもなっていた。</p>
+<p class="ce-sl-p">人によっては<b class="ce-sl-num">100万円</b>を超えていた。<br>なのに、手元に残ったものはほとんど何もない。</p>
+<p class="ce-sl-p ce-sl-gap2">一年通った塾で結局、何の結果も出なかった。<br>次の塾に移っても、また同じだった。</p>
+<p class="ce-sl-p">あの、積み重なった出費は、いったい何だったのか？</p>
+<p class="ce-sl-p ce-sl-gap2">それは、安かったのではありません。</p>
+<p class="ce-sl-p">「結果の出なかった授業料」として、高くついていたのです。</p>
+<p class="ce-sl-p ce-sl-gap2">あるいは、お金をかけずに、独学でやろうという道もあります。</p>
+<p class="ce-sl-p">でも、それも「無料」ではありません。</p>
+<p class="ce-sl-p ce-sl-gap2">何を売ればいいのか分からず、何ヶ月も、暗闇の中をさまよう時間。</p>
+<p class="ce-sl-p">間違ったメーカーに問い合わせて、返事も来ないまま、溶けていく時間。</p>
+<p class="ce-sl-p">売れない商品を仕入れて、抱えた在庫と、落ち込む夜。</p>
+<p class="ce-sl-p ce-sl-gap2">その、数年分の遠回りこそ、いちばん高くつくのです。<br>失った時間は、もう戻ってきません。</p>
+<h3 class="ce-sl-h3">これは、消える出費ではなく、残る技術です</h3>
+<p class="ce-sl-p">安い教材も、塾も、有料の記事も、その多くは買った瞬間から古びていく「情報」です。<br>今はAIでそれが量産されていて価値はありません。</p>
+<p class="ce-sl-p">でも、Crowd Edgeであなたが手にするのは、そういうものではありません。<br>一生、消えることのない「技術」です。</p>
+<p class="ce-sl-p ce-sl-gap2">そして今、AIと申し上げましたが、AIによって情報などの無形のコンテンツをいくらでも量産できるようになり価値は薄くなり、差別化はなくなっています。</p>
+<p class="ce-sl-p">では、そのAI全盛期とこれからに何が残るのか？</p>
+<p class="ce-sl-p">生身の人間である一般消費者とあなたを繋ぐのは何か？</p>
+<p class="ce-sl-p">AIでしょうか？<br>量産したコンテンツでしょうか？<br>エアプの情報発信でしょうか？</p>
+<p class="ce-sl-p ce-sl-gap2">いえ、「あなたしか持っていない、あなたの商品」です。<br>これがAIと共存する世界で、勝てる部分です。</p>
+<p class="ce-sl-p ce-sl-gap2">その技術が身につくまで、隣で支え続ける1年間です。</p>
+<p class="ce-sl-p">もし、これだけのことを、一人のプロにお願いして、個別に伴走してもらおうとすれば、その相場は…</p>
+<p class="ce-sl-p">この価格では、とても収まりません。</p>
+<p class="ce-sl-p ce-sl-gap2">その、一生ものの5つの力も、1年の伴走も、現役が使う道具の一式も、4つの特典も、2つの保証も。</p>
+<p class="ce-sl-p">その全部を、この中に収めています。</p>
+<p class="ce-sl-p">一度、身につけてしまえば、それは、一生、あなたのものです。</p>
+<p class="ce-sl-p">何度でも、新しい商品を生み出せる。<br>流行が変わっても、扱う物が変わっても消えない。</p>
+<p class="ce-sl-p ce-sl-gap2">だから、これは出費ではありません。</p>
+<p class="ce-sl-p">一度きりの投資で、一生、返ってくるものです。</p>
+<p class="ce-sl-p ce-sl-gap2">ただ、一つだけ、正直に線を引かせてください。</p>
+<p class="ce-sl-p">だからといって、これは、誰もが払うべきものではありません。</p>
+<p class="ce-sl-p ce-sl-gap2">片手間で、誰かがやってくれるのを待っている人にとっては、<b class="ce-sl-num">120万円</b>はただの高い買い物で終わります。</p>
+<p class="ce-sl-p">一年、本気で、手を動かす。<br>その覚悟のある人にとってだけ、これは投資になります。</p>
+<p class="ce-sl-p">その上で、一つ正直にお伝えしたいことがあります。</p>
+<p class="ce-sl-p">実は、私はこの価格そのままで、あなたに参加してほしいと思っているわけでは無いのです。</p>
+<p class="ce-sl-p">なぜ、そんなことを言うのか？<br>その理由を、次にお話しします。</p>
+</div></section>
+<section class="ce-sl-sec ce-sl-white" id="sl-b21"><div class="ce-sl-in">
+<div class="ce-sl-chap" aria-hidden="true"><span class="ce-sl-chap-k">CHAPTER</span><span class="ce-sl-chap-n">21</span></div>
+<p class="ce-sl-p ce-sl-gap2">私は、<b class="ce-sl-num">120万円</b>という価格そのままで、あなたに参加してほしいわけではないと言いました。</p>
+<p class="ce-sl-p">その理由を、正直に、お話しします。</p>
+<p class="ce-sl-p ce-sl-stat ce-sl-gap2">本体の価格は、<b class="ce-sl-num">88万円</b>です。</p>
+<p class="ce-sl-p">こう言うと、身構えるかもしれません。</p>
+<p class="ce-sl-p">「なんだ、結局、値引きか」<br>「最初から<b class="ce-sl-num">88万円</b>のものを、<b class="ce-sl-num">120万円</b>に見せてお得に感じさせるいつものやつだろう」と。</p>
+<p class="ce-sl-p ce-sl-gap2">違います。<br>これは、そういう見せかけの割引では、ありません。</p>
+<h2 class="ce-sl-h2">なぜ、88万円で出せるのか？</h2>
+<p class="ce-sl-p">理由は、届け方にあります。</p>
+<p class="ce-sl-p">このCrowd Edgeという学びは本来、私たちとあなたの間に、いくつかの立場が入る形で一部の方へお届けしました。販売や宣伝を、外の力に担ってもらう。そういう形です。</p>
+<p class="ce-sl-p">その形には、当然、その分の費用が価格に乗ります。<br>だから、その届け方をすると<b class="ce-sl-num">120万円</b>という数字になる。<br>それが、この学びの正規の価格です。</p>
+<p class="ce-sl-p ce-sl-gap2">でも、今回は、違います。</p>
+<p class="ce-sl-p ce-sl-gap2">今回は、私たちがあなたに直接、お届けしています。</p>
+<p class="ce-sl-p">間に入る立場がない分、そこに乗っていた費用をそぎ落とせる。<br>だから、その分をそのまま、あなたへの価格に反映できるのです。</p>
+<p class="ce-sl-p ce-sl-gap2">中身を削ったから、安いのではありません。</p>
+<p class="ce-sl-p">むしろ中身は、これまでお伝えしてきた通り一つも欠けていません。</p>
+<p class="ce-sl-p">ただ、あなたに、まっすぐ届けている。<br>だから、この価格になる。<br>それだけのことです。</p>
+<p class="ce-sl-p ce-sl-gap2">だからこそ、この価格はいつでも誰にでも、約束できるものではありません。</p>
+<p class="ce-sl-p">この形で、直接お届けできる、今このタイミングだけ。<br>本気で一歩を踏み出す方にだけ、お渡しできる価格です。</p>
+<h3 class="ce-sl-h3">安いから、ではなく。</h3>
+<p class="ce-sl-p">もし、あなたが今、「<b class="ce-sl-num">120万円</b>より<b class="ce-sl-num">88万円</b>のほうが安いから」というその一点だけを理由に申し込もうとしているのなら。</p>
+<p class="ce-sl-p">一度、立ち止まってください。</p>
+<p class="ce-sl-p">あなたは、これまでにも、「安いから」という理由で、何かに手を出してきたのではないでしょうか？</p>
+<p class="ce-sl-p">そして、その多くが、結局、何も残らなかった。<br>安さは、あなたを救ってはくれなかった。</p>
+<p class="ce-sl-p ce-sl-gap2">だから、金額の大小で、決めないでください。</p>
+<p class="ce-sl-p">大事なのは、<b class="ce-sl-num">88万円</b>が高いか安いかではないのです。</p>
+<p class="ce-sl-p">これから1年、あなたが、本気で手を動かす覚悟があるかどうか？<br>いえ、1年と言わず最初の3〜5ヶ月でOKです。</p>
+<p class="ce-sl-p ce-sl-gap2">それだけが、この<b class="ce-sl-num">88万円</b>をただの出費にするか？</p>
+<p class="ce-sl-p">人生を変える投資にするか？</p>
+<p class="ce-sl-p">ここを分けます。</p>
+<p class="ce-sl-p ce-sl-gap2">安さに、釣られないでください。</p>
+<p class="ce-sl-p">あなたの覚悟だけを頼りにしてください。</p>
+</div></section>
+<section class="ce-sl-sec ce-sl-white" id="sl-b22"><div class="ce-sl-in">
+<div class="ce-sl-chap" aria-hidden="true"><span class="ce-sl-chap-k">CHAPTER</span><span class="ce-sl-chap-n">22</span></div>
+<p class="ce-sl-p ce-sl-gap2">とはいえ、<b class="ce-sl-num">88万円</b>もまた、決して小さな金額ではありません。</p>
+<p class="ce-sl-p">この数字を、もう少しだけ、現実的な大きさに置き換えてみます。</p>
+<p class="ce-sl-p ce-sl-gap2"><b class="ce-sl-num">88万円</b>という金額は、1年間、私たちがあなたの隣で伴走するための費用でもあります。</p>
+<p class="ce-sl-p">なので、まず、1年で割ってみます。</p>
+<p class="ce-sl-p ce-sl-stat">そうすると、1ヶ月あたり、およそ<b class="ce-sl-num">7万円</b>ほど。</p>
+<p class="ce-sl-p">先ほどの数字で見たときにはあんなに大きく感じたものが、月ごとにすると、少しだけ輪郭が変わって見えないでしょうか。</p>
+<h2 class="ce-sl-h2">1日あたりで考えると、見え方が変わります</h2>
+<p class="ce-sl-p">もう少し、細かくしてみます。</p>
+<p class="ce-sl-p ce-sl-stat">1日あたりにすると、およそ<b class="ce-sl-num">2,400円</b>ほどです。</p>
+<p class="ce-sl-p">この金額を、あなたが、よく知っているはずの、別の何かと並べてみてください。</p>
+<p class="ce-sl-p">たとえば、せどりのために、休みの日に、朝から車を走らせて、あちこちの店を回っていた日。<br>ガソリン代を使い、駐車場代を払い、一日という時間をまるごと使ってあなたが稼いでいたその日銭。</p>
+<p class="ce-sl-p">あるいは、これまで、「今度こそは」と思って買ってきた教材や、塾。</p>
+<p class="ce-sl-p">結局、何も結果が出ないまま、積み重なっていったあの出費。</p>
+<p class="ce-sl-p">それらと、1日あたり<b class="ce-sl-num">2,400円</b>を、並べてみてどう感じるでしょうか？</p>
+<p class="ce-sl-p ce-sl-gap2">そして、決定的に違うことが、一つあります。</p>
+<p class="ce-sl-p">せどりで稼いだ日銭は、稼いだそばから生活費に消えていきます。<br>手元には、何も残らない。<br>次の日も、また同じように歩き回らなければならない。</p>
+<p class="ce-sl-p ce-sl-gap2">でも、この1日<b class="ce-sl-num">2,400円</b>であなたが手に入れるのは、一度身につけたら一生消えることのない技術と商品です。</p>
+<p class="ce-sl-p">消えていくお金と、残り続ける力。<br>同じ「1日あたり」でも、その中身はまるで違います。</p>
+<h3 class="ce-sl-h3">支払いについて、正直にお伝えします</h3>
+<p class="ce-sl-p">お金のことなので、隠さずはっきりとお伝えしておきます。</p>
+<p class="ce-sl-p">Crowd Edgeそのものには、分割払いの仕組みは用意していません。</p>
+<p class="ce-sl-p">ただ、クレジットカードでお支払いいただく場合は、恐れ入りますがカード会社のほうで、あとから分割払いに変えることができます。それを使えば、月々の負担に分けることができます。</p>
+<p class="ce-sl-p">一度で、無理をして払ってほしいとは思っていません。<br>あなたが、続けられる形で始めてください。</p>
+<p class="ce-sl-p">大切なのは、無理なく一歩を踏み出して、そこから走り切ることです。</p>
+<p class="ce-sl-p ce-sl-gap2">さて。</p>
+<p class="ce-sl-p">ここまで、価格の話をすべてお伝えしてきました。</p>
+<p class="ce-sl-p">数字については、もう隠していることは、何もありません。</p>
+<p class="ce-sl-p ce-sl-gap2">でも、最後に、あなたの背中を押すのは、きっと数字ではないはずです。</p>
+<p class="ce-sl-p">あとは、あなたがどうしたいか？</p>
+<p class="ce-sl-p">その話を、最後に、させてください。</p>
+</div></section>
+<section class="ce-sl-sec ce-sl-white" id="sl-b23"><div class="ce-sl-in">
+<div class="ce-sl-chap" aria-hidden="true"><span class="ce-sl-chap-k">CHAPTER</span><span class="ce-sl-chap-n">23</span></div>
+<p class="ce-sl-p ce-sl-gap2">あなたが手にするものは、もうすべてお伝えしました。</p>
+<p class="ce-sl-p ce-sl-gap2">一生、消えることのない5つの力。</p>
+<p class="ce-sl-p">1年間、隣で走り続ける伴走。</p>
+<p class="ce-sl-p">現役が今も使っている、道具の一式。</p>
+<p class="ce-sl-p">4つの特典。</p>
+<p class="ce-sl-p">そして、2つの保証。</p>
+<p class="ce-sl-p ce-sl-gap2">必要な武器は、すべて揃えました。<br>あとは、あなたの覚悟だけです。</p>
+<h2 class="ce-sl-h2">道具を揃えても変わらない人がいます</h2>
+<p class="ce-sl-p">正直に、お伝えしておきたいことがあります。</p>
+<p class="ce-sl-p">どれだけ良い道具を渡しても、どれだけ手厚く隣で支えても、途中で手を止めてしまう人は残念ながら、何も変わりません。</p>
+<p class="ce-sl-p">これは、Crowd Edgeに限った話ではありません。</p>
+<p class="ce-sl-p">どんなに評判の良いスクールに入っても、どんなに有名な人のコンサルを受けても同じことです。</p>
+<p class="ce-sl-p">道具が、人を変えるのではないのです。<br>その道具を、最後まで使うと決めた人だけが、変わっていく。</p>
+<p class="ce-sl-p ce-sl-gap2">だから、私たちが用意できるのは、ここまでです。</p>
+<p class="ce-sl-p">地図も、道具も、隣を歩く人も、全部揃えました。<br>でも、最初の一歩を踏み出すことだけは、あなた自身にしかできません。</p>
+<h3 class="ce-sl-h3">この二人も、一度はどん底を見ています</h3>
+<p class="ce-sl-p">もし、今、あなたが、自分にできるだろうか？と怖くなっているなら。</p>
+<p class="ce-sl-p">思い出してほしいことがあります。</p>
+<p class="ce-sl-p">あなたの隣に立つ辻本も、田村も、最初から、うまくいっていたわけではありません。</p>
+<p class="ce-sl-p ce-sl-gap2">ひとりは、数億円のビジネスが、たった1枚の通知で目の前から消えていくのを見ました。</p>
+<p class="ce-sl-p">もうひとりは、事業に10回挑んで、9回負けています。</p>
+<p class="ce-sl-p ce-sl-gap2">ふたりとも、特別な星のもとに生まれたわけではありません。</p>
+<p class="ce-sl-p">負けて、失って、それでも、もう一度立ち上がった。<br>ただ、それだけです。</p>
+<p class="ce-sl-p ce-sl-gap2">その二人が、今、あなたの隣で、一緒に走ろうとしています。</p>
+<p class="ce-sl-p">だから、今、深夜に一人きりで、うまくいかない現実にうなだれているあなたのその状況も。<br>終わりでは、ありません。</p>
+<p class="ce-sl-p">むしろ、ここから始める物語の最初の一行にできるのです。</p>
+<p class="ce-sl-p ce-sl-gap2">少し、間を置きます。</p>
+<p class="ce-sl-p ce-sl-big">あなたの覚悟は決まりましたか？</p>
+<p class="ce-sl-p ce-sl-gap2">もし、決まったのなら。<br>次で、その一歩を、どう踏み出せばいいのかをもう一度ご案内します。</p>
+</div></section>
+<section class="ce-sl-sec ce-sl-sunrise" id="sl-b24"><div class="ce-sl-in">
+<div class="ce-sl-chap" aria-hidden="true"><span class="ce-sl-chap-k">CHAPTER</span><span class="ce-sl-chap-n">24</span></div>
+<p class="ce-sl-p ce-sl-gap2">ここまで読み、覚悟を決めてくれたあなたへ。</p>
+<p class="ce-sl-p">最後の一歩の、踏み出し方をご案内します。</p>
+<p class="ce-sl-p">その前に、あなたが手にするものを、もう一度だけ確かめさせてください。<br>お互いのすれ違いがないようにしたいのです。</p>
+<p class="ce-sl-p">一生消えない5つの力</p>
+<p class="ce-sl-p">1年間の伴走。</p>
+<p class="ce-sl-p">現役が使う道具の一式</p>
+<p class="ce-sl-p">何を売るか迷う夜を終わらせる特典<br>宝の眠る現場を歩く展示会への案内</p>
+<p class="ce-sl-p">そして、あなたを守る2つの保証。<br>出品保証と、条件を満たせば全額をお返しする返金保証です。</p>
+<p class="ce-sl-p ce-sl-gap2">これが、Crowd Edgeであなたが受け取るものの、すべてです。</p>
+</div></section>
+<section class="ce-sl-sec ce-sl-sunrise" id="sl-b25"><div class="ce-sl-in">
+<div class="ce-sl-chap" aria-hidden="true"><span class="ce-sl-chap-k">CHAPTER</span><span class="ce-sl-chap-n">25</span></div>
+<h2 class="ce-sl-h2">なぜ、「今」なのか？</h2>
+<p class="ce-sl-p">正直にお伝えしておきたいことがあります。</p>
+<p class="ce-sl-p">このご案内を受けられる時間には、期限があります。<br>今、このページに表示されている時間が、その残りです。</p>
+</div></section>
+</div>
+<div class="ce-sl-cdph">UTAGEのカウントダウン要素（72時間）がここに入ります</div>
+<div class="ce-sl">
+<section class="ce-sl-sec ce-sl-sunrise" id="sl-b25b"><div class="ce-sl-in">
+<p class="ce-sl-p ce-sl-gap2">なぜ、区切っているのか？</p>
+<p class="ce-sl-p">取ってつけた締切ではないので、その理由を正直にお話しします。</p>
+<p class="ce-sl-p ce-sl-gap2">理由は、2つあります。</p>
+<p class="ce-sl-p">1つは、価格の話でお伝えした通りです。</p>
+<p class="ce-sl-p">今回は、間にいくつもの立場を通さず、私たちがあなたに直接お届けしています。<br>この特別な形でのご案内を、期間を区切って行っているのです。</p>
+<p class="ce-sl-p ce-sl-gap2">もう1つは、伴走の中身に関わることです。</p>
+<p class="ce-sl-p">私たちのサポートは、チャットワークで、いつでも質問に答えるだけではありません。<br>2週間に一度、30分ほどZoomであなたと画面を一緒に見ながら、進め方が合っているか、正しく進められているかを、一つひとつ確かめていきます。</p>
+<p class="ce-sl-p">この手厚さを、一人ひとりに、きちんと届けるためには一度にご案内できる人数をどうしても絞らなければなりません。</p>
+<p class="ce-sl-p">大勢を一度に受け入れて、サポートが薄くなってしまっては本末転倒だからです。<br>だから、区切っています。</p>
+<p class="ce-sl-p">あなたを急かすためではなく、あなたを放置しないためです。</p>
+<h2 class="ce-sl-h2">お申し込みの流れ</h2>
+<p class="ce-sl-p">手続きそのものは、先にお伝えした通りとても簡単です。</p>
+<p class="ce-sl-p">このページの下のボタンからお申し込みください。</p>
+<p class="ce-sl-p">お支払いは、クレジットカード、または銀行振込です。</p>
+<p class="ce-sl-p">お支払いが終わると、あなた専用の、チャットワークのグループにご招待します。<br>あなたと、私たち講師と、事務局の人間がそこに揃います。</p>
+<p class="ce-sl-p ce-sl-gap2">そして、その日から、あなたの新しい道が始まります。</p>
+<p class="ce-sl-p ce-sl-gap2">長い手紙でした。<br>ここまで読んでくださって、ありがとうございます。</p>
+<p class="ce-sl-p ce-sl-gap2">あの、深夜に、散らかった部屋。<br>たった一人で、答えの出ない不安を抱えていた夜を。</p>
+<p class="ce-sl-p">ここで、終わりにしましょう。</p>
+<p class="ce-sl-p ce-sl-gap2">そして、いつか。</p>
+<p class="ce-sl-p">お子さんに、「お父さんは、何の仕事をしているの？」と聞かれたとき。<br>あるいは、大切な人に、自分の仕事の話をするとき。</p>
+<p class="ce-sl-p ce-sl-gap2">言葉に詰まったり、目を伏せたりせずに胸を張って、こう言える日を迎えてください。</p>
+<p class="ce-sl-p">「これは、お父さんが自分で作った商品なんだ」と。</p>
+<p class="ce-sl-p ce-sl-gap2">その日のために、最初の一歩を。<br>下のボタンから、踏み出してください。</p>
+<div class="ce-sl-ctabox"><a class="ce-sl-cta" href="#ce-pay">　すぐに参加する<span class="ce-sl-cta-arw" aria-hidden="true"></span></a></div>
+<p class="ce-sl-p ce-sl-note ce-sl-gap2">もし、決済のことで分からないことがあったり、振込で進めたいなど確かめたいことがあれば。</p>
+<p class="ce-sl-p">そのまま閉じずに、お手元に届いている私たちからのメールに返信する形でご連絡ください。<br>どんなことでも、直接お答えします。</p>
+</div></section>
+<section class="ce-sl-sec ce-sl-proof" id="sl-b26"><div class="ce-sl-in">
+<div class="ce-sl-chap" aria-hidden="true"><span class="ce-sl-chap-k">CHAPTER</span><span class="ce-sl-chap-n">26</span></div>
+<p class="ce-sl-p ce-sl-gap2">最後に、お見せしておきたいものがあります。</p>
+<p class="ce-sl-p">ここで、たくさんの「成功者の声」を、これでもかとずらりと並べることもできたかもしれません。</p>
+<p class="ce-sl-p">でも、そういうものを、あなたはもう、うんざりするほど見てきたはずです。<br>どこまでが本当か分からない、顔の見えないキラキラした声を。</p>
+<p class="ce-sl-p ce-sl-gap2">だから、私たちは、それをしません。</p>
+<p class="ce-sl-p">盛った話や、作った声ではなく、記録として残っている。<br>本当のことだけを、お見せします。</p>
+<p class="ce-sl-p">なにより、クラウドファンディングサイトをご覧いただければ、その実績が隠さずに乗っております。<br>それが証拠です。</p>
+<h2 class="ce-sl-h2">この手法が実際に生んできた数字です</h2>
+<p class="ce-sl-p">これは、誰かの自慢話ではありません。<br>すべて、クラウドファンディングのページに、記録として残っている数字です。</p>
+<p class="ce-sl-p ce-sl-gap2">あるフロス関連の商品は、1回のクラウドファンディングで、<b class="ce-sl-num">970万円</b>を集めました。</p>
+<figure class="ce-sl-fig"><div class="ce-sl-frame"><span class="ce-sl-badge">1回目</span><a class="ce-sl-zoom" href="https://utagesystem.s3.ap-northeast-1.amazonaws.com/jW5amCPQZfus/v1Atm2sBDebtdQZdLqWgJH3BO2UyIch5Sy1Qlv73.jpg" target="_blank" rel="noopener"><img class="ce-sl-img" src="https://utagesystem.s3.ap-northeast-1.amazonaws.com/jW5amCPQZfus/v1Atm2sBDebtdQZdLqWgJH3BO2UyIch5Sy1Qlv73.jpg" alt="Makuake 実画面　9,692,475円" width="1200" height="410" loading="lazy" decoding="async"></a></div><figcaption class="ce-sl-cap">Makuake 実画面　9,692,475円</figcaption></figure>
+<p class="ce-sl-p">そして、驚くのはここからです。<br>同じ商品で、もう一度、また一度と、繰り返し販売し、5回目でも<b class="ce-sl-num">262万円</b>を集めています。</p>
+<figure class="ce-sl-fig"><div class="ce-sl-frame"><span class="ce-sl-badge">5回目</span><a class="ce-sl-zoom" href="../assets/letter/sl-floss-5th.jpg" target="_blank" rel="noopener"><img class="ce-sl-img" src="../assets/letter/sl-floss-5th.jpg" alt="実画面　2,620,632円" width="1200" height="409" loading="lazy" decoding="async"></a></div><figcaption class="ce-sl-cap">実画面　2,620,632円</figcaption></figure>
+<p class="ce-sl-p">これが、お伝えしてきた1つの商品を何度も売るという形です。</p>
+<p class="ce-sl-p">ジャンルは、まったく問いません。</p>
+<p class="ce-sl-p ce-sl-gap2">ある家庭用の彫刻機は、1回で、<b class="ce-sl-num">4,800万円</b>。</p>
+<figure class="ce-sl-fig ce-sl-ph"><div class="ce-sl-frame"><span>素材待ち：家庭用レーザー彫刻機 48,562,400円 の実画面</span></div><figcaption class="ce-sl-cap">家庭用レーザー彫刻機　48,562,400円</figcaption></figure>
+<p class="ce-sl-p">食品でも、結果は出ます。<br>ある松茸は、<b class="ce-sl-num">810万円</b>。</p>
+<figure class="ce-sl-fig ce-sl-ph"><div class="ce-sl-frame"><span>素材待ち：松茸 8,097,200円 の実画面</span></div><figcaption class="ce-sl-cap">松茸　8,097,200円</figcaption></figure>
+<p class="ce-sl-p ce-sl-gap2">時計も、キッチン用品も、生活家電も、同じように結果が出ています。</p>
+<p class="ce-sl-p">そして、これらを積み上げてきた、私たちのアカウント全体の実績がこちらです。</p>
+<figure class="ce-sl-fig"><div class="ce-sl-frame"><a class="ce-sl-zoom" href="../assets/letter/sl-makuake-total.jpg" target="_blank" rel="noopener"><img class="ce-sl-img" src="../assets/letter/sl-makuake-total.jpg" alt="Makuake 実行者ページ　72,208,222円／10,427人" width="1200" height="424" loading="lazy" decoding="async"></a></div><figcaption class="ce-sl-cap">Makuake 実行者ページ　72,208,222円／10,427人</figcaption></figure>
+<p class="ce-sl-p">一つひとつの商品が、こうして積み上がっていきます。</p>
+<p class="ce-sl-p ce-sl-gap2">さらに、こうした商品は、私たちが自分で言っているだけではありません。</p>
+<div class="ce-sl-grid ce-sl-grid-media">
+<figure class="ce-sl-fig"><div class="ce-sl-frame"><a class="ce-sl-zoom" href="../assets/letter/sl-media-goodspress.jpg" target="_blank" rel="noopener"><img class="ce-sl-img" src="../assets/letter/sl-media-goodspress.jpg" alt="Goods Press" width="1040" height="1000" loading="lazy" decoding="async"></a></div><figcaption class="ce-sl-cap">Goods Press</figcaption></figure>
+<figure class="ce-sl-fig"><div class="ce-sl-frame"><a class="ce-sl-zoom" href="../assets/letter/sl-media-tabilabo.jpg" target="_blank" rel="noopener"><img class="ce-sl-img" src="../assets/letter/sl-media-tabilabo.jpg" alt="TABI LABO" width="1194" height="662" loading="lazy" decoding="async"></a></div><figcaption class="ce-sl-cap">TABI LABO</figcaption></figure>
+<figure class="ce-sl-fig"><div class="ce-sl-frame"><a class="ce-sl-zoom" href="../assets/letter/sl-media-lifehacker.jpg" target="_blank" rel="noopener"><img class="ce-sl-img" src="../assets/letter/sl-media-lifehacker.jpg" alt="ライフハッカー" width="1110" height="960" loading="lazy" decoding="async"></a></div><figcaption class="ce-sl-cap">ライフハッカー</figcaption></figure>
+<figure class="ce-sl-fig"><div class="ce-sl-frame"><a class="ce-sl-zoom" href="../assets/letter/sl-media-gizmodo.jpg" target="_blank" rel="noopener"><img class="ce-sl-img" src="../assets/letter/sl-media-gizmodo.jpg" alt="ギズモード" width="1130" height="960" loading="lazy" decoding="async"></a></div><figcaption class="ce-sl-cap">ギズモード</figcaption></figure>
+</div>
+<p class="ce-sl-p">名の知れたメディアが、取り上げています。<br>そして、地方自治体のふるさと納税の返礼品にも採用されています。</p>
+<div class="ce-sl-grid ce-sl-grid-furusato">
+<figure class="ce-sl-fig"><div class="ce-sl-frame"><a class="ce-sl-zoom" href="../assets/letter/sl-furusato-satofull.jpg" target="_blank" rel="noopener"><img class="ce-sl-img" src="../assets/letter/sl-furusato-satofull.jpg" alt="さとふる（福井県鯖江市）" width="1200" height="596" loading="lazy" decoding="async"></a></div><figcaption class="ce-sl-cap">さとふる（福井県鯖江市）</figcaption></figure>
+<figure class="ce-sl-fig"><div class="ce-sl-frame"><a class="ce-sl-zoom" href="../assets/letter/sl-furusato-choice.jpg" target="_blank" rel="noopener"><img class="ce-sl-img" src="../assets/letter/sl-furusato-choice.jpg" alt="ふるさとチョイス（福井県鯖江市）" width="1200" height="724" loading="lazy" decoding="async"></a></div><figcaption class="ce-sl-cap">ふるさとチョイス（福井県鯖江市）</figcaption></figure>
+</div>
+<p class="ce-sl-p ce-sl-gap2">第三者が、きちんと、本物だと認めている。<br>これも、記録に残る事実です。</p>
+<h3 class="ce-sl-h3">そして、この道を選んでいるのはこんな人たちです</h3>
+<p class="ce-sl-p">数字だけでは、あなたにはまだ遠く感じるかもしれません。</p>
+<p class="ce-sl-p">だから、実際に、この道を選んだ人たちが、どんな人なのか？<br>それをお伝えします。</p>
+<p class="ce-sl-p ce-sl-gap2">みんな、あなたと同じ場所から来た普通の人たちです。</p>
+<p class="ce-sl-p ce-sl-gap2">毎日、路線バスのハンドルを握りながら、いつか自分の商品を持ちたいと考えていたAさん。</p>
+<p class="ce-sl-p">証券会社のコールセンターで、17年間、管理職を務めてきたBさん。</p>
+<p class="ce-sl-p">店舗を歩き回るせどりで、月に<b class="ce-sl-num">90万円</b>を売りながら、手元には<b class="ce-sl-num">15万円</b>しか残らずこれは一生は続けられないと悟ったCさん。</p>
+<p class="ce-sl-p">Amazonの制約と、いつ止まるか分からないアカウントに、ずっと神経をすり減らしてきたDさん。</p>
+<p class="ce-sl-p">別の物販の塾に一年通ったのに、結局、何も結果が出なかったEさん。</p>
+<p class="ce-sl-p">建築機器の部品を作る工場で12年間、シフト勤務を続けてきたFさん。</p>
+<p class="ce-sl-p">介護施設の事務をしながら、家でもできる仕事を探していたGさん。</p>
+<p class="ce-sl-p">物販の経験はメルカリで、いらない物を売ったことがあるだけ。<br>それでも、長く続けられるビジネスが欲しかったHさん。</p>
+<p class="ce-sl-p">漁師をしながら、自分で獲ったものをもっと多くの人に届けたかったIさん。</p>
+<p class="ce-sl-p ce-sl-gap2">数えきれないほど、います。</p>
+<p class="ce-sl-p">年齢も、職業も、これまでの経験も、バラバラです。<br>共通しているのは、ただ一つ。</p>
+<p class="ce-sl-p ce-sl-gap2">「もう、他人の棚を借りるのは、終わりにしたい」</p>
+<p class="ce-sl-p">その一点だけです。</p>
+<p class="ce-sl-p ce-sl-gap2">あなたが、特別にできないなんてことはありません。<br>再現性がある設計図がここにあります。</p>
+<p class="ce-sl-p">この人たちにできて、あなたにできない理由がどこにあるでしょうか？</p>
+<h3 class="ce-sl-h3">もうひとり紹介させてください</h3>
+<p class="ce-sl-p">最後に、もうひとりご紹介させてください。</p>
+<p class="ce-sl-p">希少な食材を扱う、Z.Aさんという方です。</p>
+<p class="ce-sl-p">以前は、Amazonなどに出品して売るだけで、お客様と続けてつながる導線が弱く、どうしても一回売って終わりになりがちでした。</p>
+<p class="ce-sl-p">それが、商品のこだわりや背景を伝えて、ファンになってもらう売り方に変えたことで大きく変わりました。</p>
+<p class="ce-sl-p">結果として、累計で<b class="ce-sl-num">4,000万円</b>以上の売上を築いています。</p>
+<p class="ce-sl-p">しかも、そのほとんどが注文を受けてから手配する。<br>在庫を抱えない形で。</p>
+<p class="ce-sl-p">利益率が低くなりがちな食品の販売で「これは非常に助かっている」と話してくれました。</p>
+<p class="ce-sl-p ce-sl-gap2">こうして、顔の見える本物の声があります。</p>
+<p class="ce-sl-p">数を、盛る必要は、ありません。</p>
+<p class="ce-sl-p">ここに並べたのは、すべて本当のことだけです。<br>Makuakeで確認してみてください。</p>
+<p class="ce-sl-p ce-sl-gap2">次に、この中に加わるのは、あなたの番です。</p>
+<p class="ce-sl-p">あの、深夜に、一人で悩んでいた夜からここまで来たなら。<br>あとは一歩、踏み出すだけです。</p>
+<div class="ce-sl-ctabox"><a class="ce-sl-cta" href="#ce-pay">　すぐに参加する<span class="ce-sl-cta-arw" aria-hidden="true"></span></a></div>
+<p class="ce-sl-p ce-sl-note">決済のことや、確かめたいことがあればお手元に届いているメールにご返信の方でご連絡ください。<br>直接、お答えします。</p>
+</div></section>
+<section class="ce-sl-sec ce-sl-sunrise" id="sl-b27"><div class="ce-sl-in">
+<div class="ce-sl-chap" aria-hidden="true"><span class="ce-sl-chap-k">POSTSCRIPT</span><span class="ce-sl-chap-n">P.S.</span></div>
+<h2 class="ce-sl-h2">追伸</h2>
+<p class="ce-sl-p">ここまで読んでくださって、まだあと一歩が踏み出せずにいるかもしれません。</p>
+<p class="ce-sl-p">その気持ちは、よく分かります。<br>決して、小さな金額ではないし大きな決断だからです。</p>
+<p class="ce-sl-p ce-sl-gap2">でも、一つだけ想像してみてほしいことがあります。</p>
+<p class="ce-sl-p ce-sl-gap2">もし、今日、あなたが何も変えなかったとしたら。</p>
+<p class="ce-sl-p">1年後の今日。<br>あなたは、どこにいるでしょうか？</p>
+<p class="ce-sl-p ce-sl-gap2">おそらく、今とほとんど同じ場所にいます。</p>
+<p class="ce-sl-p">同じように、深夜に散らかった部屋で、バーコードを読みながら、いつ止まるか分からないアカウントに怯えている。<br>積み上がらない作業を、また繰り返している。</p>
+<p class="ce-sl-p">いえ、AIによってすべて消えているかもしれません。</p>
+<p class="ce-sl-p ce-sl-gap2">1年という時間だけが、ただ静かに過ぎていく。<br>そして、また、次の1年も…</p>
+<p class="ce-sl-p ce-sl-gap2">でも、もし。</p>
+<p class="ce-sl-p">今日、あなたが一歩を踏み出したとしたら。</p>
+<p class="ce-sl-p ce-sl-gap2">1年後、あなたの手元には、一生消えることのない技術と、あなたの名前がついた商品があります。</p>
+<p class="ce-sl-p">同じ1年です。<br>同じ365日です。</p>
+<p class="ce-sl-p">なのに、その中身はまったく別のものになる。</p>
+<p class="ce-sl-p">その差を分けるのは、才能ではありません。</p>
+<p class="ce-sl-p">今日、動くかどうか。<br>ただ、それだけです。</p>
+<h3 class="ce-sl-h3">追伸2</h3>
+<p class="ce-sl-p">この、驚くほど長い手紙を、私がなぜここまで書いたのか？</p>
+<p class="ce-sl-p">うまいことを並べて、あなたに売りつけたかったからではありません。</p>
+<p class="ce-sl-p ce-sl-gap2">ここまで、実物も、数字も、隠さず、全部お見せしてきました。<br>作った成功者の声も、盛った数字も、一つもなかったはずです。</p>
+<p class="ce-sl-p ce-sl-gap2">それは、この道が本物だからです。</p>
+<p class="ce-sl-p ce-sl-gap2">そして、あなたに本気で来てほしいからです。</p>
+<p class="ce-sl-p">だからもし、あなたがこれまでキラキラした嘘、何度も裏切られてきたのだとしても。<br>これだけは、信じてください。</p>
+<p class="ce-sl-p ce-sl-gap2">ここには、あなたを騙すための言葉は一つも書いていません。</p>
+<p class="ce-sl-p ce-sl-gap2">そして、この形であなたにご案内できるのは今この時期だけです。</p>
+<p class="ce-sl-p">間に誰も挟まず、私たちが直接お届け。<br>一人ひとりに手厚く伴走できる人数を区切ってご案内している。</p>
+<p class="ce-sl-p">だから、次に同じ形でご案内できるかは、正直わかりません。</p>
+<p class="ce-sl-p">もし、あなたの心が、少しでも動いているなら。<br>その気持ちが、冷めてしまう前に。</p>
+<h3 class="ce-sl-h3">追伸3</h3>
+<p class="ce-sl-p">最後に、あなたに伝えたいことがあります。</p>
+<p class="ce-sl-p">あなたの隣に立つ、辻本も田村も。<br>最初の一歩は、怖かった。</p>
+<p class="ce-sl-p">それでも、私たちは負けても、失っても。<br>もう一度、立ち上がった。</p>
+<p class="ce-sl-p ce-sl-gap2">あの一歩がなければ、私たちは今、あなたの隣にはいません。</p>
+<p class="ce-sl-p">あんなにも多くの生徒さんの人生を変えることもできなかった。</p>
+<p class="ce-sl-p ce-sl-gap2">誰にとっても、始まりはたった一歩です。</p>
+<p class="ce-sl-p">特別な人だけが、踏み出せるわけではありません。</p>
+<p class="ce-sl-p ce-sl-gap2">そして、あなたのその一歩は、あなただけのものではないかもしれません。</p>
+<p class="ce-sl-p">いつか、あなたのお子さんが、大人になって、何か大きなことに挑もうとするとき。</p>
+<p class="ce-sl-p">「お父さんも、あの夜、たった一人で、怖いのを乗り越えて一歩を踏み出したんだ」と。</p>
+<p class="ce-sl-p">胸を張って、そう言える日が来るかもしれません。<br>あなたの一歩は、あなたの子どもの、背中を押す一歩にもなるのです。</p>
+<p class="ce-sl-p ce-sl-gap2">長い、長い手紙でした。</p>
+<p class="ce-sl-p">最後まで、読んでくださって、本当にありがとうございました。</p>
+<p class="ce-sl-p ce-sl-gap2">あとは、あなたが決めるだけです。<br>あの、深夜の、たった一人きりの夜を。</p>
+<p class="ce-sl-p">ここで、終わりにしましょう。</p>
+<p class="ce-sl-p ce-sl-gap2">chatworkでお会いできること楽しみにしております。</p>
+<div class="ce-sl-ctabox"><a class="ce-sl-cta" href="#ce-pay">　すぐに参加する<span class="ce-sl-cta-arw" aria-hidden="true"></span></a></div>
+<p class="ce-sl-p ce-sl-note">決済のことや、聞いておきたいことがありましたら。<br>お手元に届いているメールに、ご返信の形でご連絡ください。</p>
+<p class="ce-sl-p">最後まで、私たちが直接お答えします。</p>
+<figure class="ce-sl-fig ce-sl-ph ce-sl-ph-sign"><div class="ce-sl-frame"><span>素材待ち：辻本さん・田村さんのサイン</span></div></figure>
+</div></section>
+<div class="ce-sl-dock"><div class="ce-sl-ctabox ce-sl-dock-in"><a class="ce-sl-cta" href="#ce-pay">すぐに参加する<span class="ce-sl-cta-arw" aria-hidden="true"></span></a></div>
+</div>
+</div>
+</body>
+</html>
