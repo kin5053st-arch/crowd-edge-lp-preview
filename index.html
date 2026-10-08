@@ -2207,6 +2207,67 @@ html.ce-still .ce-lp:not(#ce) .ce-mk{background-size:100% 100%!important}
 
 
 
+.ce-lp:not(#ce) .ce-sl-spot{position:relative;z-index:2;overflow:hidden;margin-block:3.2em;padding:64px 0 60px;text-align:center;
+  background:radial-gradient(70% 70% at 50% 50%,rgba(226,182,92,.20),transparent 70%),linear-gradient(180deg,#1C2459 0%,#121848 55%,#0C1136 100%);
+  box-shadow:0 -18px 40px -24px rgba(26,33,82,.35),0 18px 40px -24px rgba(26,33,82,.35)}
+.ce-lp:not(#ce) .ce-sl-spot::before,.ce-lp:not(#ce) .ce-sl-spot::after{content:"";position:absolute;left:0;right:0;height:1px;pointer-events:none;background:linear-gradient(90deg,transparent,#E2B65C 20%,#FFE6A8 50%,#E2B65C 80%,transparent)}
+.ce-lp:not(#ce) .ce-sl-spot::before{top:8px}
+.ce-lp:not(#ce) .ce-sl-spot::after{bottom:8px}
+.ce-lp:not(#ce) .ce-sl-spot-glow{position:absolute;left:50%;top:50%;width:560px;height:560px;margin:-280px 0 0 -280px;border-radius:50%;pointer-events:none;
+  background:repeating-conic-gradient(from 0deg,rgba(255,226,160,.09) 0 4deg,transparent 4deg 15deg);
+  -webkit-mask:radial-gradient(closest-side,#000 20%,transparent);mask:radial-gradient(closest-side,#000 20%,transparent)}
+.ce-lp:not(#ce) .ce-sl-spot-k{position:relative;z-index:1;display:block;font-family:var(--latin);font-style:italic;font-weight:600;font-size:14px;letter-spacing:.5em;padding-left:.5em;line-height:1;color:#E9C27A}
+.ce-lp:not(#ce) .ce-sl-spot-orn{display:block;width:180px;margin:14px auto 20px;z-index:1}
+.ce-lp:not(#ce) .ce-sl-spot-orn-b{margin:26px auto 0}
+.ce-lp:not(#ce) .ce-sl-spot .ce-col>p{margin:0!important;font-family:var(--head);font-weight:var(--hw);font-size:clamp(26px,7.6vw,34px);line-height:1.6;letter-spacing:.04em;font-feature-settings:"palt";color:#FFF6E0;text-shadow:0 0 26px rgba(243,200,110,.35)}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  .ce-lp:not(#ce) .ce-sl-spot .ce-col>p{background:linear-gradient(180deg,#FFF8E6 0%,#FFE3A1 45%,#E7B55A 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;text-shadow:none;filter:drop-shadow(0 0 16px rgba(243,200,110,.35))}
+}
+.ce-lp:not(#ce) .ce-sl-spot .ce-col>p *{color:inherit;-webkit-text-fill-color:inherit;background:none;text-decoration:none;border:0;box-shadow:none}
+.ce-lp:not(#ce) .ce-sl-spot .ce-col>p::before,.ce-lp:not(#ce) .ce-sl-spot .ce-col>p::after{display:none}
+
+
+.ce-lp:not(#ce) .ce-sl-sec .ce-chap{position:relative;isolation:isolate;padding-top:18px}
+.ce-lp:not(#ce) .ce-sl-chap-wm{position:absolute;left:50%;top:50%;z-index:-1;transform:translate(-50%,-50%);font-family:var(--latin);font-style:italic;font-weight:600;font-size:230px;line-height:1;letter-spacing:-.02em;white-space:nowrap;pointer-events:none;
+  color:transparent;-webkit-text-stroke:1px rgba(201,154,63,.28);opacity:.9}
+.ce-lp:not(#ce) .ce-dark .ce-sl-chap-wm{-webkit-text-stroke-color:rgba(243,213,142,.22)}
+.ce-lp:not(#ce) .ce-sl-h2.ce-sl-door{font-size:clamp(26px,7.4vw,31px)}
+.ce-lp:not(#ce) .ce-sl-door .ce-chap-q-in{position:relative;display:inline-block;padding:4px 1em}
+.ce-lp:not(#ce) .ce-sl-door .ce-chap-q-in::before,.ce-lp:not(#ce) .ce-sl-door .ce-chap-q-in::after{content:"";position:absolute;width:16px;height:16px;border-color:var(--rule);border-style:solid}
+.ce-lp:not(#ce) .ce-sl-door .ce-chap-q-in::before{left:0;top:0;border-width:1.5px 0 0 1.5px}
+.ce-lp:not(#ce) .ce-sl-door .ce-chap-q-in::after{right:0;bottom:0;border-width:0 1.5px 1.5px 0}
+.ce-lp:not(#ce) .ce-sl-sec .ce-rail-in{background:transparent}
+
+
+.ce-lp:not(#ce) .ce-sl-price{margin-block:3em 2em;text-align:center}
+.ce-lp:not(#ce) .ce-sl-price-k{position:relative;z-index:2;display:inline-block;margin-bottom:-12px;padding:0 14px 0 calc(14px + .4em);font-family:var(--latin);font-style:italic;font-weight:600;font-size:14px;line-height:26px;letter-spacing:.4em;color:#FFF3D0;background:linear-gradient(180deg,var(--navy-1),var(--navy-2));border:1px solid #D9AE56;border-radius:var(--r-xs)}
+.ce-lp:not(#ce) .ce-sl-price .ce-sl-b95{text-align:center}
+.ce-lp:not(#ce) .ce-sl-price-main .ce-sl-b95{max-width:460px;padding:46px 16px 40px;box-shadow:0 0 0 1px rgba(255,230,168,.5),0 0 0 7px rgba(226,182,92,.16),0 30px 60px rgba(26,33,82,.35),0 0 90px rgba(243,200,110,.35)}
+.ce-lp:not(#ce) .ce-sl-price-main .ce-sl-b95 p{font-size:22px}
+.ce-lp:not(#ce) .ce-sl-price-main .ce-sl-num{font-size:2.9em}
+.ce-lp:not(#ce) .ce-sl-price .ce-sl-b95 .ce-sl-num,.ce-lp:not(#ce) .ce-light .ce-sl-price .ce-sl-b95 .ce-sl-num{color:#F3D58E;-webkit-text-fill-color:#F3D58E}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  .ce-lp:not(#ce) .ce-sl-price .ce-sl-b95 .ce-sl-num,.ce-lp:not(#ce) .ce-light .ce-sl-price .ce-sl-b95 .ce-sl-num{background:linear-gradient(180deg,#FFF8E6 0%,#FFE3A1 40%,#E9B85C 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 14px rgba(243,200,110,.5))}
+}
+.ce-lp:not(#ce) .ce-sl-price-burst{position:absolute;inset:0;overflow:hidden;border-radius:inherit;pointer-events:none;
+  background:repeating-conic-gradient(from 0deg at 50% 62%,rgba(255,226,160,.12) 0 3deg,transparent 3deg 12deg);
+  -webkit-mask:radial-gradient(60% 70% at 50% 62%,#000 15%,transparent);mask:radial-gradient(60% 70% at 50% 62%,#000 15%,transparent)}
+
+@media (min-width:768px){
+  .ce-lp:not(#ce) .ce-sl-spot{padding:84px 0 80px}
+  .ce-lp:not(#ce) .ce-sl-spot .ce-col>p{font-size:40px}
+  .ce-lp:not(#ce) .ce-sl-spot-glow{width:820px;height:820px;margin:-410px 0 0 -410px}
+  .ce-lp:not(#ce) .ce-sl-chap-wm{font-size:300px}
+  .ce-lp:not(#ce) .ce-sl-h2.ce-sl-door{font-size:38px}
+  .ce-lp:not(#ce) .ce-sl-door .ce-chap-q-in::before,.ce-lp:not(#ce) .ce-sl-door .ce-chap-q-in::after{width:22px;height:22px}
+  .ce-lp:not(#ce) .ce-sl-price-main .ce-sl-b95{max-width:600px}
+  .ce-lp:not(#ce) .ce-sl-price-main .ce-sl-b95 p{font-size:26px}
+}
+@media (min-width:1024px){
+  .ce-lp:not(#ce) .ce-sl-chap-wm{font-size:380px}
+}
+
+
 .ce-lp:not(#ce) .ce-pc-br{display:none}
 @media (min-width:1024px){
   .ce-lp:not(#ce) .ce-fv-h1 .ce-sp-br{display:none}
