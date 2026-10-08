@@ -2039,6 +2039,26 @@ html.ce-still .ce-lp:not(#ce) .ce-mk{background-size:100% 100%!important}
   .ce-lp:not(#ce) .ce-sl-fv-4{font-size:46px}
 }
 
+.ce-lp:not(#ce) .ce-sl-fv-photo{position:absolute;inset:0;z-index:0;pointer-events:none}
+.ce-lp:not(#ce) .ce-sl-fv-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 70%;filter:saturate(.9)}
+.ce-lp:not(#ce) .ce-sl-fv-photo::after{content:"";position:absolute;inset:0;
+  background:radial-gradient(70% 55% at 50% 38%,rgba(6,10,32,.42),rgba(6,10,32,.12) 70%,transparent),
+    linear-gradient(180deg,rgba(5,8,26,.62) 0%,rgba(5,8,26,.25) 30%,rgba(5,8,26,.08) 55%,rgba(10,17,48,.15) 78%,#0B1032 100%)}
+.ce-lp:not(#ce) .ce-sl-fv .ce-sl-fv-1,.ce-lp:not(#ce) .ce-sl-fv .ce-sl-fv-4{text-shadow:0 2px 18px rgba(3,6,22,.75),0 0 2px rgba(3,6,22,.5)}
+.ce-lp:not(#ce) .ce-sl-fv .ce-sl-fv-5{text-shadow:0 1px 10px rgba(3,6,22,.8)}
+
+@media (max-width:767px){
+  .ce-lp:not(#ce) .ce-sl-fv-photo{bottom:auto;height:125%}
+  .ce-lp:not(#ce) .ce-sl-fv-photo::after{background:radial-gradient(70% 45% at 50% 30%,rgba(6,10,32,.42),rgba(6,10,32,.12) 70%,transparent),
+    linear-gradient(180deg,rgba(5,8,26,.62) 0%,rgba(5,8,26,.25) 24%,rgba(5,8,26,.06) 46%,rgba(10,17,48,.2) 66%,#0B1032 80%)}
+}
+@media (min-width:768px){
+  .ce-lp:not(#ce) .ce-sl-fv-photo{bottom:auto;height:120%}
+  .ce-lp:not(#ce) .ce-sl-fv-photo img{object-position:50% 30%}
+  .ce-lp:not(#ce) .ce-sl-fv-photo::after{background:radial-gradient(60% 45% at 50% 32%,rgba(6,10,32,.42),rgba(6,10,32,.12) 70%,transparent),
+    linear-gradient(180deg,rgba(5,8,26,.6) 0%,rgba(5,8,26,.22) 26%,rgba(5,8,26,.06) 48%,rgba(10,17,48,.18) 68%,#0B1032 83%)}
+}
+
 .ce-lp:not(#ce) .ce-pc-br{display:none}
 @media (min-width:1024px){
   .ce-lp:not(#ce) .ce-fv-h1 .ce-sp-br{display:none}
@@ -2157,7 +2177,7 @@ html.ce-still .ce-lp:not(#ce) .ce-mk{background-size:100% 100%!important}
 <div class="ce-progress" aria-hidden="true"><div class="ce-progress-bar"><div class="ce-progress-fill"></div></div><div class="ce-progress-dot"></div></div>
 <section id="sl-fv" class="ce-fv ce-sl-fv ce-sl-sec ce-sl-fvbg ce-dark ce-night">
 <div class="ce-stars" aria-hidden="true"></div>
-<div class="ce-sl-fv-dawn" aria-hidden="true"><span class="ce-sl-fv-rays"></span><span class="ce-sl-fv-arc"></span><span class="ce-sl-fv-sun"></span></div>
+<div class="ce-sl-fv-photo" aria-hidden="true"><picture><source media="(min-width:768px)" srcset="../assets/letter/sl-fv-sky-pc.webp" width="1920" height="1280"><img src="../assets/letter/sl-fv-sky-sp.webp" alt="" width="750" height="1200" fetchpriority="high" decoding="async"></picture></div>
 <div class="ce-col">
 <div class="ce-sl-fv-in">
 <h1 class="ce-sl-fv-h"><span class="ce-sl-fv-1">せどり・転売？</span><span class="ce-sl-fv-2 ce-gt">今<wbr>日から<wbr>辞めていい。</span><span class="ce-spark" style="--s:16px;right:2%;top:30%;--d:.6s" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M10 0C11 7 13 9 20 10 13 11 11 13 10 20 9 13 7 11 0 10 7 9 9 7 10 0Z"/></svg></span></h1>
