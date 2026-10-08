@@ -2131,6 +2131,48 @@ html.ce-still .ce-lp:not(#ce) .ce-mk{background-size:100% 100%!important}
   .ce-lp:not(#ce) .ce-sl-h2.ce-sl-door{font-size:clamp(20px,5.9vw,25px)}
 }
 
+.ce-lp:not(#ce) .ce-sl-hlwrap{position:relative}
+.ce-lp:not(#ce) .ce-sl-hl{position:absolute;pointer-events:none;border:2px solid #F2C14E;border-radius:10px;
+  box-shadow:0 0 0 3px rgba(242,193,78,.28),0 0 16px 2px rgba(242,193,78,.65),inset 0 0 12px rgba(242,193,78,.35);animation:ceSlHl 2.4s ease-in-out infinite}
+@keyframes ceSlHl{0%,100%{box-shadow:0 0 0 3px rgba(242,193,78,.28),0 0 14px 1px rgba(242,193,78,.5),inset 0 0 10px rgba(242,193,78,.3)}50%{box-shadow:0 0 0 5px rgba(242,193,78,.18),0 0 24px 5px rgba(242,193,78,.75),inset 0 0 14px rgba(242,193,78,.4)}}
+@media (prefers-reduced-motion:reduce){.ce-lp:not(#ce) .ce-sl-hl{animation:none}}
+
+.ce-lp:not(#ce) .ce-sl-f15-rail{margin:4px auto 18px;max-width:420px;text-align:center}
+.ce-lp:not(#ce) .ce-sl-f15-k{display:inline-block;margin-bottom:10px;padding:2px 14px;font-family:var(--head);font-weight:var(--hw);font-size:15px;letter-spacing:.2em;color:#1A2152;background:linear-gradient(180deg,#FFF1C8,#E9C27A);border-radius:999px}
+.ce-lp:not(#ce) .ce-sl-f15-rail ol{position:relative;display:flex;justify-content:space-between;margin:0 18px;padding:0;list-style:none}
+.ce-lp:not(#ce) .ce-sl-f15-rail ol::before{content:"";position:absolute;left:6px;right:6px;top:6px;height:2px;background:linear-gradient(90deg,#F3D58E,#D9AE56 50%,#F3D58E)}
+.ce-lp:not(#ce) .ce-sl-f15-rail li{position:relative;display:flex;flex-direction:column;align-items:center;width:14px}
+.ce-lp:not(#ce) .ce-sl-f15-rail i{display:block;width:8px;height:8px;margin-top:3px;border-radius:50%;background:#D9AE56;box-shadow:0 0 0 3px rgba(10,17,48,.9)}
+.ce-lp:not(#ce) .ce-sl-f15-rail li.ce-on i{width:14px;height:14px;margin-top:0;background:#FFE7AE;box-shadow:0 0 0 3px rgba(10,17,48,.9),0 0 12px 3px rgba(243,200,110,.7)}
+.ce-lp:not(#ce) .ce-sl-f15-rail b{margin-top:6px;white-space:nowrap;font-family:var(--head);font-weight:var(--hw);font-size:15px;color:#F3D58E}
+.ce-lp:not(#ce) .ce-light .ce-sl-f15-rail b{color:#6E450C}
+.ce-lp:not(#ce) .ce-sl-f15-row{display:grid;grid-template-columns:1fr;justify-items:center;gap:6px}
+.ce-lp:not(#ce) .ce-sl-f15-card{width:100%;text-align:center}
+.ce-lp:not(#ce) .ce-sl-f15-a{width:78%}
+.ce-lp:not(#ce) .ce-sl-f15-a .ce-evidence-frame{opacity:.9;transform:scale(.98)}
+.ce-lp:not(#ce) .ce-sl-f15-amt{margin-top:10px!important;font-family:var(--latin);font-style:italic;font-weight:600;font-size:30px;line-height:1.1;letter-spacing:.01em;color:#F3D58E;text-shadow:0 0 16px rgba(243,200,110,.45);font-variant-numeric:lining-nums}
+.ce-lp:not(#ce) .ce-sl-f15-a .ce-sl-f15-amt{font-size:24px;opacity:.85}
+.ce-lp:not(#ce) .ce-light .ce-sl-f15-amt{color:#8A5A12;text-shadow:none}
+.ce-lp:not(#ce) .ce-sl-f15-arrow{position:relative;display:block;width:26px;height:34px}
+.ce-lp:not(#ce) .ce-sl-f15-arrow::before{content:"";position:absolute;left:50%;top:0;bottom:8px;width:2px;margin-left:-1px;background:linear-gradient(180deg,rgba(243,213,142,.2),#F3D58E)}
+.ce-lp:not(#ce) .ce-sl-f15-arrow::after{content:"";position:absolute;left:50%;bottom:2px;width:12px;height:12px;margin-left:-6px;border:solid #F3D58E;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.ce-lp:not(#ce) .ce-sl-f15 figcaption{margin-top:1.2em}
+@media (min-width:768px){
+  .ce-lp:not(#ce) .ce-sl-f15-row{grid-template-columns:1fr 40px 1.25fr;align-items:center;gap:10px}
+  .ce-lp:not(#ce) .ce-sl-f15-a{width:100%}
+  .ce-lp:not(#ce) .ce-sl-f15-arrow{width:40px;height:26px}
+  .ce-lp:not(#ce) .ce-sl-f15-arrow::before{left:0;right:8px;top:50%;bottom:auto;width:auto;height:2px;margin:-1px 0 0;background:linear-gradient(90deg,rgba(243,213,142,.2),#F3D58E)}
+  .ce-lp:not(#ce) .ce-sl-f15-arrow::after{left:auto;right:2px;top:50%;bottom:auto;margin:-6px 0 0;transform:rotate(-45deg)}
+  .ce-lp:not(#ce) .ce-sl-f15-amt{font-size:34px}
+  .ce-lp:not(#ce) .ce-sl-f15-a .ce-sl-f15-amt{font-size:26px}
+  .ce-lp:not(#ce) .ce-sl-f15-rail{max-width:520px}
+}
+.ce-lp:not(#ce) .ce-sl-f15 .ce-sl-f15-rail{padding-top:26px}
+
+@media (min-width:1024px){
+  .ce-lp:not(#ce) .ce-sl-f15{margin-inline:calc((100% - min(980px,92vw)) / 2)}
+}
+
 .ce-lp:not(#ce) .ce-pc-br{display:none}
 @media (min-width:1024px){
   .ce-lp:not(#ce) .ce-fv-h1 .ce-sp-br{display:none}
