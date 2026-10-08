@@ -2282,6 +2282,42 @@ html.ce-still .ce-lp:not(#ce) .ce-mk{background-size:100% 100%!important}
 @media (min-width:1024px) and (max-width:1279px) and (max-height:820px){
   .ce-lp:not(#ce) .ce-fv-h1{font-size:40px}
 }
+
+
+.ce-lp:not(#ce) .ce-chap-q{position:relative;max-width:620px;margin:-8px auto 46px!important;padding:0 10px;text-align:center;
+  font-family:var(--head);font-weight:var(--hw);font-size:calc(var(--fs-lead) - 1px);line-height:1.6;letter-spacing:.04em;font-feature-settings:"palt";color:var(--tx-strong);
+  word-break:keep-all;line-break:strict;overflow-wrap:anywhere}
+.ce-lp:not(#ce) .ce-chap-q-in{position:relative;display:inline-block;padding:0 .9em}
+
+.ce-lp:not(#ce) .ce-chap-q-in::before,.ce-lp:not(#ce) .ce-chap-q-in::after{content:"";position:absolute;width:14px;height:14px;border-color:var(--rule);border-style:solid;opacity:.9}
+.ce-lp:not(#ce) .ce-chap-q-in::before{left:0;top:2px;border-width:1.5px 0 0 1.5px}
+.ce-lp:not(#ce) .ce-chap-q-in::after{right:0;bottom:2px;border-width:0 1.5px 1.5px 0}
+.ce-lp:not(#ce) .ce-chap-q::after{content:"";display:block;width:56px;height:1px;margin:22px auto 0;background:var(--rule);opacity:.7}
+.ce-lp:not(#ce) .ce-rail{display:none}
+@media (min-width:768px){
+  .ce-lp:not(#ce) .ce-chap-q{max-width:680px;margin-bottom:56px!important;font-size:calc(var(--fs-lead) + 1px)}
+}
+@media (min-width:1024px){
+  
+  .ce-lp:not(#ce) .ce-chap{margin-bottom:30px;gap:26px}
+  .ce-lp:not(#ce) .ce-chap-rule{max-width:180px}
+  .ce-lp:not(#ce) .ce-chap-n{font-size:118px}
+  .ce-lp:not(#ce) .ce-chap-q{max-width:760px;margin:0 auto 76px!important;font-size:33px;line-height:1.55}
+  .ce-lp:not(#ce) .ce-chap-q-in::before,.ce-lp:not(#ce) .ce-chap-q-in::after{width:20px;height:20px}
+  .ce-lp:not(#ce) .ce-chap-q::after{width:72px;margin-top:30px}
+  
+  .ce-lp:not(#ce) .ce-rail{display:block;position:absolute;z-index:1;top:150px;bottom:120px;left:calc(50% - (var(--col) / 2) - 150px);width:64px;pointer-events:none}
+  .ce-lp:not(#ce) .ce-rail::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:linear-gradient(180deg,transparent,var(--rule) 12%,var(--rule) 88%,transparent);opacity:.45}
+  .ce-lp:not(#ce) .ce-rail-in{position:sticky;top:42vh;display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px 0;background:inherit}
+  .ce-lp:not(#ce) .ce-rail-t{font-family:var(--latin);font-style:italic;font-weight:600;font-size:11px;letter-spacing:.32em;padding-left:.32em;color:var(--chap-t);writing-mode:vertical-rl}
+  .ce-lp:not(#ce) .ce-rail-n{font-family:var(--latin);font-style:italic;font-weight:600;font-size:30px;line-height:1;color:var(--chap-t);
+    text-shadow:0 0 12px rgba(243,200,110,.35)}
+  .ce-lp:not(#ce) .ce-rail-n::before{content:"";display:block;width:7px;height:7px;margin:0 auto 10px;transform:rotate(45deg);background:#F3D58E;box-shadow:0 0 8px 2px rgba(243,213,142,.55)}
+}
+@media (min-width:1440px){
+  .ce-lp:not(#ce) .ce-rail{left:calc(50% - (var(--col) / 2) - 190px)}
+  .ce-lp:not(#ce) .ce-chap-q{font-size:35px}
+}
 </style>
 </head>
 <body>
@@ -2367,9 +2403,12 @@ html.ce-still .ce-lp:not(#ce) .ce-mk{background-size:100% 100%!important}
 <div class="ce-lp" lang="ja" data-ce-part="B1">
 
 <section id="b1" data-block="B1" class="ce-blk ce-b1 ce-dark ce-night">
+<div class="ce-rail" aria-hidden="true"><span class="ce-rail-in"><span class="ce-rail-t">CHAPTER</span><span class="ce-rail-n">01</span></span></div>
 <span class="ce-b1-stars" aria-hidden="true"></span>
 <div class="ce-col">
 <div class="ce-chap ce-rv" aria-hidden="true"><span class="ce-chap-rule"></span><span class="ce-chap-in"><span class="ce-chap-t">CHAPTER</span><span class="ce-chap-n ce-gx">01</span></span><span class="ce-chap-rule"></span></div>
+
+<p class="ce-chap-q ce-rv" aria-hidden="true"><span class="ce-chap-q-in">うまくいかなかった話を<wbr>伏せて、<wbr>うまくいった話だけを<wbr>並べるつもりは<wbr>ないんです。</span></p>
 <p class="ce-rv">はじめまして。<br><span class="ce-name">辻本といいます。</span></p>
 <p class="ce-g1 ce-rv">これから、<wbr>少しお話を<wbr>させていただきます。<br>その<wbr>前に、<wbr>数字だけ<wbr>先に<wbr>置かせてください。</p>
 <p class="ce-g2 ce-rv">私と、<wbr>一緒にやってきた<wbr>人たちが<wbr><span class="ce-ib">動かした<wbr>売上は、</span><br>これまでに<wbr>累計で<wbr><span class="ce-hl">10億円</span>を<wbr>超えました。</p>
@@ -2412,8 +2451,11 @@ html.ce-still .ce-lp:not(#ce) .ce-mk{background-size:100% 100%!important}
 <div class="ce-lp" lang="ja" data-ce-part="B2">
 
 <section id="b2" data-block="B2" class="ce-blk ce-b2 ce-dark ce-night">
+<div class="ce-rail" aria-hidden="true"><span class="ce-rail-in"><span class="ce-rail-t">CHAPTER</span><span class="ce-rail-n">02</span></span></div>
 <div class="ce-col">
 <div class="ce-chap ce-rv" aria-hidden="true"><span class="ce-chap-rule"></span><span class="ce-chap-in"><span class="ce-chap-t">CHAPTER</span><span class="ce-chap-n ce-gx">02</span></span><span class="ce-chap-rule"></span></div>
+
+<p class="ce-chap-q ce-rv" aria-hidden="true"><span class="ce-chap-q-in">つまり私は、<wbr>今も現場にいます。</span></p>
 
 <figure class="ce-host ce-rv">
   <div class="ce-portrait"><img src="assets/instructors/tsujimoto.jpg" data-asset="b2-tsujimoto" alt="辻本の写真" width="1122" height="1402" loading="lazy" decoding="async" onerror="this.parentNode.style.display='none';var c=this.closest('.ce-host');if(c)c.classList.add('ce-no-photo')"></div>
@@ -2466,8 +2508,11 @@ html.ce-still .ce-lp:not(#ce) .ce-mk{background-size:100% 100%!important}
 <div class="ce-lp" lang="ja" data-ce-part="B3">
 
 <section id="b3" data-block="B3" class="ce-blk ce-b3 ce-dark ce-violet">
+<div class="ce-rail" aria-hidden="true"><span class="ce-rail-in"><span class="ce-rail-t">CHAPTER</span><span class="ce-rail-n">03</span></span></div>
 <div class="ce-col">
 <div class="ce-chap ce-rv" aria-hidden="true"><span class="ce-chap-rule"></span><span class="ce-chap-in"><span class="ce-chap-t">CHAPTER</span><span class="ce-chap-n ce-gx">03</span></span><span class="ce-chap-rule"></span></div>
+
+<p class="ce-chap-q ce-rv" aria-hidden="true"><span class="ce-chap-q-in">この3つは、<wbr>バラバラに見えて、<wbr>実はひとつに<wbr>つながっています。</span></p>
 <p class="ce-rv">先に<wbr>言っておきます。</p>
 <p class="ce-g1 ce-rv">これから<wbr>並べる<wbr>3つは、<br>誰か<wbr>特定の<wbr>人が<wbr>言い出したものじゃありません。</p>
 <p class="ce-g1 ce-rv">みんなが<wbr>言っているうちに、<br>いつの間にか<wbr>当たり前になったものです。</p>
@@ -2547,8 +2592,11 @@ html.ce-still .ce-lp:not(#ce) .ce-mk{background-size:100% 100%!important}
 <div class="ce-lp" lang="ja" data-ce-part="B4">
 
 <section id="b4" data-block="B4" class="ce-blk ce-b4 ce-dark ce-violet">
+<div class="ce-rail" aria-hidden="true"><span class="ce-rail-in"><span class="ce-rail-t">CHAPTER</span><span class="ce-rail-n">04</span></span></div>
 <div class="ce-col">
 <div class="ce-chap ce-rv" aria-hidden="true"><span class="ce-chap-rule"></span><span class="ce-chap-in"><span class="ce-chap-t">CHAPTER</span><span class="ce-chap-n ce-gx">04</span></span><span class="ce-chap-rule"></span></div>
+
+<p class="ce-chap-q ce-rv" aria-hidden="true"><span class="ce-chap-q-in">問題は、<wbr>腕ではありません。<br>立っている場所です。</span></p>
 <p class="ce-rv">利益が<wbr>出ないのは、<wbr>リサーチが<wbr>甘いから。</p>
 <p class="ce-g1 ce-rv">もっと<wbr>数を<wbr>見て、<wbr>もっと<wbr>早く<wbr>動けば、<br>いつかは<wbr>抜けられる。</p>
 <p class="ce-g2 ce-rv">この<wbr>話がやっかいなのは、<br>「正しく<wbr>聞こえる」ことなんです。</p>
@@ -2620,11 +2668,14 @@ html.ce-still .ce-lp:not(#ce) .ce-mk{background-size:100% 100%!important}
 <div class="ce-lp" lang="ja" data-ce-part="B5">
 
 <section id="b5" data-block="B5" class="ce-b5">
+<div class="ce-rail" aria-hidden="true"><span class="ce-rail-in"><span class="ce-rail-t">CHAPTER</span><span class="ce-rail-n">05</span></span></div>
 
 <div class="ce-b5-pre ce-dark ce-violet">
 <div class="ce-stars ce-stars-dim" aria-hidden="true"></div>
 <div class="ce-col">
 <div class="ce-chap ce-rv" aria-hidden="true"><span class="ce-chap-rule"></span><span class="ce-chap-in"><span class="ce-chap-t">CHAPTER</span><span class="ce-chap-n ce-gx">05</span></span><span class="ce-chap-rule"></span></div>
+
+<p class="ce-chap-q ce-rv" aria-hidden="true"><span class="ce-chap-q-in">順番が「逆」だから、<wbr>95%なんです。</span></p>
 <p class="ce-rv">これも、<wbr>間違いではありません。</p>
 <p class="ce-g2 ce-rv">モノを<wbr>売るんだから、<wbr>まず<wbr>モノがいる。<br>当たり前です。</p>
 <p class="ce-g2 ce-rv">ただ、<wbr>この<wbr>順番でいく<wbr>限り、<br>どうしても<wbr>消えないものが<wbr>ひとつあります。</p>
@@ -2729,8 +2780,11 @@ html.ce-still .ce-lp:not(#ce) .ce-mk{background-size:100% 100%!important}
 <div class="ce-lp" lang="ja" data-ce-part="B6">
 
 <section id="b6" data-block="B6" class="ce-blk ce-b6 ce-light ce-warm">
+<div class="ce-rail" aria-hidden="true"><span class="ce-rail-in"><span class="ce-rail-t">CHAPTER</span><span class="ce-rail-n">06</span></span></div>
 <div class="ce-col">
 <div class="ce-chap ce-rv" aria-hidden="true"><span class="ce-chap-rule"></span><span class="ce-chap-in"><span class="ce-chap-t">CHAPTER</span><span class="ce-chap-n ce-gx">06</span></span><span class="ce-chap-rule"></span></div>
+
+<p class="ce-chap-q ce-rv" aria-hidden="true"><span class="ce-chap-q-in">つまり、<wbr>無名であることが<wbr>前提の場所です。</span></p>
 <p class="ce-rv">これは、<wbr>いちばん<wbr>根の<wbr>深いところです。</p>
 <p class="ce-g2 ce-rv">「自分の<wbr>商品を<wbr>持つだなんて！」<br>「実績や<wbr>センス、<wbr>まとまったお金がある<wbr>人の<wbr>話でしょ？」</p>
 <p class="ce-g1 ce-rv">と。</p>
@@ -2842,8 +2896,11 @@ html.ce-still .ce-lp:not(#ce) .ce-mk{background-size:100% 100%!important}
 <div class="ce-lp" lang="ja" data-ce-part="B7">
 
 <section id="b7" data-block="B7" class="ce-blk ce-b7 ce-light ce-sky">
+<div class="ce-rail" aria-hidden="true"><span class="ce-rail-in"><span class="ce-rail-t">CHAPTER</span><span class="ce-rail-n">07</span></span></div>
 <div class="ce-col">
 <div class="ce-chap ce-rv" aria-hidden="true"><span class="ce-chap-rule"></span><span class="ce-chap-in"><span class="ce-chap-t">CHAPTER</span><span class="ce-chap-n ce-gx">07</span></span><span class="ce-chap-rule"></span></div>
+
+<p class="ce-chap-q ce-rv" aria-hidden="true"><span class="ce-chap-q-in">おそらく、<wbr>誰もウソは<wbr>ついていません。</span></p>
 <p class="ce-rv">私も、<wbr>そこで<wbr>止まりました。</p>
 <p class="ce-g1 ce-rv">同じことを、<wbr>ずっと<wbr>思っていたんです。</p>
 <p class="ce-g2 ce-rv">先に、<wbr>答えを<wbr>言います。</p>
@@ -2915,8 +2972,11 @@ html.ce-still .ce-lp:not(#ce) .ce-mk{background-size:100% 100%!important}
 <div class="ce-lp" lang="ja" data-ce-part="B8">
 
 <section id="b8" data-block="B8" class="ce-blk ce-b8 ce-light ce-warm">
+<div class="ce-rail" aria-hidden="true"><span class="ce-rail-in"><span class="ce-rail-t">CHAPTER</span><span class="ce-rail-n">08</span></span></div>
 <div class="ce-col">
 <div class="ce-chap ce-rv" aria-hidden="true"><span class="ce-chap-rule"></span><span class="ce-chap-in"><span class="ce-chap-t">CHAPTER</span><span class="ce-chap-n ce-gx">08</span></span><span class="ce-chap-rule"></span></div>
+
+<p class="ce-chap-q ce-rv" aria-hidden="true"><span class="ce-chap-q-in">今の収入は、<wbr>残したまま。<br>その横に、<wbr>もうひとつ持つ。</span></p>
 <p class="ce-rv">ひとつは、<br>今夜もこれまで<wbr>通りの<wbr>道です。</p>
 <p class="ce-g1 ce-rv">悪い<wbr>道じゃありません。</p>
 <p class="ce-g2 ce-rv">明日も、<wbr>次の<wbr>商品を<wbr>探して、<br>売り切って、<wbr>また<wbr>探して。</p>
