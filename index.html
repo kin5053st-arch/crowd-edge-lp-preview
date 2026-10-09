@@ -2459,6 +2459,15 @@ html.ce-still .ce-lp:not(#ce) .ce-mk{background-size:100% 100%!important}
 }
 
 
+.ce-lp:not(#ce) .ce-sl-book{margin:2.4em auto 1.6em;text-align:center}
+.ce-lp:not(#ce) .ce-sl-book-in{position:relative;display:inline-block;width:min(240px,62vw);border-radius:2px 6px 6px 2px;transform:perspective(900px) rotateY(-9deg);
+  box-shadow:-1px 0 0 rgba(0,0,0,.08),10px 14px 0 -6px rgba(0,0,0,.06),18px 26px 40px rgba(26,33,82,.35),0 0 60px rgba(243,200,110,.25)}
+.ce-lp:not(#ce) .ce-sl-book-in img{display:block;width:100%;height:auto;border-radius:2px 6px 6px 2px}
+.ce-lp:not(#ce) .ce-sl-book-in::after{content:"";position:absolute;left:0;top:0;bottom:0;width:14px;border-radius:2px 0 0 2px;background:linear-gradient(90deg,rgba(0,0,0,.28),rgba(255,255,255,.18) 45%,rgba(0,0,0,.06));pointer-events:none}
+.ce-lp:not(#ce) .ce-sl-book figcaption{margin-top:1.4em;font-size:var(--fs-note);line-height:1.7;color:var(--tx-2)}
+@media (min-width:768px){.ce-lp:not(#ce) .ce-sl-book-in{width:280px}}
+
+
 .ce-lp:not(#ce) .ce-pc-br{display:none}
 @media (min-width:1024px){
   .ce-lp:not(#ce) .ce-fv-h1 .ce-sp-br{display:none}
