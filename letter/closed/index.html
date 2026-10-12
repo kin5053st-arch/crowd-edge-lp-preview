@@ -2180,6 +2180,22 @@ html.ce-still .ce-lp:not(#ce) .ce-mk{background-size:100% 100%!important}
 .ce-lp:not(#ce) .ce-sl-book figcaption{margin-top:1.4em;font-size:var(--fs-note);line-height:1.7;color:var(--tx-2)}
 @media (min-width:768px){.ce-lp:not(#ce) .ce-sl-book-in{width:280px}}
 
+.ce-lp:not(#ce) .ce-sl-tool{position:relative;margin:1.8em auto 1.4em;text-align:center}
+.ce-lp:not(#ce) .ce-sl-tool .ce-sl-zoom{position:relative;display:block;padding:6px;background:#fff;border-radius:6px;
+  box-shadow:0 0 0 1px rgba(201,154,63,.55),5px 5px 0 0 #F4EEDF,5px 5px 0 1px rgba(201,154,63,.35),10px 10px 0 0 #EDE4CF,10px 10px 0 1px rgba(201,154,63,.25),0 18px 36px rgba(26,33,82,.18)}
+.ce-lp:not(#ce) .ce-sl-tool img{display:block;width:100%;height:auto;border-radius:3px}
+.ce-lp:not(#ce) .ce-sl-tool-tall .ce-sl-zoom{width:min(100%,420px);margin-inline:auto;max-height:520px;overflow:hidden}
+.ce-lp:not(#ce) .ce-sl-tool-tall .ce-sl-zoom::after{content:"";position:absolute;left:6px;right:6px;bottom:6px;height:70px;background:linear-gradient(180deg,rgba(255,255,255,0),#fff);pointer-events:none}
+.ce-lp:not(#ce) .ce-sl-tool-k{position:absolute;z-index:2;left:50%;top:-12px;transform:translateX(-50%);padding:0 12px 0 calc(12px + .4em);font-family:var(--latin);font-style:italic;font-weight:600;font-size:13px;line-height:24px;letter-spacing:.4em;color:#FFF3D0;background:linear-gradient(180deg,var(--navy-1),var(--navy-2));border:1px solid #D9AE56;border-radius:var(--r-xs)}
+.ce-lp:not(#ce) .ce-sl-tool figcaption{margin-top:1.1em;font-size:var(--fs-note);line-height:1.7;color:var(--tx-2)}
+@media (min-width:768px){.ce-lp:not(#ce) .ce-sl-tool-tall .ce-sl-zoom{width:460px;max-height:560px}}
+
+.ce-lp:not(#ce) .ce-sl-sign{display:flex;justify-content:flex-end;align-items:flex-end;gap:22px;margin:2.2em 6px 0 auto}
+.ce-lp:not(#ce) .ce-sl-sign-i img{display:block;height:auto;mix-blend-mode:multiply}
+.ce-lp:not(#ce) .ce-sl-sign-i:first-child img{width:132px}
+.ce-lp:not(#ce) .ce-sl-sign-i:last-child img{width:150px}
+@media (min-width:768px){.ce-lp:not(#ce) .ce-sl-sign-i:first-child img{width:160px}.ce-lp:not(#ce) .ce-sl-sign-i:last-child img{width:186px}}
+
 .ce-lp:not(#ce) .ce-pc-br{display:none}
 @media (min-width:1024px){
   .ce-lp:not(#ce) .ce-fv-h1 .ce-sp-br{display:none}
